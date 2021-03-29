@@ -1,11 +1,24 @@
 import React from "react";
 import Searchbar from "./Searchbar";
+import RestaurantList from "./RestaurantList";
+import {
+  LandingPageContainer,
+  UserAccessTitleWrapper,
+  BestRatedWrapper,
+  CardWrapper,
+} from "../../styledcomponents/HomePage";
 
 const Home = () => {
   return (
-    <div>
+    <LandingPageContainer>
       <Searchbar />
-    </div>
+      <UserAccessTitleWrapper titletext="Best Rated Restaurants" />
+      <BestRatedWrapper>
+        <CardWrapper>
+          <RestaurantList />
+        </CardWrapper>
+      </BestRatedWrapper>
+    </LandingPageContainer>
   );
 };
 

@@ -1,7 +1,6 @@
 {
   "dependencies": {
-    "add": "^2.0.6",
-    "react-icons": "^4.2.0",
-    "react-masonry-css": "^1.0.14"
+    "react-masonry-css": "^1.0.14",
+    "react-star-rating-component": "^1.4.1"
   }
 }
