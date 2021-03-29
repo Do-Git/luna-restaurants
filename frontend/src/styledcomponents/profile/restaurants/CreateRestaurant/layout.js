@@ -3,20 +3,29 @@ import styled from 'styled-components';
 // Create Restaurant Body
 export const CreateRestaurantContainer = styled.div`
     background-color: #F2F2F2;
-    height: 200vh;
     position: absolute;
     top: 8vh;
     width: 100%;
-    // text-align: center;
+    height:90vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
 `
 
 // Grid Layout
 export const FormGridContainer = styled.form`
     display: grid;
-    grid-template: repeat(4, 1fr 3fr) / repeat(3, 1fr);
+    grid-template: repeat(4, 5% 10%) 20% / repeat(3, 1fr);
     grid-column-gap: 3rem;
+    grid-row-gap: 1rem;
     width: 70%;
     margin: auto;
+`
+
+//Text
+export const TitleH1 = styled.h1`
+    padding-top: 1rem;
+    border-bottom: solid #e47d31;
 `
 
 // Content
@@ -51,6 +60,8 @@ export const InputLabel = styled.label`
 
 export const InputBox = styled.input`
     border: solid 1px #EBEBEB;
+    height: 1.5rem;
+    margin: 1rem 0 1rem 0;
 `
 
 const BaseFormDiv = styled.div`
@@ -108,4 +119,9 @@ export const PriceForm = styled(BaseFormDiv)`
 
 export const ImageForm = styled(BaseFormDiv)`
     grid-area: 8 / 3 / 9 / 4;
+`
+
+//Create Button
+export const CreateButtonDiv = styled.div`
+    grid-area: 9 / 2 / 10 / 3;
 `

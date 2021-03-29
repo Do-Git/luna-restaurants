@@ -4,7 +4,7 @@ import {
     CategoryForm,
     CityForm,
     ContactSpan,
-    CountryForm,
+    CountryForm, CreateButtonDiv,
     DetailsSpan,
     EmailForm,
     FormGridContainer, ImageForm,
@@ -18,6 +18,7 @@ import {
     WebsiteForm,
     ZipForm
 } from "../../../../../../styledcomponents/profile/restaurants/CreateRestaurant/layout";
+import {ButtonSearchbar} from "../../../../../../styledcomponents/forAll/buttons";
 
 const CreateRestaurantForm = () => {
     return (
@@ -74,7 +75,9 @@ const CreateRestaurantForm = () => {
                     <InputLabel>Image</InputLabel>
                     <InputBox/>
                 </ImageForm>
-
+                <CreateButtonDiv>
+                    <ButtonSearchbar>Create</ButtonSearchbar>
+                </CreateButtonDiv>
         </FormGridContainer>
     )
 }
