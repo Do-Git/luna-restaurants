@@ -19,7 +19,7 @@ export const RestaurantMainContainer = styled.div`
   cursor: pointer;
 
   &:hover ${TopBar} {
-    height: 20px;
+    height: 16px;
   }
 
   img {
@@ -63,10 +63,11 @@ export const RestaurantAddress = styled.p`
 export const StarsReviewContainer = styled.div`
   display: flex;
   justify-content: space-between;
+  align-items: center;
   height: 27px;
   font-size: 20px;
   p {
-    margin-top: 8px;
+    margin-top: 24px;
     margin-right: 19px;
     font-family: Helvetica, serif;
     font-stretch: normal;
@@ -75,7 +76,7 @@ export const StarsReviewContainer = styled.div`
     line-height: 23px;
     color: #4c4c4c;
   }
-  i {
+  /* i {
     font-size: 27px;
-  }
+  } */
 `;
