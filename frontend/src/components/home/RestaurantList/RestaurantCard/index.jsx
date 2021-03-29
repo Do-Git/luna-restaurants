@@ -1,5 +1,5 @@
-import React from "react";
-import StarRatingComponent from "react-star-rating-component";
+import React, { useState } from "react";
+import StarRatingComponent from "react-rating-stars-component";
 import {
   RestaurantAddress,
   RestaurantDetailsContainer,
@@ -11,7 +11,10 @@ import {
 import DefaultRestaurantImage from "../../../../assets/restaurants/default.png";
 
 const RestaurantCard = () => {
-  const onClickHandler = () => {
+  const [rating, setRating] = useState(0);
+
+  const onClickHandler = (e) => {
+    e.preventDefault();
     // go to detail restaurant
   };
 
@@ -23,13 +26,11 @@ const RestaurantCard = () => {
         <RestaurantAddress>123 Buenos Aires</RestaurantAddress>
         <StarsReviewContainer>
           <StarRatingComponent
-            name="Restaurant_Rating"
-            starColor={"#F8E71C"}
-            emptyStarColor={"rgba(235, 235, 235, 0.5)"}
-            starDimension={"30px"}
-            editing={false}
-            starCount={5}
-            value={4}
+            activeColor="#F8E71C"
+            isHalf={true}
+            color={"rgba(235, 235, 235, 0.5)"}
+            size={27}
+            value={rating}
           />
           <p>75</p>
         </StarsReviewContainer>
