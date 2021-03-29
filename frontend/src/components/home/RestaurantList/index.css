@@ -1,0 +1,15 @@
+.custom-masonry {
+  display: flex;
+  margin-left: -20px;
+  margin-bottom: 50px;
+}
+
+.custom-masonry-column {
+  padding-left: 20px;
+  background-clip: padding-box;
+}
+
+.custom-masonry-column > .div {
+  background: red;
+  margin-bottom: 20px;
+}
