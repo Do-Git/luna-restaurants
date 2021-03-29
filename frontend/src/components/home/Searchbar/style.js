@@ -18,8 +18,8 @@ export const InputWrapper = styled.div`
   input {
     width: 530px;
     height: 55px;
-    font-size: 1rem;
-    line-height: 1rem;
+    font-size: 20px;
+    line-height: 20px;
     line-height: 20px;
     color: #4c4c4c;
     padding-left: 20px;
