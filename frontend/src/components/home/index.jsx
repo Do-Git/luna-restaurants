@@ -1,6 +1,8 @@
 import React from "react";
 import Searchbar from "./Searchbar";
 import RestaurantList from "./RestaurantList";
+import Navbar from "../headers/Navbar";
+import Footer from "../headers/Footer";
 import {
   LandingPageContainer,
   UserAccessTitleWrapper,
@@ -11,6 +13,7 @@ import {
 const Home = () => {
   return (
     <LandingPageContainer>
+      <Navbar />
       <Searchbar />
       <UserAccessTitleWrapper titletext="Best Rated Restaurants" />
       <BestRatedWrapper>
@@ -18,6 +21,7 @@ const Home = () => {
           <RestaurantList />
         </CardWrapper>
       </BestRatedWrapper>
+      <Footer />
     </LandingPageContainer>
   );
 };
