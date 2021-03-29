@@ -1,5 +1,13 @@
 import styled from "styled-components";
 
+export const TopBar = styled.div`
+  background: #e47d31;
+  height: 8px;
+  width: 100%;
+  border-top-right-radius: 3px;
+  border-top-left-radius: 3px;
+`;
+
 export const RestaurantMainContainer = styled.div`
   position: relative;
   width: 271px;
@@ -10,6 +18,10 @@ export const RestaurantMainContainer = styled.div`
   border: 1px solid #ebebeb;
   cursor: pointer;
 
+  &:hover ${TopBar} {
+    height: 16px;
+  }
+
   img {
     height: 283px;
     width: 100%;
@@ -17,14 +29,6 @@ export const RestaurantMainContainer = styled.div`
     border-bottom-right-radius: 3px;
     border-bottom-left-radius: 3px;
   }
-`;
-
-export const TopBar = styled.div`
-  background: #e47d31;
-  height: 8px;
-  width: 100%;
-  border-top-right-radius: 3px;
-  border-top-left-radius: 3px;
 `;
 
 export const RestaurantDetailsContainer = styled.div`
@@ -59,11 +63,11 @@ export const RestaurantAddress = styled.p`
 export const StarsReviewContainer = styled.div`
   display: flex;
   justify-content: space-between;
-  /* margin-top: 12px; */
+  align-items: center;
   height: 27px;
   font-size: 20px;
   p {
-    margin-top: 8px;
+    margin-top: 24px;
     margin-right: 19px;
     font-family: Helvetica, serif;
     font-stretch: normal;
@@ -72,7 +76,7 @@ export const StarsReviewContainer = styled.div`
     line-height: 23px;
     color: #4c4c4c;
   }
-  i {
+  /* i {
     font-size: 27px;
-  }
+  } */
 `;

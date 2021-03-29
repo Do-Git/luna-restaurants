@@ -2,6 +2,7 @@ import styled from "styled-components";
 
 export const LandingPageContainer = styled.div`
   align-self: flex-start;
+  background: #f8f8f8;
 `;
 
 export const BestRatedWrapper = styled.div`
