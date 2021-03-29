@@ -9,7 +9,7 @@ function OurRouter() {
     <Router history={history}>
       <Switch>
         <Route path="/" exact component={Home} />
-        <Route path="/sign-in/" exact component={Login}/>
+        <Route path="/sign-in/" exact component={Login} />
         <Route path="*" component={() => "404 NOT FOUND"} />
       </Switch>
     </Router>
