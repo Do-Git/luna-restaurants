@@ -4,11 +4,9 @@ import {
     NavRightWrapper,
     HeaderSpan,
     NavWrapper,
-    Logo,
     NavTextDiv, ButtonWrapper
 } from "../../styledcomponents/headers/layout";
 import {NavBarSignInButton, NavBarSignUpButton} from "../../styledcomponents/forAll/buttons";
-import lunaLogo from "../../../src/assets/logo/LUNA.png"
 
 const Navbar = () => {
     return (
