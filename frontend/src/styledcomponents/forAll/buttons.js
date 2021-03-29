@@ -17,6 +17,7 @@ export const ButtonSearchbar = styled.button`
 
   a {
     font-family: Helvetica, Arial, serif;
+    font-weight: 400;
     font-size: 20px;
     line-height: 20px;
     color: #ffffff;
