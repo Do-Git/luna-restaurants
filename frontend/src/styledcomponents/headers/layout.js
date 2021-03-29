@@ -3,10 +3,16 @@ import styled from 'styled-components';
 //Nav
 
 export const NavWrapper = styled.div`
+    width: 100%;
+    min-width: 550px;
+    height: 8vh;
+    position: fixed;
     display: flex;
     justify-content: space-between;
-    min-width: 550px;
-    // position: fixed;
+    top: 0;
+    border-bottom: solid 2px #f2f2f2;
+    background-color: white;
+    z-index: 999;
 `
 
 export const NavRightWrapper = styled.div`
@@ -37,13 +43,21 @@ export const FooterWrapper = styled.div`
     bottom: 0;
     left: 0;
     width: 100%;
+    height: 10vh;
+    background-color: white;
+    z-index: 999;
 `
 
-export const FooterFlexWrapper = styled(NavWrapper)`
+export const FooterFlexWrapper = styled.div`
+    display: flex;
     justify-content: space-between;
-    padding-bottom: 0.5rem;
-    padding-top: 0.5rem;
+    min-width: 550px;
+    justify-content: space-between;
+    padding-bottom: 0.2rem;
+    padding-top: 0.2rem;
     border-bottom: solid 2px #f2f2f2;
+    align-items: center;
+    padding: 0.7rem 0 0.7rem 0;
 `
 
 export const FooterLeftWrapper = styled(NavRightWrapper)`
@@ -53,6 +67,7 @@ export const SocialMediaWrapper = styled.div`
     min-width: 180px;
     display: flex;
     justify-content: space-around;
+    align-items: center;
     width: 15%;
 `
 
@@ -65,6 +80,8 @@ export const LunaLogoH1 = styled.h1`
 
 export const HeaderSpan = styled.span`
     vertical-align: middle;
+    margin-left: 0.5rem;
+    margin-right: 0.5rem;
     :hover{
         cursor: pointer;
         // color: #E47D31;
