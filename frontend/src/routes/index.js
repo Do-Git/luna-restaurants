@@ -5,7 +5,7 @@ import Home from "../components/home";
 import SignIn from "../components/registration/signIn/index.js";
 import SignUp from "../components/registration/signUp/index.js";
 import Congratulation from "../components/registration/Congratulation/index.js";
-import Verification from "../components/registration/verification";
+import Verification from "../components/registration/Verification";
 import CreateRestaurant from "../components/profile/restaurants/CreateRestaurant";
 import Restaurants from "../components/search/restaurants/index";
 
