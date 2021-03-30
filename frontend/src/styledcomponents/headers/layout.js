@@ -5,6 +5,7 @@ import styled from 'styled-components';
 export const NavWrapper = styled.div`
     width: 100%;
     min-width: 550px;
+    min-height: 90px;
     height: 8vh;
     position: fixed;
     display: flex;

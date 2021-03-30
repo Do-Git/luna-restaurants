@@ -7,13 +7,14 @@ import SignUp from "../components/registration/SignUp/index.js";
 import Congratulation from "../components/registration/Congratulation/index.js";
 import Verification from "../components/registration/Verification";
 import CreateRestaurant from "../components/profile/restaurants/CreateRestaurant";
-// test. delete this
+import RestaurantPage from "../components/search/restaurants/restaurantPage";
 
 function OurRouter() {
   return (
     <Router history={history}>
       <Switch>
         <Route path="/" exact component={Home} />
+        <Route path="/restaurant-page/" exact component={RestaurantPage} />
         <Route path="/sign-in/" exact component={SignIn} />
         <Route path="/sign-up/" exact component={SignUp} />
         <Route
