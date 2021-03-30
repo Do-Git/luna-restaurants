@@ -146,7 +146,9 @@ class Verification extends Component {
             <Input type="password" placeholder="Password repeat" required />
           </InputDiv>
             <div style={{display: "flex",justifyContent: "center",alignItems: "flex-start",gridArea:"button", width:"650px"}}>
+          <Link to={'/sign-in'}>
           <BigButton>Finish registration</BigButton>
+          </Link>
             </div>
          
           </Form>

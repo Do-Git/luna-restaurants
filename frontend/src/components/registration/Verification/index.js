@@ -1,13 +1,18 @@
 import React from 'react';
 import { connect } from 'react-redux';
+import { LandingPageContainer } from '../../../styledcomponents/HomePage';
+import Footer from '../../headers/Footer';
+import Navbar from '../../headers/Navbar';
 import VerificationBody from './VerificationBody';
 
 
 const Verification = (props) => {
     return (
-        <>
-          <VerificationBody/>    
-        </>
+        <LandingPageContainer>
+            <Navbar/>
+                <VerificationBody/>  
+            <Footer/>  
+        </LandingPageContainer>
     )
 }
 

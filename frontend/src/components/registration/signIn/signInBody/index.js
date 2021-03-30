@@ -5,6 +5,7 @@ import SignInButton from "../SignInButton";
 import { withRouter } from "react-router-dom";
 import { MiddleSection, H1 , Form, OrangeDiv, TopDiv, BottomDiv}from "../../../../styledcomponents/forAll/layout.js";
 import { Input, InputDiv, }from "../../../../styledcomponents/forAll/inputs.js";
+import {Link} from "react-router-dom"
 
 class SignInBody extends Component {
 //   constructor (props){
@@ -86,7 +87,9 @@ class SignInBody extends Component {
             {/* <Input value={ this.state.password } onChange={ this.setPassword } type="password" placeholder="   Password" required /> */}
             <Input type="password" placeholder="   Password" required />
            </InputDiv>
-           <SignInButton />
+           <Link to={'/'}>
+            <SignInButton />
+           </Link>
         {/* </this.Form> */}
       </MiddleSection>
          

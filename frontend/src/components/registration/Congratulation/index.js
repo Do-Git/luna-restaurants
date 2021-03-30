@@ -3,16 +3,16 @@ import { connect } from 'react-redux';
 import { LandingPageContainer } from '../../../styledcomponents/HomePage';
 import Footer from '../../headers/Footer';
 import Navbar from '../../headers/Navbar';
-import SignUpBody from './SignUpBody';
+import CongratulationBody from './CongratulationBody';
 
 
-const SignUp = (props) => {
+const Verification = (props) => {
     return (
         <LandingPageContainer>
             <Navbar/>
-                <SignUpBody/>  
-            <Footer/>
-        </LandingPageContainer> 
+                <CongratulationBody/>  
+            <Footer/>  
+        </LandingPageContainer>
     )
 }
 
@@ -23,6 +23,5 @@ const mapStateToProps = () => {
 }
 
 const connection = connect(mapStateToProps);
-const ConnectedApp = connection(SignUp);
+const ConnectedApp = connection(Verification);
 export default ConnectedApp;
-

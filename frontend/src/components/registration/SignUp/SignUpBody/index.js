@@ -1,10 +1,10 @@
 import { connect } from 'react-redux';
-import { MiddleSection, H1 , OrangeDiv, TopDiv, BottomDiv}from "../../../../styledcomponents/forAll/layout.js";
+import { MiddleSection, H1 , OrangeDiv}from "../../../../styledcomponents/forAll/layout.js";
 import { Input, InputDiv, }from "../../../../styledcomponents/forAll/inputs.js";
 import SignUpRegistration from "../SignUpRegistration";
 import React, { Component } from 'react';
 import styled from 'styled-components';
-import { withRouter } from "react-router-dom";
+import { Link, withRouter } from "react-router-dom";
 
 
 
@@ -53,7 +53,9 @@ class SignUnBody extends Component {
               {/* <Input type="email" placeholder="   Email" value={ email } onChange={ event => setEmail(event.target.value) } required /> */}
               <Input type="email" placeholder="   Email" required />
             </InputDiv>
-            <SignUpRegistration />
+            <Link to={'/sign-up/congratulation'}>
+             <SignUpRegistration />
+            </Link>
           {/* </Form> */}
        </MiddleSection>
     )
