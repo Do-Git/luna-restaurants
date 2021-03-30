@@ -25,9 +25,9 @@ const Navbar = () => {
                     {/*</Link>*/}
                 </NavTextDiv>
                 <NavTextDiv>
-                    {/*<Link to={}>*/}
+                    <Link to={'/profile/'}>
                         <HeaderSpan>Profile</HeaderSpan>
-                    {/*</Link>*/}
+                    </Link>
                 </NavTextDiv>
                 <ButtonWrapper>
                     <NavBarSignUpButton>SIGNUP</NavBarSignUpButton>
