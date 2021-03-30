@@ -1,7 +1,7 @@
 //import { connect } from 'react-redux';
 import React from 'react';
 // import SignUpLink from "./SignUpLink";
-import SignInBody from "./signInBody";
+import SignInBody from "./SignInBody";
 
 
 export const SignIn = () => {
