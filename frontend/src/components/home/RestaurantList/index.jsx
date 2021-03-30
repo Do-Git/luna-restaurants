@@ -24,14 +24,6 @@ const RestaurantList = () => {
         <RestaurantCard></RestaurantCard>
         <RestaurantCard></RestaurantCard>
         <RestaurantCard></RestaurantCard>
-        <RestaurantCard></RestaurantCard>
-        <RestaurantCard></RestaurantCard>
-        <RestaurantCard></RestaurantCard>
-        <RestaurantCard></RestaurantCard>
-        <RestaurantCard></RestaurantCard>
-        <RestaurantCard></RestaurantCard>
-        <RestaurantCard></RestaurantCard>
-        <RestaurantCard></RestaurantCard>
       </Masonry>
     </Center>
   );
