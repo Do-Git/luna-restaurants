@@ -6,7 +6,7 @@ import { BigButton } from "../../../../styledcomponents/forAll/buttons";
 const SignUpRegistration = () => {
     return (
         <div>
-          <BigButton type="submit">Login</BigButton>
+          <BigButton type="submit">Register</BigButton>
         </div>
     )
 }
