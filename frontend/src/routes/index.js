@@ -6,6 +6,7 @@ import SignIn from "../components/registration/SignIn/index.js";
 import SignUp from "../components/registration/SignUp/index.js";
 import Congratulation from "../components/registration/SignUp/SignUpCongratulation/index.js";
 import Verification from "../components/registration/Verification";
+import CreateRestaurant from "../components/profile/restaurants/CreateRestaurant";
 
 function OurRouter() {
   return (
@@ -16,6 +17,7 @@ function OurRouter() {
         <Route path="/sign-up/" exact component={SignUp} />
         <Route path="/sign-up/congratulation" exact component={Congratulation} />
         <Route path="/sign-up/verification" exact component={Verification} />
+        <Route path="/create-restaurant/" exact component={CreateRestaurant} />
         <Route path="*" component={() => "404 NOT FOUND"} />
       </Switch>
     </Router>

@@ -43,6 +43,12 @@ INSTALLED_APPS = [
     'rest_framework',
     'corsheaders',
 
+    # own
+    'user',
+    'restaurant',
+    'review',
+    'comment',
+    'registration',
 ]
 
 CORS_ALLOW_ALL_ORIGINS = True
@@ -135,7 +141,7 @@ REST_FRAMEWORK = {
 
 }
 
-# AUTH_USER_MODEL = 'user.User'
+AUTH_USER_MODEL = 'user.User'
 
 SIMPLE_JWT = {
     'ACCESS_TOKEN_LIFETIME': timedelta(days=20),

@@ -1,4 +1,5 @@
 import React from "react";
+import { Link } from 'react-router-dom';
 import {
     LunaLogoH1,
     NavRightWrapper,
@@ -14,13 +15,19 @@ const Navbar = () => {
             <LunaLogoH1>LUNA</LunaLogoH1>
             <NavRightWrapper>
                 <NavTextDiv>
-                    <HeaderSpan>Home</HeaderSpan>
+                    <Link to={'/'}>
+                        <HeaderSpan>Home</HeaderSpan>
+                    </Link>
                 </NavTextDiv>
                 <NavTextDiv>
-                    <HeaderSpan>Search</HeaderSpan>
+                    {/*<Link to={}>*/}
+                        <HeaderSpan>Search</HeaderSpan>
+                    {/*</Link>*/}
                 </NavTextDiv>
                 <NavTextDiv>
-                    <HeaderSpan>Profile</HeaderSpan>
+                    {/*<Link to={}>*/}
+                        <HeaderSpan>Profile</HeaderSpan>
+                    {/*</Link>*/}
                 </NavTextDiv>
                 <ButtonWrapper>
                     <NavBarSignUpButton>SIGNUP</NavBarSignUpButton>
