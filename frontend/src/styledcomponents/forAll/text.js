@@ -35,3 +35,16 @@ export const MapText = styled(WhiteReviewCountSpan)`
     color: #4C4C4C;
 `
 
+export const BlackSpan = styled(WhiteSpan)`
+    color: #000000;
+    font-size: 20px;
+    line-height: 23px;
+`
+
+export const OrangeSpan = styled(WhiteSpan)`
+    font-size: 16px;
+    font-weight: 400;
+    line-height: 18px;
+    text-align: right;
+    color: #E47D31;
+`
