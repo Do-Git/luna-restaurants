@@ -11,11 +11,11 @@ const ButtonDiv = styled.div`
 `;
 
 
-const SignUpRegistration = () => {
+const CongratulationButton = () => {
     return (
         <ButtonDiv>
             {/* <Link to={'/sign-up/congratulation'}> */}
-                <BigButton type="submit">Register</BigButton>
+                <BigButton type="submit">Validate</BigButton>
             {/* </Link> */}
         </ButtonDiv>
     )
@@ -27,5 +27,5 @@ const mapStateToProps = state => {
 };
 
 const connection = connect(mapStateToProps);
-const ConnectedApp = connection(SignUpRegistration);
+const ConnectedApp = connection(CongratulationButton);
 export default ConnectedApp;
