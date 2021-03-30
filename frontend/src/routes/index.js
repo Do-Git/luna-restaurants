@@ -3,11 +3,11 @@ import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
 import history from "../history";
 import Home from "../components/home";
 import SignIn from "../components/registration/signIn/index.js";
-import SignUp from "../components/registration/SignUp/index.js";
+import SignUp from "../components/registration/signUp/index.js";
 import Congratulation from "../components/registration/Congratulation/index.js";
-import Verification from "../components/registration/Verification";
+import Verification from "../components/registration/verification";
 import CreateRestaurant from "../components/profile/restaurants/CreateRestaurant";
-// test. delete this
+import Restaurants from "../components/search/restaurants/index";
 
 function OurRouter() {
   return (
@@ -23,6 +23,7 @@ function OurRouter() {
         />
         <Route path="/sign-up/verification" exact component={Verification} />
         <Route path="/create-restaurant/" exact component={CreateRestaurant} />
+        <Route path="/restaurants" exact component={Restaurants} />
         <Route path="*" component={() => "404 NOT FOUND"} />
       </Switch>
     </Router>
