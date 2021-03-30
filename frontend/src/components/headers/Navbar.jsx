@@ -30,8 +30,12 @@ const Navbar = () => {
                     </Link>
                 </NavTextDiv>
                 <ButtonWrapper>
-                    <NavBarSignUpButton>SIGNUP</NavBarSignUpButton>
+                    <Link to={'/sign-up'}>
+                        <NavBarSignUpButton>SIGNUP</NavBarSignUpButton>
+                    </Link>
+                    <Link to={'/sign-in'}>
                     <NavBarSignInButton>LOGIN</NavBarSignInButton>
+                    </Link>
                 </ButtonWrapper>
             </NavRightWrapper>
         </NavWrapper>
