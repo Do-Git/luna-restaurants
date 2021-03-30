@@ -1,18 +1,18 @@
 import styled from "styled-components";
 
 export const BigButton = styled.button`
-    background-color: #E47D31;
-    border: none;
-    border-radius: 28px;
-    width: 200px;
-    height: 56px;
-    color: white;
-    font-size: 20px;
-    margin-top: 150px;
-    :hover {
-        cursor: pointer;
-    }
-`
+  background-color: #e47d31;
+  border: none;
+  border-radius: 28px;
+  width: 200px;
+  height: 56px;
+  color: white;
+  font-size: 20px;
+  margin-top: 150px;
+  :hover {
+    cursor: pointer;
+  }
+`;
 export const ButtonSearchbar = styled.button`
   height: 58px;
   width: 200px;
@@ -23,6 +23,7 @@ export const ButtonSearchbar = styled.button`
   font-family: Helvetica, Arial, serif;
   font-size: 20px;
   line-height: 23px;
+  margin-top: 65px;
   color: #ffffff;
   &:focus {
     outline: none;
@@ -36,6 +37,21 @@ export const ButtonSearchbar = styled.button`
     color: #ffffff;
   }
 `;
+
+export const OrangeSmallButton = styled(ButtonSearchbar)`
+    height: 40px;
+    width: 170px;
+    font-size: 16px;
+    font-weight: 400px;
+    font-family: Helvetica;
+    line-height: 18px;
+    text-align: center;
+`
+
+export const OrangeMiniButton = styled(OrangeSmallButton)`
+    width: 120px;
+`
+
 export const NavBarButton = styled.button`
   background-color: #e47d31;
   color: white;
@@ -65,3 +81,13 @@ export const SocialMediaIcon = styled.div`
   vertical-align: middle;
   line-height: 1.5rem;
 `;
+
+export const GrayLikeButton = styled(NavBarSignUpButton)`
+    background-color: #919191;
+    height: 33px;
+`
+
+export const GrayCommentButton = styled(NavBarSignInButton)`
+    background-color: #919191;
+    height: 33px;
+`
