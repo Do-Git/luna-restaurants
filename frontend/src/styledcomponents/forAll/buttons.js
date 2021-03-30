@@ -37,6 +37,21 @@ export const ButtonSearchbar = styled.button`
     color: #ffffff;
   }
 `;
+
+export const OrangeSmallButton = styled(ButtonSearchbar)`
+    height: 40px;
+    width: 170px;
+    font-size: 16px;
+    font-weight: 400px;
+    font-family: Helvetica;
+    line-height: 18px;
+    text-align: center;
+`
+
+export const OrangeMiniButton = styled(OrangeSmallButton)`
+    width: 120px;
+`
+
 export const NavBarButton = styled.button`
   background-color: #e47d31;
   color: white;
@@ -66,3 +81,13 @@ export const SocialMediaIcon = styled.div`
   vertical-align: middle;
   line-height: 1.5rem;
 `;
+
+export const GrayLikeButton = styled(NavBarSignUpButton)`
+    background-color: #919191;
+    height: 33px;
+`
+
+export const GrayCommentButton = styled(NavBarSignInButton)`
+    background-color: #919191;
+    height: 33px;
+`

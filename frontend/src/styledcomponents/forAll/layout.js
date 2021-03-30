@@ -20,7 +20,18 @@ export const TopDiv = styled.div`
   margin-top: 50px;
 `;
 export const BottomDiv = styled.div`
-  margin-top: 50px
-  flex-direction: column;
-  align-items: flex-start;
+    margin-top:50px
+    flex-direction: column;
+    align-items: flex-start;
+`;
+
+export const FlexCenterDiv = styled.div`
+  display: flex;
+  justify-content: center;
+`;
+
+export const FlexSpaceBetweenDiv = styled.div`
+  display: flex;
+  justify-content: space-between;
+  padding: 1rem;
 `;

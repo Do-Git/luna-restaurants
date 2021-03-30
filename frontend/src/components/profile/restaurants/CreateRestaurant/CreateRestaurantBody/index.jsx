@@ -3,13 +3,13 @@ import {
     CreateRestaurantContainer,
     TitleH1
 } from "../../../../../styledcomponents/profile/restaurants/CreateRestaurant/layout";
-import {OrangeUnderline} from "../../../../../styledcomponents/HomePage";
+import {OrangeUnderline, UserAccessTitleWrapper} from "../../../../../styledcomponents/HomePage";
 
 
 const CreateRestaurantBody = () => {
     return (
         <CreateRestaurantContainer>
-            <TitleH1>CREATE NEW RESTAURANT</TitleH1>
+            <UserAccessTitleWrapper titletext="CREATE NEW RESTAURANT" />
             <CreateRestaurantForm />
         </CreateRestaurantContainer>
     )
