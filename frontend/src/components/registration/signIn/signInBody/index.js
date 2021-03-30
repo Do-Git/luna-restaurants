@@ -35,7 +35,7 @@ class SignInBody extends Component {
   login = (e) => {
     console.log("inside login")
     e.preventDefault();
-      const url = "https://luna-sagittarius.propulsion-learn.ch/backend/api/auth/token/";
+      const url = "https://localhost:8000/backend/api/auth/token/";
       const method = 'POST';
       const body = {
           email: this.state.email,
@@ -55,15 +55,9 @@ class SignInBody extends Component {
           console.log(data);
           if (data.access){
             const token = data.access;
-            const id = data.user.id;
             localStorage.setItem('token', token);
             this.props.dispatch({type: 'SET_TOKEN', payload: token});
-            this.props.dispatch({type: 'ADD_ID', payload: id});
-            this.props.dispatch({type: 'ADD_FIRST_NAME', payload: data.user.first_name});
-            this.props.dispatch({type: 'ADD_LAST_NAME', payload: data.user.last_name});
-            this.props.dispatch({type: 'ADD_USERNAME', payload: data.user.username});
-            this.props.dispatch({type: 'ADD_AVATAR', payload: data.user.avatar});
-            this.props.history.push(`/feed/${data.user.id}`);
+            this.props.history.push(`/`);
             console.log('inside login')
           } else {
             this.props.history.push("/");
@@ -90,8 +84,8 @@ class SignInBody extends Component {
                 <Input value={ this.state.password } onChange={ this.setPassword } type="password" placeholder="   Password" required />
                 {/* <Input type="password" placeholder="   Password" required /> */}
               </InputDiv>
-              <SignInButton />
            </Form>
+           <SignInButton />
       </MiddleSection>
          
     )
