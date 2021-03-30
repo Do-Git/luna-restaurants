@@ -6,7 +6,7 @@ export const CreateRestaurantContainer = styled.div`
     position: absolute;
     top: 8vh;
     width: 100%;
-    height:90vh;
+    min-height:92vh;
     display: flex;
     flex-direction: column;
     align-items: center;
