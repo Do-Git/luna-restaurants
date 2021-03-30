@@ -1,6 +1,6 @@
 //import { connect } from 'react-redux';
 import React from 'react';
-import SignInBody from "./SignInBody";
+import SignInBody from "./signInBody";
 import Navbar from "../../headers/Navbar";
 import Footer from "../../headers/Footer";
 import {
