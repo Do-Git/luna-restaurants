@@ -39,6 +39,7 @@ export const BlackSpan = styled(WhiteSpan)`
     color: #000000;
     font-size: 20px;
     line-height: 23px;
+    white-space: nowrap;
 `
 
 export const OrangeSpan = styled(WhiteSpan)`
@@ -47,4 +48,7 @@ export const OrangeSpan = styled(WhiteSpan)`
     line-height: 18px;
     text-align: right;
     color: #E47D31;
+    :hover {
+        cursor: pointer;
+    }
 `

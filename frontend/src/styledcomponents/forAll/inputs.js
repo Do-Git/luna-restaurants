@@ -27,3 +27,9 @@ export const FilterInput = styled.input`
     border-radius: 3px;
     border: solid 1px #EBEBEB;
 `
+
+export const CommentInput = styled(FilterInput)`
+    // margin-left: 1rem;
+    width: 60%;
+    height: 30px;
+`

@@ -45,10 +45,20 @@ export const OrangeSmallButton = styled(ButtonSearchbar)`
     font-family: Helvetica;
     line-height: 18px;
     text-align: center;
+    // margin-left: 1rem;
+    white-space: nowrap;
 `
 
 export const OrangeMiniButton = styled(OrangeSmallButton)`
     width: 120px;
+    margin-left: 1rem;
+`
+
+export const OrangeSuperMiniButton = styled(OrangeSmallButton)`
+    min-width: 90px;
+    width: 15%;
+    min-height: 2rem;
+    height: 70%;
 `
 
 export const NavBarButton = styled.button`
