@@ -1,7 +1,9 @@
 import React, { useState } from "react";
 import Footer from "../../headers/Footer";
 import Navbar from "../../headers/Navbar";
-import RestaurantList from "../../home/RestaurantList/index";
+import RestaurantList from "../../home/RestaurantList/";
+import Reviews from "../reviews/";
+import Users from "../users";
 import {
   BestRatedWrapper,
   CardWrapper,
@@ -40,6 +42,19 @@ const Restaurant = () => {
 
   const onCategoryChange = (e) => {
     // fetch by category
+  };
+
+  const renderContent = () => {
+    switch (viewFilter) {
+      case "RESTAURANTS":
+        return <RestaurantList></RestaurantList>;
+      case "REVIEWS":
+        return <Reviews></Reviews>;
+      case "USERS":
+        return <Users></Users>;
+      default:
+        return <p>Invalid filter...</p>;
+    }
   };
 
   return (
@@ -88,9 +103,7 @@ const Restaurant = () => {
           </TabSelectorItem>
         </TabSelector>
         <BestRatedWrapper>
-          <CardWrapper>
-            <RestaurantList />
-          </CardWrapper>
+          <CardWrapper>{renderContent()}</CardWrapper>
         </BestRatedWrapper>
       </PageContent>
       <Footer></Footer>
