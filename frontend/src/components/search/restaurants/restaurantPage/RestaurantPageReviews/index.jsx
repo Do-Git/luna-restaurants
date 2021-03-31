@@ -20,8 +20,6 @@ const RestaurantPageReviews = () => {
     const [reviews, setReviews] = useState([])
     const [reviewsCount, setReviewsCount] = useState(0)
 
-    
-
     return (
         <FlexCenterDiv>
             <AllReviewCardsDiv>
