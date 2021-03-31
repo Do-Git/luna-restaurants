@@ -5,6 +5,7 @@ import userimage from '../assets/background/user/IMG_6531.JPG.png';
 export const RegistrationPageContainer = styled.section`
     width: 100%;
     background-color: #f2f2f2;
+    height: 100vh;
     overflow: scroll;
 `
 export const ProfileBackgroundImage = styled.div`
