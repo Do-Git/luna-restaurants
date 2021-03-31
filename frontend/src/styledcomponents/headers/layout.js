@@ -45,6 +45,7 @@ export const FooterWrapper = styled.div`
   width: 100%;
   height: 91px;
   background-color: white;
+  z-index: 3;
 `;
 
 export const FooterFlexWrapper = styled.div`

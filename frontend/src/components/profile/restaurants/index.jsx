@@ -1,5 +1,6 @@
 import { ReviewsContainer, ReviewCard, CreateButton } from '../../../styledcomponents/Profile.js';
 import StarRatingComponent from "react-rating-stars-component";
+import { Link } from 'react-router-dom';
 
 const Restaurants = (props) => {
     return (
@@ -23,7 +24,9 @@ const Restaurants = (props) => {
             </ReviewCard>
 
             <ReviewCard>
-                <CreateButton>Create Restaurant</CreateButton>
+                <Link to="/create-restaurant/">
+                    <CreateButton>Create Restaurant</CreateButton>
+                </Link>
             </ReviewCard>
         </ReviewsContainer>
     )
