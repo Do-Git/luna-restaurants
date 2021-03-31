@@ -1,0 +1,1 @@
+export const GET_TOP_4_RESTAURANTS = "TOP_4_RESTAURANTS";

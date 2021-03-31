@@ -10,6 +10,7 @@ import CreateRestaurant from "../components/profile/restaurants/CreateRestaurant
 import Profile from "../components/profile/userProfile"
 import Restaurants from "../components/search/restaurants/index";
 import RestaurantPage from "../components/search/restaurants/restaurantPage";
+import RestaurantPageCreateReview from "../components/search/restaurants/restaurantPageWriteReview";
 
 function OurRouter() {
   return (
@@ -28,6 +29,7 @@ function OurRouter() {
         <Route path="/create-restaurant/" exact component={CreateRestaurant} />
         <Route path="/profile/" exact component={Profile} />
         <Route path="/restaurants" exact component={Restaurants} />
+        <Route path="/restaurants/review" exact component={RestaurantPageCreateReview} />
         <Route path="*" component={() => "404 NOT FOUND"} />
       </Switch>
     </Router>
