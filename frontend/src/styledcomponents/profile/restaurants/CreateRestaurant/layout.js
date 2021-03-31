@@ -10,7 +10,6 @@ export const CreateRestaurantContainer = styled.div`
     display: flex;
     flex-direction: column;
     align-items: center;
-    padding-top: 
 `
 
 // Grid Layout
