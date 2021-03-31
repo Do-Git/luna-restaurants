@@ -1,11 +1,12 @@
-*{
-  /* border: solid 1px red; */
-}
+/* * {
+  border: solid 1px red; 
+} */
 
 body {
   margin: 0;
   font-family: Helvetica, serif;
   color: #4c4c4c;
+  background-color: #F2F2F2;
 }
 
 a {
@@ -25,7 +26,7 @@ button {
   outline: none;
 }
 
-#submit-input { 
+#submit-input {
   width: 10rem;
   height: 2.5rem;
   border: none;
