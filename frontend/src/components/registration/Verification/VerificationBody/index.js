@@ -66,7 +66,8 @@ class Verification extends Component {
   verification = (e) => {
     console.log('inside verification');
     e.preventDefault();
-      const url = "http://localhost:8000/backend/api/registration/validation/";
+    // if (this.state.password==this.state.password_repeat){
+      const url = "http://localhost:8000/backend/api/registration/validate/";
       const method = 'POST';
       const body = {
           username: this.state.username,
@@ -88,7 +89,7 @@ class Verification extends Component {
       .then(res => res.json() )
       .then(data => {
           console.log('data ok');
-        //   if (data.user.password==data.user.password_repeat){  
+    
           if(data.user){ 
             this.props.dispatch({type: 'ADD_ID', payload: data.user.id});
             this.props.dispatch({type: 'ADD_LOCATION', payload: data.user.location});
@@ -97,9 +98,12 @@ class Verification extends Component {
             console.log('validation response ok');
         }else{
          console.log('validation response not ok')
-        // }
+       
         };
   });
+//}else{
+
+//}
 }
   render(){
     return (    
