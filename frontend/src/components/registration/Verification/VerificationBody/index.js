@@ -66,7 +66,7 @@ class Verification extends Component {
   verification = (e) => {
     console.log('inside verification');
     e.preventDefault();
-      const url = "http://localhost:8000/backend/api/registration/validation/";
+      const url = "http://localhost:8000/backend/api/registration/validate/";
       const method = 'POST';
       const body = {
           username: this.state.username,

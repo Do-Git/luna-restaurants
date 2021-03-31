@@ -1,4 +1,7 @@
 import React, { useState } from 'react';
+import { useDispatch, useSelector } from 'react-redux';
+import { useHistory } from 'react-router-dom'
+
 import {
     AddressSpan,
     BasicSpan,
@@ -24,6 +27,12 @@ import {ButtonSearchbar} from "../../../../../../styledcomponents/forAll/buttons
 
 const CreateRestaurantForm = () => {
 
+    const dispatch = useDispatch();
+    const history = useHistory();
+
+    // const token = useSelector( state => state.token )
+    const token = localStorage.getItem('token');
+
     const [name, setName] = useState('');
     const [category, setCategory] = useState('');
     const [country, setCountry] = useState('');
@@ -40,11 +49,12 @@ const CreateRestaurantForm = () => {
     const createRestaurant = e => {
         e.preventDefault();
         // const url = "https://luna-sagittarius.propulsion-learn.ch/backend/api/restaurants/new/";
-        const url = "localhost:8000/backend/api/restaurants/new/"
+        
+        const url = "http://localhost:8000/backend/api/restaurants/new/"
         const method = 'POST';
         const body = {
             name: name,
-            category: category,
+            categories: category,
             country: country,
             street: street,
             city: city,
@@ -57,7 +67,8 @@ const CreateRestaurantForm = () => {
             image: image
         };
         const headers = new Headers({
-            'Content-Type': 'application/json'
+            'Content-Type': 'application/json',
+            'Authorization': `Bearer ${token}`
         });
         const config = {
             method: method,
@@ -69,8 +80,8 @@ const CreateRestaurantForm = () => {
         .then(status => {
             if (status === 201){
                 console.log("ok")
-                // props.dispatch({type: 'ADD_EMAIL', payload: email});
-                // props.history.push("/sign-up/congratulation/");
+                // dispatch({type: 'ADD_RESTAURANT', payload: body});
+                history.push("/");
             } else {
                 console.log("response not ok");
             }

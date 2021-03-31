@@ -13,7 +13,8 @@ const initialState = {
   newPost: '',
   location: '',
   users: [],
-  requests: []
+  requests: [],
+  restaurants: []
 };
 
 const rootReducer = (state = initialState, action) => {
