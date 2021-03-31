@@ -11,6 +11,7 @@ import {
 } from "../../styledcomponents/HomePage";
 import { connect, useDispatch } from "react-redux";
 import { top4RestaurantsAction } from "../../store/actions/restaurantActions";
+import { BodyWrapper } from "../../styledcomponents/forAll/layout";
 
 const Home = ({ top4Restaurants }) => {
   const dispatch = useDispatch();
@@ -22,17 +23,19 @@ const Home = ({ top4Restaurants }) => {
   return (
     <LandingPageContainer>
       <Navbar />
-      <Searchbar />
-      <UserAccessTitleWrapper titletext="Best Rated Restaurants" />
-      <BestRatedWrapper>
-        <CardWrapper>
-          {top4Restaurants ? (
-            <RestaurantList items={top4Restaurants} key={"top-4-restaurants"} />
-          ) : (
-            <></>
-          )}
-        </CardWrapper>
-      </BestRatedWrapper>
+      <BodyWrapper>
+        <Searchbar />
+        <UserAccessTitleWrapper titletext="Best Rated Restaurants" />
+        <BestRatedWrapper>
+          <CardWrapper>
+            {top4Restaurants ? (
+              <RestaurantList items={top4Restaurants} key={"top-4-restaurants"} />
+            ) : (
+              <></>
+            )}
+          </CardWrapper>
+        </BestRatedWrapper>
+      </BodyWrapper>
       <Footer />
     </LandingPageContainer>
   );
