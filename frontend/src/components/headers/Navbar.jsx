@@ -1,4 +1,4 @@
-import React, {useEffect} from "react";
+import React, {useEffect, useState} from "react";
 import { Link } from 'react-router-dom';
 
 import {
@@ -13,10 +13,11 @@ import {NavBarSignInButton, NavBarSignUpButton} from "../../styledcomponents/for
 import { useSelector, useDispatch } from 'react-redux';
 
 
-const Navbar = () => {
+const Navbar = (props) => {
 
     const dispatch = useDispatch();
     const userId = useSelector(state => state.id);
+    const clickedIndex = useSelector(state => state.clicked_index);
 
     useEffect(() => {
         if (!userId){
@@ -56,18 +57,18 @@ const Navbar = () => {
         <NavWrapper>
             <LunaLogoH1>LUNA</LunaLogoH1>
             <NavRightWrapper>
-                <NavTextDiv>
-                    <Link to={'/'}>
+                <NavTextDiv primary={ clickedIndex === 0 ? true : false } >
+                    <Link to={'/'} onClick={ () => dispatch({type: "CLICKED", payload: 0}) } >
                         <HeaderSpan>Home</HeaderSpan>
                     </Link>
                 </NavTextDiv>
-                <NavTextDiv>
-                    {/*<Link to={}>*/}
+                <NavTextDiv primary={ clickedIndex === 1 ? true : false } >
+                    <Link to={'/restaurants/'} onClick={ () => dispatch({type: "CLICKED", payload: 1}) } >
                         <HeaderSpan>Search</HeaderSpan>
-                    {/*</Link>*/}
+                    </Link>
                 </NavTextDiv>
-                <NavTextDiv>
-                    <Link to={'/profile/'}>
+                <NavTextDiv primary={ clickedIndex === 2 ? true : false } >
+                    <Link to={'/profile/'} onClick={ () => dispatch({type: "CLICKED", payload: 2}) } >
                         <HeaderSpan>Profile</HeaderSpan>
                     </Link>
                 </NavTextDiv>

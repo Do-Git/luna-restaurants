@@ -119,10 +119,9 @@ export const ReviewCard = styled.div`
 `
 export const AboutContainer = styled.article`
     width: 27.5vw;
-    height: 300px;
     left: 70vw;
-    top: 28vh;
-    position: absolute;
+    top: -100vh;
+    position: relative;
     h2 {
         margin: 0;
         margin-top: 2.5vh;
