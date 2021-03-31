@@ -4,7 +4,7 @@ import { Center } from "./style";
 import "./index.css";
 import RestaurantCard from "./RestaurantCard";
 
-const RestaurantList = () => {
+const RestaurantList = ({ items }) => {
   const breakpointColumnsObj = {
     default: 4,
     1200: 3,
@@ -12,7 +12,7 @@ const RestaurantList = () => {
     768: 2,
     576: 1,
   };
-
+  console.log(items, "items");
   return (
     <Center>
       <Masonry
@@ -20,10 +20,14 @@ const RestaurantList = () => {
         className="custom-masonry"
         columnClassName="custom-masonry-column"
       >
-        <RestaurantCard></RestaurantCard>
-        <RestaurantCard></RestaurantCard>
-        <RestaurantCard></RestaurantCard>
-        <RestaurantCard></RestaurantCard>
+        {items
+          ? [
+              ...items.map((item, i) => (
+                <RestaurantCard item={item} key={"item" + item.id} />
+              )),
+            ]
+          : "No data available"}
+        {/* <RestaurantCard></RestaurantCard> */}
       </Masonry>
     </Center>
   );

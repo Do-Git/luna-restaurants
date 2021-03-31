@@ -10,7 +10,7 @@ import {
 } from "./style";
 import DefaultRestaurantImage from "../../../../assets/restaurants/default.png";
 
-const RestaurantCard = () => {
+const RestaurantCard = ({ item }) => {
   const [rating, setRating] = useState(0);
 
   const onClickHandler = (e) => {
@@ -22,20 +22,25 @@ const RestaurantCard = () => {
     <RestaurantMainContainer onClick={onClickHandler}>
       <TopBar />
       <RestaurantDetailsContainer>
-        <RestaurantName>Kansas</RestaurantName>
-        <RestaurantAddress>123 Buenos Aires</RestaurantAddress>
+        <RestaurantName>{item.name}</RestaurantName>
+        <RestaurantAddress>
+          {item.street}, {item.city}
+        </RestaurantAddress>
         <StarsReviewContainer>
           <StarRatingComponent
             activeColor="#F8E71C"
             isHalf={true}
             color={"rgba(235, 235, 235, 0.5)"}
             size={27}
-            value={rating}
+            value={item.avg_rating ? item.avg_rating : rating}
           />
           <p>75</p>
         </StarsReviewContainer>
       </RestaurantDetailsContainer>
-      <img src={DefaultRestaurantImage} alt="Restaurant" />
+      <img
+        src={item.image ? item.image : DefaultRestaurantImage}
+        alt="Restaurant"
+      />
     </RestaurantMainContainer>
   );
 };

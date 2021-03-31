@@ -5,11 +5,11 @@ import styled from "styled-components";
 export const NavWrapper = styled.div`
   width: 100%;
   min-width: 550px;
-  min-height: 75px;
-  height: 7vh;
+  height: 55px;
   position: fixed;
   display: flex;
   justify-content: space-between;
+  align-items: center;
   top: 0;
   border-bottom: solid 2px #f2f2f2;
   background-color: white;
@@ -27,6 +27,8 @@ export const NavTextDiv = styled.div`
   height: 100%;
   display: flex;
   align-items: center;
+  border-bottom: ${props => props.primary ? "solid #e47d31" : "none" };
+  font-weight: ${props => props.primary ? "bold" : "normal" };
   :hover {
     border-bottom: solid #e47d31;
     cursor: pointer;
@@ -40,13 +42,10 @@ export const ButtonWrapper = styled.div`
 
 // Footer
 export const FooterWrapper = styled.div`
-  position: fixed;
-  bottom: 0;
-  left: 0;
   width: 100%;
-  height: 10vh;
+  height: 91px;
   background-color: white;
-  z-index: 999;
+  z-index: 3;
 `;
 
 export const FooterFlexWrapper = styled.div`
@@ -82,11 +81,6 @@ export const HeaderSpan = styled.span`
   vertical-align: middle;
   margin-left: 0.5rem;
   margin-right: 0.5rem;
-  :hover {
-    cursor: pointer;
-    // color: #E47D31;
-    // border-bottom: solid black;
-  }
 `;
 
 export const CopyRightSpan = styled.span`

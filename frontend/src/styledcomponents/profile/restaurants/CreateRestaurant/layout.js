@@ -10,7 +10,6 @@ export const CreateRestaurantContainer = styled.div`
     display: flex;
     flex-direction: column;
     align-items: center;
-    padding-top: 
 `
 
 // Grid Layout
@@ -63,6 +62,12 @@ export const InputBox = styled.input`
     border: solid 1px #EBEBEB;
     height: 1.5rem;
     margin: 1rem 0 1rem 0;
+`
+
+export const SelectBox = styled.select`
+    border: solid 1px #EBEBEB;
+    height: 1.5rem;
+    margin: 1rem 0 1rem 0;  
 `
 
 const BaseFormDiv = styled.div`
