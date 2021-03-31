@@ -18,6 +18,17 @@ export const BannerDiv = styled.div`
     background-size: cover;
 `
 
+export const BannerDivSmall = styled.div`
+    position: relative;
+    top: 8vh;
+    min-width: 880px;
+    width: 100%;
+    height: 20vh;
+    background-image: url(${bannerImg});
+    background-repeat: no-repeat;
+    background-size: cover;
+`
+
 export const BannerGrayLayer = styled.div`
     position: absolute;
     top: 8vh;
@@ -118,6 +129,48 @@ export const ReviewCardTop = styled.div`
     }
 `
 
+export const ReviewCardCenter = styled.div`
+    display: flex;
+    flex-direction: column;
+    border-bottom: solid 1px #EBEBEB;
+    padding-right: 1rem;
+    width: 832px;
+    height: 421px;
+`
+
+export const ReviewCardFirst = styled.div`
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+    width: 33%;
+    height: 100px;
+    white-space: nowrap;
+    span{
+        font-family: Helvetica;
+        font-size: 20px;
+        font-style: normal;
+        font-weight: 300; 
+        letter-spacing: 0px;
+        text-align: center;
+    }
+`
+export const ReviewCardSecond = styled.div`
+    display: flex;
+    align-items: center;
+    width: 100%;
+    height: 100px;
+    white-space: nowrap;
+    span{
+        font-family: Helvetica;
+        font-size: 20px;
+        font-style: normal;
+        font-weight: 300; 
+        letter-spacing: 0px;
+        text-align: center;
+    }
+`
+
+
 export const ReviewCardTopLeft = styled.div`
     display: flex;
     justify-content: space-around;
@@ -174,6 +227,12 @@ export const ReviewContent = styled.div`
 `
 
 export const FilterWrapper = styled.div`
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+`
+export const TextWrapper = styled.div`
     display: flex;
     justify-content: space-between;
     align-items: center;

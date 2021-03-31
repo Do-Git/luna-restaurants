@@ -7,7 +7,14 @@ import { MiddleSection, H1 , OrangeDiv, TopDiv, BottomDiv}from "../../../../styl
 import { Input, InputDiv, }from "../../../../styledcomponents/forAll/inputs.js";
 import {Link} from "react-router-dom"
 
+const ButtonDiv = styled.div`
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+`;
+
 const Form = styled.form`
+    margin-top: 40px;
     display: flex;
     flex-direction: column;
   `
@@ -35,7 +42,7 @@ class SignInBody extends Component {
   login = (e) => {
     console.log("inside login")
     e.preventDefault();
-      const url = "https://luna-sagittarius.propulsion-learn.ch/backend/api/auth/token/";
+      const url = "https://luna-sagittarius.propulsion-learn.ch/backend/api/token/";
       const method = 'POST';
       const body = {
           email: this.state.email,
@@ -83,9 +90,11 @@ class SignInBody extends Component {
                 <i className="fas fa-unlock-alt input-i" />
                 <Input value={ this.state.password } onChange={ this.setPassword } type="password" placeholder="   Password" required />
                 {/* <Input type="password" placeholder="   Password" required /> */}
-              </InputDiv>
+              </InputDiv> 
+              <ButtonDiv> 
+                <SignInButton/>
+              </ButtonDiv>
            </Form>
-           <SignInButton />
       </MiddleSection>
          
     )
