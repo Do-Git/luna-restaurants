@@ -21,3 +21,29 @@ button {
 .undefined.react-stars {
   outline: none;
 }
+
+#submit-input { 
+  width: 10rem;
+  height: 2.5rem;
+  border: none;
+  color: white;
+  border-radius: 3rem;
+  font-size: 1.2rem;
+  margin-top: 3vh;
+  margin-bottom: 15vh;
+}
+
+#delete-input {
+  width: 10rem;
+  height: 2.5rem;
+  border: none;
+  color: red;
+  font-size: 1.2rem;
+  margin-top: 3vh;
+  margin-bottom: 15vh;
+  margin-right: 10%;
+}
+
+#username-label {
+  margin-top: 5vh;
+}
