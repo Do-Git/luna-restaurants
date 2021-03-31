@@ -27,7 +27,7 @@ function OurRouter() {
         <Route path="/sign-up/verification" exact component={Verification} />
         <Route path="/create-restaurant/" exact component={CreateRestaurant} />
         <Route path="/profile/" exact component={Profile} />
-        <Route path="/restaurants" exact component={Restaurants} />
+        <Route path="/restaurants/" exact component={Restaurants} />
         <Route path="*" component={() => "404 NOT FOUND"} />
       </Switch>
     </Router>

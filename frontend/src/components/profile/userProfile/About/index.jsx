@@ -8,18 +8,24 @@ const About = () => {
     const Description = useSelector(state => state.description);
     const thingsILove = useSelector(state => state.things_I_love);
     const firstName = useSelector(state => state.first_name);
+    const lastName = useSelector(state => state.last_name);
+    const phone = useSelector(state => state.phone);
     
-    const monthNum = parseInt(dateJoined.slice(4, 6));
-    const day = parseInt(dateJoined.slice(6, 8));
-    const year = parseInt(dateJoined.slice(0, 4));
+    const monthNum = dateJoined ? parseInt(dateJoined.slice(4, 6)) : 0;
+    const day = dateJoined ? parseInt(dateJoined.slice(6, 8)) : 0;
+    const year = dateJoined ? parseInt(dateJoined.slice(0, 4)) : 0;
 
-    const date = new Date(year, day, monthNum);
+    const date = monthNum ? new Date(year, day, monthNum) : 0;
     const month = date.toLocaleString('default', {month: 'long'});
 
 
     return (
         <AboutContainer>
             <h2>{`ABOUT ${firstName.toUpperCase()}`}</h2>
+            <h3>Name</h3>
+            <p>{`${firstName} ${lastName}`}</p>
+            <h3>Phone number</h3>
+            <p>{phone}</p>
             <h3>Location</h3>
             <p>{ location }</p>
             <h3>Luna member since</h3>

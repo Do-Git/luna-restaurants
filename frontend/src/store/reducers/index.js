@@ -17,7 +17,8 @@ const initialState = {
   date_joined: '',
   description: 'Loading...',
   things_I_love: 'Loading...',
-  phone: 'Loading...'
+  phone: 'Loading...',
+  clicked_index: 0
 };
 
 const rootReducer = (state = initialState, action) => {
@@ -67,6 +68,8 @@ const rootReducer = (state = initialState, action) => {
     case 'ADD_PHONE':
       return {...state, phone: action.payload};
       break;
+    case 'CLICKED':
+      return {...state, clicked_index: action.payload};
     default:
       return state;
       break;
