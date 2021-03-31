@@ -11,8 +11,9 @@ export const BannerDiv = styled.div`
     position: relative;
     top: 8vh;
     min-width: 880px;
+    min-height: 400px;
     width: 100%;
-    height: 42vh;
+    height: 35vh;
     background-image: url(${bannerImg});
     background-repeat: no-repeat;
     background-size: cover;
@@ -31,12 +32,12 @@ export const BannerDivSmall = styled.div`
 
 export const BannerGrayLayer = styled.div`
     position: absolute;
-    top: 8vh;
     width: 100%;
-    height: 20vh;
+    height: 50%;
     background: rgba(0, 0, 0, 0.5);
     z-index: 2;
     min-width: 880px;
+    padding-top: 1rem;
     #stars-container, .title {
         margin-left: 10%;
         margin-top: 1.5rem;
@@ -56,12 +57,12 @@ export const BannerBackground = () => {
 
 export const MapDiv = styled.div`
     position: absolute;
-    top: 11vh;
+    top: 5vh;
     right: 7%;
     width: 20%;
     min-width: 260px;
-    min-height: 325px;
-    height: 30vh;
+    min-height: 270px;
+    height: 50%;
     background: white;
     z-index: 3;
     i {

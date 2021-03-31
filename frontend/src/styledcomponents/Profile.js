@@ -140,3 +140,71 @@ export const AboutContainer = styled.article`
         padding-left: 5%;
     }
 `
+export const InputContainer = styled.div`
+    width: 100%;
+    background-color: white;
+`
+export const EditForm = styled.form`
+    display: flex;
+    flex-direction: column;
+    label {
+        font-size: 1.3rem;
+        margin-left: 2%;
+        margin-bottom: 1vh;
+    }
+    input {
+        margin-left: 2%;
+        height: 4vh;
+        margin-bottom: 3vh;
+        width: 50%;
+        border: 2px solid gray;
+        border-radius: 0.3rem;
+        font-size: 1.5rem;
+        color: gray;
+        ::placeholder{
+            font-size: 1.3rem;
+        }
+    }
+    textarea {
+        margin-left: 2%;
+        margin-bottom: 3vh;
+        border: 2px solid gray;
+        border-radius: 0.3rem;
+        outline: none;
+        width: 70%;
+        font-size: 1.5rem;
+        color: gray;
+        ::placeholder{
+            font-size: 1.3rem;
+        }
+    }
+`
+export const SubmitButton = styled.input`
+    background-color: #e47d31;
+    :hover{
+        cursor: pointer;
+    }
+`
+export const DeleteButton = styled.button`
+    background-color: white;
+    :hover{
+        cursor: pointer;
+    }
+`
+export const SubmitContainer = styled.div`
+    display: flex;
+    justify-content: space-between;
+`
+export const CreateButton = styled.button`
+    background-color: #e47d31;
+    color: white;
+    width: 10rem;
+    height: 3rem;
+    border: none;
+    border-radius: 3rem;
+    font-size: 1.2rem;
+    margin: 5vh auto 10vh 38%;
+    :hover{
+        cursor: pointer;
+    }
+`

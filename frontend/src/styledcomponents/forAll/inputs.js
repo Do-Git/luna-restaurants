@@ -34,4 +34,10 @@ export const TextInput = styled.input`
     left: 0px;
     top: 0px;
     border: solid 1px #EBEBEB;
+`    
+
+export const CommentInput = styled(FilterInput)`
+    // margin-left: 1rem;
+    width: 60%;
+    height: 30px;
 `

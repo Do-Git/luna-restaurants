@@ -25,6 +25,9 @@ export const ButtonSearchbar = styled.button`
   line-height: 23px;
   margin-top: 65px;
   color: #ffffff;
+  &:hover {
+    background-color: #e87520;
+  }
   &:focus {
     outline: none;
   }
@@ -46,10 +49,20 @@ export const OrangeSmallButton = styled(ButtonSearchbar)`
     font-family: Helvetica;
     line-height: 18px;
     text-align: center;
+    // margin-left: 1rem;
+    white-space: nowrap;
 `
 
 export const OrangeMiniButton = styled(OrangeSmallButton)`
     width: 120px;
+    margin-left: 1rem;
+`
+
+export const OrangeSuperMiniButton = styled(OrangeSmallButton)`
+    min-width: 90px;
+    width: 15%;
+    min-height: 2rem;
+    height: 70%;
 `
 
 export const NavBarButton = styled.button`
@@ -61,6 +74,7 @@ export const NavBarButton = styled.button`
   margin: 1px;
   :hover {
     cursor: pointer;
+    background-color: #e87520;
   }
 `;
 export const NavBarSignUpButton = styled(NavBarButton)`
@@ -83,11 +97,11 @@ export const SocialMediaIcon = styled.div`
 `;
 
 export const GrayLikeButton = styled(NavBarSignUpButton)`
-    background-color: #919191;
-    height: 33px;
-`
+  background-color: #919191;
+  height: 33px;
+`;
 
 export const GrayCommentButton = styled(NavBarSignInButton)`
-    background-color: #919191;
-    height: 33px;
-`
+  background-color: #919191;
+  height: 33px;
+`;
