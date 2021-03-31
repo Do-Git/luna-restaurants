@@ -44,13 +44,11 @@ const CreateRestaurantForm = () => {
     const [email, setEmail] = useState('');
     const [openingHours, setOpeningHours] = useState('');
     const [priceLevel, setPriceLevel] = useState('');
-    const [image, setImage] = useState('');
+    const [image, setImage] = useState(null);
 
     const createRestaurant = e => {
         e.preventDefault();
-        // const url = "https://luna-sagittarius.propulsion-learn.ch/backend/api/restaurants/new/";
-        
-        const url = "http://localhost:8000/backend/api/restaurants/new/"
+        const url = "https://luna-sagittarius.propulsion-learn.ch/backend/api/restaurants/new/";
         const method = 'POST';
         const body = {
             name: name,

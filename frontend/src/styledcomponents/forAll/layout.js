@@ -1,5 +1,10 @@
 import styled from "styled-components";
 
+export const BodyWrapper = styled.div`
+  min-height: calc(100vh - 146px); 
+  /* 55px for nav bar and 91px for footer */
+`
+
 export const MiddleSection = styled.div`
   height: 100vh;
   display: flex;

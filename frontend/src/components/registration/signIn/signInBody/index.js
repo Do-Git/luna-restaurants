@@ -41,8 +41,8 @@ class SignInBody extends Component {
   }
   login = (e) => {
     e.preventDefault();
-      // const url = "https://luna-sagittarius.propulsion-learn.ch/backend/api/token/";
-      const url = "http://localhost:8000/backend/api/token/";
+      const url = "https://luna-sagittarius.propulsion-learn.ch/backend/api/token/";
+      // const url = "http://localhost:8000/backend/api/token/";
       const method = 'POST';
       const body = {
           email: this.state.email,
