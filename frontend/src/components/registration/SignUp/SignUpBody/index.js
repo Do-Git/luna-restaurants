@@ -18,8 +18,7 @@ const SignUnBody = (props) => {
     
     const register = e => {
         e.preventDefault();
-        // const url = "https://luna-sagittarius.propulsion-learn.ch/backend/api/registration/";
-        const url = "http://localhost:8000/backend/api/registration/";
+        const url = "https://luna-sagittarius.propulsion-learn.ch/backend/api/registration/";
         const method = 'POST';
         const body = {
            email: email
