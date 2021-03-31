@@ -9,15 +9,15 @@ User = get_user_model()
 
 class Review(models.Model):
     RATING = (
-        ('0', 'no rating'),
-        ('1', 'one star'),
-        ('2', 'two stars'),
-        ('3', 'three stars'),
-        ('4', 'four stars'),
-        ('5', 'five stars'),
+        (0, 'no rating'),
+        (1, 'one star'),
+        (2, 'two stars'),
+        (3, 'three stars'),
+        (4, 'four stars'),
+        (5, 'five stars'),
     )
     content = models.CharField(max_length=600, null=True, blank=True)
-    rating = models.CharField(max_length=1, choices=RATING, default='0')
+    rating = models.IntegerField(verbose_name='review rating', choices=RATING)
     created = models.DateTimeField(auto_now_add=True)
     modified = models.DateTimeField(auto_now=True)
     author = models.ForeignKey(to=settings.AUTH_USER_MODEL,
