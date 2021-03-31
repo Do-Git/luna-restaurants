@@ -11,23 +11,23 @@ def user_directory_path(instance, filename):
 
 class Restaurant(models.Model):
     CATEGORIES = (
-        ('0', 'No category'),
-        ('1', 'Pub'),
-        ('2', 'Italian'),
-        ('3', 'Fast Food'),
-        ('4', 'Chinese'),
-        ('5', 'Thai'),
-        ('6', 'Oriental'),
-        ('7', 'Vegetarian'),
-        ('8', 'Bar'),
-        ('9', 'Sea Food'),
+        ('No category', '0'),
+        ('Pub', '1'),
+        ('Italian', '2'),
+        ('Fast Food', '3'),
+        ('Chinese', '4'),
+        ('Thai', '5'),
+        ('Oriental', '6'),
+        ('Vegetarian', '7'),
+        ('Bar', '8'),
+        ('Sea Food', '9'),
     )
 
     PRICE_LEVEL = (
-        ('0', 'No information'),
-        ('1', 'Budget'),
-        ('2', 'Fair'),
-        ('3', 'Expensive')
+        ('No information', '0'),
+        ('Budget', '1'),
+        ('Fair', '2'),
+        ('Expensive', '3')
     )
 
     name = models.CharField(max_length=30)
@@ -42,8 +42,8 @@ class Restaurant(models.Model):
     image = models.ImageField(upload_to=user_directory_path, blank=True, null=True)
     owner = models.ForeignKey(to=settings.AUTH_USER_MODEL, on_delete=models.SET_NULL, related_name='restaurants',
                               null=True)
-    price_level = models.CharField(max_length=2, choices=PRICE_LEVEL, default='0')
-    categories = models.CharField(max_length=2, choices=CATEGORIES, default='0')
+    price_level = models.CharField(max_length=15, choices=PRICE_LEVEL, default='0')
+    categories = models.CharField(max_length=15, choices=CATEGORIES, default='0')
     created = models.DateTimeField(auto_now_add=True, null=True)
 
     def __str__(self):
