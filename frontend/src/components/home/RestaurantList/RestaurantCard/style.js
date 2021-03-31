@@ -80,3 +80,7 @@ export const StarsReviewContainer = styled.div`
     font-size: 27px;
   } */
 `;
+
+export const StarsReviewRestaurantPageContainer = styled(StarsReviewContainer)`
+    justify-content: flex-start;
+`

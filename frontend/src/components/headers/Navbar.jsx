@@ -1,11 +1,13 @@
 import React, {useEffect} from "react";
 import { Link } from 'react-router-dom';
+
 import {
-    LunaLogoH1,
-    NavRightWrapper,
-    HeaderSpan,
-    NavWrapper,
-    NavTextDiv, ButtonWrapper
+  LunaLogoH1,
+  NavRightWrapper,
+  HeaderSpan,
+  NavWrapper,
+  NavTextDiv,
+  ButtonWrapper,
 } from "../../styledcomponents/headers/layout";
 import {NavBarSignInButton, NavBarSignUpButton} from "../../styledcomponents/forAll/buttons";
 import { useSelector, useDispatch } from 'react-redux';

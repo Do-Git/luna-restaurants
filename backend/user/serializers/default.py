@@ -1,10 +1,14 @@
 from django.contrib.auth import get_user_model
 from rest_framework import serializers
 
+from restaurant.serializers.nested import RestaurantInUserSerializer
+
 User = get_user_model()
 
 
 class UserSerializer(serializers.ModelSerializer):
+    restaurants = RestaurantInUserSerializer(read_only=True, many=True)
+
     class Meta:
         model = User
         fields = ["id",
@@ -22,4 +26,5 @@ class UserSerializer(serializers.ModelSerializer):
                   "things_I_love",
                   "description",
                   "profile_picture",
+                  "restaurants",
                   ]
