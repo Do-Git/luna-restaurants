@@ -27,6 +27,8 @@ export const NavTextDiv = styled.div`
   height: 100%;
   display: flex;
   align-items: center;
+  border-bottom: ${props => props.primary ? "solid #e47d31" : "none" };
+  font-weight: ${props => props.primary ? "bold" : "normal" };
   :hover {
     border-bottom: solid #e47d31;
     cursor: pointer;
@@ -78,11 +80,6 @@ export const HeaderSpan = styled.span`
   vertical-align: middle;
   margin-left: 0.5rem;
   margin-right: 0.5rem;
-  :hover {
-    cursor: pointer;
-    // color: #E47D31;
-    // border-bottom: solid black;
-  }
 `;
 
 export const CopyRightSpan = styled.span`

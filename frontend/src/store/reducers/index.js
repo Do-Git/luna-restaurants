@@ -13,10 +13,11 @@ const initialState = {
   location: "Loading...",
   users: [],
   restaurants: [],
-  date_joined: "",
-  description: "Loading...",
-  things_I_love: "Loading...",
-  phone: "Loading...",
+  date_joined: '',
+  description: 'Loading...',
+  things_I_love: 'Loading...',
+  phone: 'Loading...',
+  clicked_index: 0
 };
 
 const mixReducer = (state = initialState, action) => {
@@ -66,6 +67,8 @@ const mixReducer = (state = initialState, action) => {
     case "ADD_PHONE":
       return { ...state, phone: action.payload };
       break;
+    case 'CLICKED':
+      return {...state, clicked_index: action.payload};
     default:
       return state;
       break;
