@@ -1,144 +1,87 @@
 import styled from "styled-components";
 
-export const SearchContainer = styled.div`
+export const SearchBar = styled.div`
+  width: 97%;
+  height: 60px;
+  background: white;
+  border-top: 1px solid #ebebeb;
+  border-bottom: 1px solid #ebebeb;
   display: flex;
-  flex-direction: row;
-  background-color: #ffffff;
-  height: 50px;
-  width: 100%;
-  border: 1px solid #d8d8d8;
-  align-self: flex-start;
-
-  input {
-    width: 75%;
-    height: 100%;
-    padding-left: 30px;
-    border-right: 1px solid #d8d8d8;
-    border-left: none;
-    border-top: none;
-    border-bottom: none;
-
-    font-family: Helvetica, serif;
-    font-style: normal;
-    font-weight: bold;
-    font-size: 20px;
-    line-height: 23px;
-
-    color: #979797;
-
-    ::-webkit-input-placeholder {
-      /* Edge */
-      color: #979797;
-    }
-
-    :-ms-input-placeholder {
-      /* Internet Explorer 10-11 */
-      color: #979797;
-    }
-
-    ::placeholder {
-      color: #979797;
-    }
-  }
-
-  select {
-    width: 25%;
-    height: 100%;
-
-    font-family: Helvetica, serif;
-    font-style: normal;
-    font-weight: bold;
-    font-size: 20px;
-    line-height: 23px;
-
-    color: #979797;
-  }
+  align-items: center;
+  padding: 0 30px;
 `;
 
-export const Selector = styled.select`
-  width: 25%;
+export const SearchField = styled.input`
+  border: none;
+  width: 100%;
+  font-family: Helvetica;
+  font-style: normal;
+  font-weight: bold;
+  font-size: 20px;
+  line-height: 23px;
+  margin-left: 25px;
+  margin-top: 10px;
+  outline: none;
+  color: #d8d8d8;
+`;
+
+export const SearchSelector = styled.select`
   height: 100%;
-  color: #979797;
-  font-family: Helvetica, serif;
+  width: 25%;
+  border: none;
+  border-left: 1px solid #d8d8d8;
+  padding: 0 20px;
+  font-family: Helvetica;
+  font-style: normal;
   font-weight: normal;
   font-size: 20px;
   line-height: 23px;
-  padding-left: 38px;
-  border: none;
+
+  /* margin-left: 45px; */
+  color: #d8d8d8;
+  outline: none;
 `;
 
-export const TitleMasterContainer = styled.div`
+export const TabSelector = styled.ul`
+  margin-top: 30px;
+  margin-bottom: 30px;
+  width: 640px;
+  height: 60px;
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+`;
+
+export const TabSelectorItem = styled.li`
+  list-style: none;
+  height: 100%;
+  margin-bottom: -2px;
+  border-bottom: 2px solid;
+  border-bottom-color: ${(props) => (props.isActive ? "#E47D31" : "#d8d8d8")};
   display: flex;
   justify-content: center;
-`;
-
-export const TitleContainer = styled.div`
-  width: 630px;
-  height: 54.5px;
-  display: flex;
-  flex-direction: row;
-  border-bottom: 1px solid #d8d8d8;
-`;
-
-export const LinkWrapper = styled.div`
-  margin-top: 19px;
-  width: 200px;
-  height: 23px;
-  display: flex;
-  justify-content: center;
-
-  a {
-    font-family: Helvetica, serif;
-    font-style: normal;
-    font-weight: bold;
-    font-size: 20px;
-    line-height: 23px;
-
-    text-align: center;
-    text-transform: uppercase;
-    color: #4c4c4c;
-  }
-
-  .active {
-    border-bottom: 3px solid #e47d31;
-    width: 205px;
-    margin-bottom: -11px;
-  }
-`;
-
-export const BestRatedWrapper = styled.div`
-  width: 100%;
-  display: flex;
-  justify-content: center;
-  align-items: flex-start;
-  padding-top: 44px;
-`;
-
-export const CardWrapper = styled.div`
-  width: 1170px;
-  display: flex;
-  justify-content: space-between;
   align-items: center;
-`;
-
-export const ValidSearchContainer = styled.div`
-  font-family: Helvetica, serif;
-  font-style: normal;
-  font-weight: bold;
-  font-size: 60px;
-  line-height: 23px;
-  border: 2px #e47d31 solid;
-  display: flex;
-  justify-content: center;
-  padding: 20px;
-
-  text-align: center;
-  text-transform: uppercase;
+  cursor: pointer;
   color: #4c4c4c;
+  font-weight: bold;
+
+  :hover {
+    border-bottom-color: #e47d31;
+  }
+`;
+export const PageContainer = styled.div`
+  padding-top: 70px;
+  width: 100vw;
+  min-height: 100vh;
+  display: grid;
+  grid-template-rows: 1fr auto;
+  background-color: #f8f8f8;
 `;
 
-export const ParentWrapper = styled.div`
-  width: 100%;
+export const PageContent = styled.div`
+  min-height: 100%;
+  width: 100vw;
   display: flex;
-  justify-content: center;
+  flex-direction: column;
+  align-items: center;
+  padding-bottom: 50px;
 `;

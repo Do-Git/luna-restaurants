@@ -1,12 +1,16 @@
 import { SideBarContainer, UserImage, UserName, SideBarButton } from '../../../../styledcomponents/Profile.js';
 import React, { useState } from 'react';
+import { useSelector } from 'react-redux';
 
 const SideBar = (props) => {
+
+    const firstName = useSelector(state => state.first_name);
+
     return (
         <SideBarContainer>
             <UserImage />
             <UserName>
-                <p>Laurent's profile</p>
+                <p>{`${firstName}'s profile`}</p>
             </UserName>
             <SideBarButton primary={ props.clickedIndex === 0 ? true : false } >
                 <button onClick={ () => props.setClickedIndex(0) } >

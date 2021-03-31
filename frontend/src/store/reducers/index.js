@@ -6,15 +6,18 @@ const initialState = {
   token: '',
   email: '',
   id: '',
-  first_name: '',
+  first_name: 'Loading...',
   last_name: '',
   user_name: '',
   avatar: '',
   newPost: '',
-  location: '',
+  location: 'Loading...',
   users: [],
-  requests: [],
-  restaurants: []
+  restaurants: [],
+  date_joined: '',
+  description: 'Loading...',
+  things_I_love: 'Loading...',
+  phone: 'Loading...'
 };
 
 const rootReducer = (state = initialState, action) => {
@@ -46,11 +49,23 @@ const rootReducer = (state = initialState, action) => {
     case 'GET_USERS':
       return {...state, users: action.payload};
       break;
-    case 'GET_REQUESTS':
-      return {...state, requests: action.payload};
+    case 'ADD_RESTAURATS':
+      return {...state, restaurants: action.payload};
       break;
-    case 'GET_LOCATION':
-      return {...state, requests: action.payload};
+    case 'ADD_LOCATION':
+      return {...state, location: action.payload};
+      break;
+    case 'ADD_DATE':
+      return {...state, date_joined: action.payload};
+      break;
+    case 'ADD_DESCRIPTION':
+      return {...state, description: action.payload};
+      break;
+    case 'ADD_LOVE':
+      return {...state, things_I_love: action.payload};
+      break;
+    case 'ADD_PHONE':
+      return {...state, phone: action.payload};
       break;
     default:
       return state;
