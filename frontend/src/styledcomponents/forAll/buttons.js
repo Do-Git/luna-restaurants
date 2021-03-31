@@ -42,18 +42,28 @@ export const ButtonSearchbar = styled.button`
 `;
 
 export const OrangeSmallButton = styled(ButtonSearchbar)`
-  height: 40px;
-  width: 170px;
-  font-size: 16px;
-  font-weight: 400px;
-  font-family: Helvetica;
-  line-height: 18px;
-  text-align: center;
-`;
+    height: 40px;
+    width: 170px;
+    font-size: 16px;
+    font-weight: 400px;
+    font-family: Helvetica;
+    line-height: 18px;
+    text-align: center;
+    // margin-left: 1rem;
+    white-space: nowrap;
+`
 
 export const OrangeMiniButton = styled(OrangeSmallButton)`
-  width: 120px;
-`;
+    width: 120px;
+    margin-left: 1rem;
+`
+
+export const OrangeSuperMiniButton = styled(OrangeSmallButton)`
+    min-width: 90px;
+    width: 15%;
+    min-height: 2rem;
+    height: 70%;
+`
 
 export const NavBarButton = styled.button`
   background-color: #e47d31;
