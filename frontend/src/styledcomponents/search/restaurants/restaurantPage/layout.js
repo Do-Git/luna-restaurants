@@ -30,6 +30,20 @@ export const BannerDivSmall = styled.div`
     background-size: cover;
 `
 
+export const BannerGrayLayerSmall = styled.div`
+    position: absolute;
+    width: 100%;
+    height: 93%;
+    background: rgba(0, 0, 0, 0.5);
+    z-index: 2;
+    min-width: 880px;
+    padding-top: 1rem;
+    #stars-container, .title {
+        margin-left: 10%;
+        margin-top: 1.5rem;
+    }
+`
+
 export const BannerGrayLayer = styled.div`
     position: absolute;
     width: 100%;

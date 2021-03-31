@@ -1,7 +1,9 @@
 import {
     BannerBackground,
     BannerGrayLayer,
-    BannerDivSmall
+    BannerGrayLayerSmall,
+    BannerDivSmall,
+    BannerDiv
 } from "../../../../../styledcomponents/search/restaurants/restaurantPage/layout";
 import {MapText, WhiteH1, WhiteReviewCountSpan, WhiteSpan} from "../../../../../styledcomponents/forAll/text";
 import StarRatingComponent from "react-rating-stars-component";
@@ -9,13 +11,14 @@ import {StarsReviewRestaurantPageContainer} from "../../../../home/RestaurantLis
 import React, {useState} from "react";
 import mapImage from "../../../../../assets/map/Screen Shot 2018-04-26 at 00.15.36.png"
 
-const RestaurantPageBanner = () => {
+const RestaurantPageBannerReview = () => {
 
     const [rating, setRating] = useState(0);
 
     return(
         <>
-            <BannerGrayLayer>
+        <BannerDivSmall>
+            <BannerGrayLayerSmall>
                 <WhiteH1 className="title">Läderach Chocolatier Suisse</WhiteH1>
                 <WhiteSpan className="title">Chocolatiers & Shops</WhiteSpan>
                 <StarsReviewRestaurantPageContainer id='stars-container'>
@@ -28,10 +31,10 @@ const RestaurantPageBanner = () => {
                     />
                     <WhiteReviewCountSpan>68 reviews</WhiteReviewCountSpan>
                 </StarsReviewRestaurantPageContainer>
-            </BannerGrayLayer>
-            <BannerDivSmall />
+            </BannerGrayLayerSmall>
+        </BannerDivSmall>
         </>
     )
 }
 
-export default RestaurantPageBanner
+export default RestaurantPageBannerReview
