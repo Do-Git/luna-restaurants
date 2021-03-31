@@ -160,9 +160,13 @@ export const EditForm = styled.form`
         border: 2px solid gray;
         border-radius: 0.3rem;
         font-size: 1.5rem;
-        color: gray;
+        color: #3b3b3b;
         ::placeholder{
             font-size: 1.3rem;
+            color: #999999;
+        }
+        :focus {
+            border-color: blue;
         }
     }
     textarea {
@@ -173,9 +177,13 @@ export const EditForm = styled.form`
         outline: none;
         width: 70%;
         font-size: 1.5rem;
-        color: gray;
+        color: #3b3b3b;
         ::placeholder{
             font-size: 1.3rem;
+            color: #999999;
+        }
+        :focus {
+            border-color: blue;
         }
     }
 `
