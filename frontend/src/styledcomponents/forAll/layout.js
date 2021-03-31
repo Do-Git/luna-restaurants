@@ -28,7 +28,7 @@ export const TopDiv = styled.div`
 `
 
 export const BottomDiv = styled.div`
-    margin-top:50px
+    margin-top: 50px;
     flex-direction: column;
     align-items: flex-start;
 `
