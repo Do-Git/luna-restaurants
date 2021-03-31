@@ -21,7 +21,7 @@ const About = () => {
 
     return (
         <AboutContainer>
-            <h2>{`ABOUT ${firstName.toUpperCase()}`}</h2>
+            <h2>{`ABOUT ${firstName ? firstName.toUpperCase() : "USER"}`}</h2>
             <h3>Name</h3>
             <p>{`${firstName} ${lastName}`}</p>
             <h3>Phone number</h3>
