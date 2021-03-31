@@ -7,6 +7,7 @@ import SignUp from "../components/registration/SignUp/";
 import Congratulation from "../components/registration/Congratulation/index.js";
 import Verification from "../components/registration/Verification";
 import CreateRestaurant from "../components/profile/restaurants/CreateRestaurant";
+import Profile from "../components/profile/userProfile"
 import Restaurants from "../components/search/restaurants/index";
 import RestaurantPage from "../components/search/restaurants/restaurantPage";
 
@@ -25,6 +26,7 @@ function OurRouter() {
         />
         <Route path="/sign-up/verification" exact component={Verification} />
         <Route path="/create-restaurant/" exact component={CreateRestaurant} />
+        <Route path="/profile/" exact component={Profile} />
         <Route path="/restaurants" exact component={Restaurants} />
         <Route path="*" component={() => "404 NOT FOUND"} />
       </Switch>
