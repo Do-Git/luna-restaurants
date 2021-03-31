@@ -2,14 +2,15 @@ import styled from 'styled-components';
 
 // Create Restaurant Body
 export const CreateRestaurantContainer = styled.div`
-    background-color: #F2F2F2;
-    position: absolute;
-    top: 8vh;
+    position: relative;
+    top: 15vh;
+    min-width: 870px;
     width: 100%;
-    height:90vh;
+    min-height: 92vh;
     display: flex;
     flex-direction: column;
     align-items: center;
+    padding-top: 
 `
 
 // Grid Layout
@@ -19,7 +20,7 @@ export const FormGridContainer = styled.form`
     grid-column-gap: 3rem;
     grid-row-gap: 1rem;
     width: 70%;
-    margin: auto;
+    margin-top: 5%;
 `
 
 //Text

@@ -17,5 +17,27 @@ export const Input = styled.input`
         color: black;
         font-size: 1.2rem;
     }
+`
 
+export const FilterInput = styled.input`
+    height: 40px;
+    width: 70%;
+    left: 0px;
+    top: 0px;
+    border-radius: 3px;
+    border: solid 1px #EBEBEB;
+`
+
+export const TextInput = styled.input`
+    height: 300px;
+    width: 100%;
+    left: 0px;
+    top: 0px;
+    border: solid 1px #EBEBEB;
+`    
+
+export const CommentInput = styled(FilterInput)`
+    // margin-left: 1rem;
+    width: 60%;
+    height: 30px;
 `

@@ -7,7 +7,14 @@ import { MiddleSection, H1 , OrangeDiv, TopDiv, BottomDiv}from "../../../../styl
 import { Input, InputDiv, }from "../../../../styledcomponents/forAll/inputs.js";
 import {Link} from "react-router-dom"
 
+const ButtonDiv = styled.div`
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+`;
+
 const Form = styled.form`
+    margin-top: 40px;
     display: flex;
     flex-direction: column;
   `
@@ -33,9 +40,8 @@ class SignInBody extends Component {
       });
   }
   login = (e) => {
-    console.log("inside login")
     e.preventDefault();
-      const url = "https://localhost:8000/backend/api/auth/token/";
+      const url = "https://luna-sagittarius.propulsion-learn.ch/backend/api/token/";
       const method = 'POST';
       const body = {
           email: this.state.email,
@@ -52,15 +58,12 @@ class SignInBody extends Component {
       fetch(url, config)
       .then(res => res.status ? res.json() : console.log('login response not ok'))
       .then(data => {
-          console.log(data);
           if (data.access){
             const token = data.access;
             localStorage.setItem('token', token);
             this.props.dispatch({type: 'SET_TOKEN', payload: token});
             this.props.history.push(`/`);
-            console.log('inside login')
           } else {
-            this.props.history.push("/");
             this.setState({
               email: '',
               password: ''
@@ -77,17 +80,17 @@ class SignInBody extends Component {
               <InputDiv>
                 <i className="far fa-user input-i" />
                 <Input value={ this.state.email } onChange={ this.setEmail } type="email" placeholder="   Username" required />
-                {/* <Input type="email" placeholder="   Username" required /> */}
               </InputDiv>
               <InputDiv>
                 <i className="fas fa-unlock-alt input-i" />
                 <Input value={ this.state.password } onChange={ this.setPassword } type="password" placeholder="   Password" required />
                 {/* <Input type="password" placeholder="   Password" required /> */}
-              </InputDiv>
+              </InputDiv> 
+                <ButtonDiv> 
+                  <SignInButton/>
+                </ButtonDiv>
            </Form>
-           <SignInButton />
       </MiddleSection>
-         
     )
   }
 }

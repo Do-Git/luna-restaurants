@@ -7,6 +7,7 @@ import styled from 'styled-components';
 import { withRouter } from "react-router-dom";
 
 const Form = styled.form`
+    margin-top: 40px;
     display: flex;
     flex-direction: column;
   `
@@ -17,7 +18,8 @@ const SignUnBody = (props) => {
     
     const register = e => {
         e.preventDefault();
-        const url = "https://luna-sagittarius.propulsion-learn.ch/backend/api/registration/";
+        // const url = "https://luna-sagittarius.propulsion-learn.ch/backend/api/registration/";
+        const url = "http://localhost:8000/backend/api/registration/";
         const method = 'POST';
         const body = {
            email: email
