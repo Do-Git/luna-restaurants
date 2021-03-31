@@ -3,11 +3,13 @@ import React from 'react';
 import styled from 'styled-components';
 import { BigButton } from "../../../../styledcomponents/forAll/buttons";
 
+
+
 const SignInButton = () => {
     return (
-        <div>
+        
           <BigButton type="submit">Login</BigButton>
-        </div>
+        
     )
 }
 

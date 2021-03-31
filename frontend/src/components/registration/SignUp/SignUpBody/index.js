@@ -7,6 +7,7 @@ import styled from 'styled-components';
 import { withRouter } from "react-router-dom";
 
 const Form = styled.form`
+    margin-top: 40px;
     display: flex;
     flex-direction: column;
   `

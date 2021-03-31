@@ -12,6 +12,7 @@ import { Link } from "react-router-dom";
 import { BigButton } from "../../../../styledcomponents/forAll/buttons.js";
 
 const Form = styled.form`
+  margin-top: 40px;
   display: grid;
   grid-template-areas:
     " email code "
@@ -69,7 +70,8 @@ class Verification extends Component {
   verification = (e) => {
     console.log("inside verification");
     e.preventDefault();
-    const url = "http://localhost:8000/backend/api/registration/validation/";
+    const url =
+      "https://luna-sagittarius.propulsion-learn.ch/backend/api/registration/validate/";
     const method = "POST";
     const body = {
       username: this.state.username,
@@ -91,22 +93,11 @@ class Verification extends Component {
       .then((res) => res.json())
       .then((data) => {
         console.log("data ok");
-        //   if (data.user.password==data.user.password_repeat){
-        if (data.user) {
-          this.props.dispatch({ type: "ADD_ID", payload: data.user.id });
-          this.props.dispatch({
-            type: "ADD_LOCATION",
-            payload: data.user.location,
-          });
-          this.props.dispatch({
-            type: "ADD_USER_NAME",
-            payload: data.user.username,
-          });
+        if (data.id) {
           this.props.history.push("/sign-in/");
           console.log("validation response ok");
         } else {
           console.log("validation response not ok");
-          // }
         }
       });
   };
@@ -186,7 +177,7 @@ class Verification extends Component {
             }}
           >
             {/* <Link to={'/sign-in'}> */}
-            <BigButton>Finish registration</BigButton>
+            <BigButton type="submit">Finish registration</BigButton>
             {/* </Link> */}
           </div>
         </Form>

@@ -4,16 +4,15 @@ import RestaurantPageReviews from "./RestaurantPageReviews";
 import RestaurantPageBanner from "./RestaurantPageBanner";
 import {RestaurantPageContainer} from "../../../../styledcomponents/search/restaurants/restaurantPage/layout";
 
-const RestaurantPage = () => {
+const RestaurantPageCreateReview = () => {
     return (
         <RestaurantPageContainer>
             <Navbar />
             <RestaurantPageBanner />
             <RestaurantPageReviews />
-            
             <Footer />
         </RestaurantPageContainer>
     )
 }
 
-export default RestaurantPage
+export default RestaurantPageCreateReview

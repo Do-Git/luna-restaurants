@@ -7,7 +7,14 @@ import { MiddleSection, H1 , OrangeDiv, TopDiv, BottomDiv}from "../../../../styl
 import { Input, InputDiv, }from "../../../../styledcomponents/forAll/inputs.js";
 import {Link} from "react-router-dom"
 
+const ButtonDiv = styled.div`
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+`;
+
 const Form = styled.form`
+    margin-top: 40px;
     display: flex;
     flex-direction: column;
   `
@@ -77,8 +84,11 @@ class SignInBody extends Component {
               <InputDiv>
                 <i className="fas fa-unlock-alt input-i" />
                 <Input value={ this.state.password } onChange={ this.setPassword } type="password" placeholder="   Password" required />
-              </InputDiv>
-              <SignInButton />
+                {/* <Input type="password" placeholder="   Password" required /> */}
+              </InputDiv> 
+                <ButtonDiv> 
+                  <SignInButton/>
+                </ButtonDiv>
            </Form>
       </MiddleSection>
     )
