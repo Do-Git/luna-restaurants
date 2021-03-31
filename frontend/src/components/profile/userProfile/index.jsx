@@ -7,6 +7,7 @@ import Reviews from './reviews';
 import About from './About';
 import Comments from '../comments';
 import Restaurants from '../restaurants';
+import EditProfile from '../edit';
 import React, { useState } from 'react';
 
 const Profile = () => {
@@ -20,6 +21,7 @@ const Profile = () => {
             <Reviews hide={clickedIndex !== 0 ? true : false} />
             <Comments hide={clickedIndex !== 1 ? true : false} />
             <Restaurants hide={clickedIndex !== 2 ? true : false} />
+            <EditProfile hide={clickedIndex !== 3 ? true : false} />
             <About />
             <Footer />
         </RegistrationPageContainer>

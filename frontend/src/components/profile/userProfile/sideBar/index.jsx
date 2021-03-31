@@ -10,7 +10,7 @@ const SideBar = (props) => {
             </UserName>
             <SideBarButton primary={ props.clickedIndex === 0 ? true : false } >
                 <button onClick={ () => props.setClickedIndex(0) } >
-                    <p><i class="fas fa-star fa-2x"></i><span>Review</span></p>
+                    <p><i class="fas fa-star fa-2x"></i><span>Reviews</span></p>
                 </button>
             </SideBarButton>
             <SideBarButton primary={ props.clickedIndex === 1 ? true : false } >
