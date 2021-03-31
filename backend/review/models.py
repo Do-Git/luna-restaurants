@@ -34,3 +34,6 @@ class Review(models.Model):
     def __str__(self):
         return f'Review for {self.restaurant} by {self.author} with {self.rating} rating'
 
+    class Meta:
+        ordering = ['-created']
+
