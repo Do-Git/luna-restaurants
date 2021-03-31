@@ -1,4 +1,4 @@
-import { ReviewsContainer, ReviewCard } from '../../../styledcomponents/Profile.js';
+import { ReviewsContainer, ReviewCard, CreateButton } from '../../../styledcomponents/Profile.js';
 import StarRatingComponent from "react-rating-stars-component";
 
 const Restaurants = (props) => {
@@ -20,6 +20,10 @@ const Restaurants = (props) => {
                     simul soleat accusata te sea. Vix maluisset sententiae et, eam an salutatus consectetuer,
                     ludus partiendo te ius. Vivendum convenire pro in. Cum impedit honestatis eu.
                 </p>
+            </ReviewCard>
+
+            <ReviewCard>
+                <CreateButton>Create Restaurant</CreateButton>
             </ReviewCard>
         </ReviewsContainer>
     )
