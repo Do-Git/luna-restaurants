@@ -84,6 +84,19 @@ const CreateRestaurantForm = () => {
                 history.push("/");
             } else {
                 console.log("response not ok");
+
+                console.log("name", name);
+                console.log("category", category)
+                console.log("country", country)
+                console.log("street", street)
+                console.log("city", city)
+                console.log("zip", zip)
+                console.log("website", website)
+                console.log("phone", phone)
+                console.log("email", email)
+                console.log("opening hours", openingHours)
+                console.log("price", priceLevel)
+                console.log("image", image)
             }
         });
     }
