@@ -11,9 +11,10 @@ import React, {useState} from "react";
 import {
     GrayCommentButton,
     GrayLikeButton,
-    OrangeMiniButton
+    OrangeSuperMiniButton
 } from "../../../../../../styledcomponents/forAll/buttons";
-import {FlexSpaceBetweenDiv} from "../../../../../../styledcomponents/forAll/layout";
+import {FlexSpaceAroundDiv, FlexSpaceBetweenDiv} from "../../../../../../styledcomponents/forAll/layout";
+import {CommentInput} from "../../../../../../styledcomponents/forAll/inputs";
 
 const ReviewCard = () => {
 
@@ -67,11 +68,11 @@ const ReviewCard = () => {
                 </FlexSpaceBetweenDiv>
                     :
                 <div>
-                    <div>
-                        <input placeholder="Comment"/>
-                        <OrangeMiniButton>POST</OrangeMiniButton>
+                    <FlexSpaceAroundDiv>
+                        <CommentInput placeholder="Comment"/>
+                        <OrangeSuperMiniButton>POST</OrangeSuperMiniButton>
                         <span onClick={clickHandler}>Hide</span>
-                    </div>
+                    </FlexSpaceAroundDiv>
                     <FlexSpaceBetweenDiv>
                         <div>
                             <h3>Colin Wirtz</h3>
