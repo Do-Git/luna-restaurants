@@ -38,7 +38,7 @@ class Restaurant(models.Model):
     website = models.CharField(max_length=70, blank=True)
     phone = models.CharField(max_length=15)
     email = models.EmailField(max_length=70, blank=True)
-    opening_hours = models.CharField(max_length=13)
+    opening_hours = models.CharField(max_length=50)
     image = models.ImageField(upload_to=user_directory_path, blank=True, null=True)
     owner = models.ForeignKey(to=settings.AUTH_USER_MODEL, on_delete=models.SET_NULL, related_name='restaurants',
                               null=True)
@@ -48,3 +48,14 @@ class Restaurant(models.Model):
 
     def __str__(self):
         return f'{self.name} owned by {self.owner}'
+
+    # @property
+    # def avg_rating(self):
+    #     average = 0
+    #     all_ratings = []
+    #     restaurants = Review.objects.filter(restaurant=self)
+    #     for review in restaurants:
+    #         all_ratings.append(review.rating)
+    #         average += int(review.rating)
+    #     average = average/len(all_ratings)
+    #     return average
