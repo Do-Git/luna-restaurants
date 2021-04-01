@@ -99,6 +99,7 @@ export const RightSideDetailsContainer = styled.div`
     top: 10vh;
     right: 20%;
     width:30%;
+    height: 10%;
     right: 20px;
     display: flex;
     flex-direction: column;
@@ -255,7 +256,7 @@ export const ReviewContent = styled.div`
 
 export const FilterWrapper = styled.div`
     display: flex;
-    justify-content: space-between;
+    justify-content: space-around;
     align-items: center;
     width: 100%;
 `

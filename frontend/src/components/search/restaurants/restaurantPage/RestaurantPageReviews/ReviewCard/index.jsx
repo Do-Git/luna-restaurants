@@ -48,7 +48,7 @@ const ReviewCard = (props) => {
                 </ReviewCardTopLeft>
                 <DateTimeContainer>
                     <span>
-                        props.created
+                        {props.created}
                         {/* <Moment>{props.created}</Moment> */}
                     </span>
                 </DateTimeContainer>

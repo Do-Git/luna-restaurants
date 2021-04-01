@@ -1,6 +1,6 @@
 import RightSideInfo from "./RightSideInfo";
 import ReviewCard from "./ReviewCard";
-import {FlexCenterDiv} from "../../../../../styledcomponents/forAll/layout";
+import {FlexAlignCenterDiv, FlexCenterDiv} from "../../../../../styledcomponents/forAll/layout";
 import {
     AllReviewCardsDiv,
     FilterWrapper
