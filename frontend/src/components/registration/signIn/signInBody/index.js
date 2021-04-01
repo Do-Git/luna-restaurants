@@ -27,8 +27,6 @@ class SignInBody extends Component {
     }
   }
   
-  
-
   setEmail = e => {
       this.setState({
           email: e.target.value
