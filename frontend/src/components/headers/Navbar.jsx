@@ -80,7 +80,6 @@ const Navbar = (props) => {
                     <Link to={'/sign-up'}>
                         <NavBarSignUpButton>SIGNUP</NavBarSignUpButton>
                     </Link>
-                    {/* <NavBarSignUpButton onClick={logOut}>LOGOUT</NavBarSignUpButton> */}
                     <Link to={'/sign-in'}>
                     <NavBarSignInButton>LOGIN</NavBarSignInButton>
                     </Link>
