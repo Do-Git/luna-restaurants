@@ -39,13 +39,13 @@ const UserHeaderReviewTotal = styled.p`
   font-size: 16px;
 `;
 
-const UserReviewHeader = () => {
+const UserReviewHeader = ({user}) => {
   return (
     <UserHeader to={`/profile/`}>
-      <UserPicture image={ImageUserTest}></UserPicture>
+      <UserPicture image={user.profile_picture ? user.profile_picture : ImageUserTest}></UserPicture>
       <UserHeaderDetails>
-        <UserHeaderName>Matt Damon.</UserHeaderName>
-        <UserHeaderReviewTotal>reviews 79</UserHeaderReviewTotal>
+        <UserHeaderName>{user.first_name || user.username}</UserHeaderName>
+        <UserHeaderReviewTotal>{user.reviews.length}</UserHeaderReviewTotal>
       </UserHeaderDetails>
     </UserHeader>
   );

@@ -25,6 +25,7 @@ const Restaurant = () => {
   const [searchTerm, setSearchTerm] = useState("");
   const [viewFilter, setViewFilter] = useState("RESTAURANTS");
   const restaurants = useSelector(state => state.restaurantReducer.restaurants);
+  const searchUsers = useSelector(state => state.restaurantReducer.searchUsers);
   const dispatch = useDispatch()
 
 
@@ -54,10 +55,8 @@ const Restaurant = () => {
 
   const handleKeyPress = (e) => {
     if (e.key === 'Enter') {
-      console.log('tro')
       const search_string = `search/?type=${viewFilter.toLowerCase()}&search_string=${e.target.value}`
-      console.log(search_string, 'str')
-      dispatch(searchAllRestaurantsAction(search_string))
+      dispatch(searchAllRestaurantsAction(search_string, viewFilter))
     }
   }
 
@@ -68,7 +67,7 @@ const Restaurant = () => {
       case "REVIEWS":
         return <Reviews></Reviews>;
       case "USERS":
-        return <Users></Users>;
+        return (searchUsers ? (<Users></Users>) : <></>);
       default:
         return <p>Invalid filter...</p>;
     }

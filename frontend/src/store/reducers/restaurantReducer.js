@@ -3,6 +3,7 @@ import { GET_TOP_4_RESTAURANTS, SEARCH_RESTAURANTS_BY_CATEGORY, } from "../actio
 const initial_state = {
   top4Restaurants: [],
   restaurants: [],
+  searchUsers: [],
 };
 
 export default function restaurantReducer (state = initial_state, action){
@@ -18,6 +19,11 @@ export default function restaurantReducer (state = initial_state, action){
                 ...state,
                 restaurants: action.payload
             };
+      case 'SEARCH_USERS':
+              return {
+                  ...state,
+                  searchUsers: action.payload
+      };      
     default:
       return state;
   }
