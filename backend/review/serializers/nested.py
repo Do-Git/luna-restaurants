@@ -10,4 +10,4 @@ class ReviewInRestaurantSerializer(serializers.ModelSerializer):
 
     class Meta:
         model = Review
-        fields = '__all__'
+        fields = ['id', 'content', 'author', 'rating']
