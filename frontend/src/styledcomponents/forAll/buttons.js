@@ -11,6 +11,7 @@ export const BigButton = styled.button`
   margin-top: 150px;
   :hover {
     cursor: pointer;
+    background-color: #e87520;
   }
 `;
 export const ButtonSearchbar = styled.button`
@@ -55,6 +56,18 @@ export const OrangeSmallButton = styled(ButtonSearchbar)`
     text-align: center;
     // margin-left: 1rem;
     white-space: nowrap;
+`
+
+export const OrangeSmallSubmitButton = styled(ButtonSearchbar)`
+    height: 57px;
+    width: 200px;
+    border-radius: 28px;
+    font-family: Roboto;
+    font-style: normal;
+    font-weight: normal;
+    font-size: 20px;
+    line-height: 23px;
+    color: #000000;
 `
 
 export const OrangeMiniButton = styled(OrangeSmallButton)`

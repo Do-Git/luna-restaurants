@@ -43,9 +43,3 @@ class HandleRestaurant(RetrieveUpdateDestroyAPIView):
     permission_classes = [IsOwnerOrAdmin]
 
 
-class ShowFourBestRatedRestaurants(ListAPIView):
-    serializer_class = RestaurantSerializer
-
-    def get_queryset(self):
-        return Restaurant.objects.all().order_by('-avg_rating')[:4]
-

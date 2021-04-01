@@ -15,7 +15,7 @@ export const MiddleSection = styled.div`
 
 export const H1 = styled.h1`
   font-size: 2rem;
-  margin-top: 100px;
+  margin-top: 200px;
 `
 
 export const OrangeDiv = styled.div`

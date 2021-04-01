@@ -28,12 +28,22 @@ export const FilterInput = styled.input`
     border: solid 1px #EBEBEB;
 `
 
-export const TextInput = styled.input`
-    height: 300px;
+export const TextInput = styled.textarea`
+    margin-top:120px;
+    height: 220px;
     width: 100%;
     left: 0px;
     top: 0px;
-    border: solid 1px #EBEBEB;
+    border: solid 3px #E3E3E3;
+    padding: 15px;
+    ::placeholder{
+        font-family: Helvetica;
+        font-style: normal;
+        font-weight: normal;
+        font-size: 20px;
+        line-height: 23px;
+        color: #BBB7B7;
+    }
 `    
 
 export const CommentInput = styled(FilterInput)`

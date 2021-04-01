@@ -1,4 +1,5 @@
 import React, { useState } from "react";
+import {useSelector, useDispatch } from 'react-redux'
 import Footer from "../../headers/Footer";
 import Navbar from "../../headers/Navbar";
 import RestaurantList from "../../home/RestaurantList/";
@@ -18,22 +19,26 @@ import {
   TabSelectorItem,
 } from "./style";
 import { BodyWrapper } from "../../../styledcomponents/forAll/layout";
+import {searchAllRestaurantsAction} from '../../../store/actions/restaurantActions'
 
 const Restaurant = () => {
   const [searchTerm, setSearchTerm] = useState("");
   const [viewFilter, setViewFilter] = useState("RESTAURANTS");
+  const restaurants = useSelector(state => state.restaurantReducer.restaurants);
+  const dispatch = useDispatch()
+
 
   const [categories] = useState([
-    { label: "Select a category...", value: 0 },
-    { label: "Pub", value: 1 },
-    { label: "Italian", value: 2 },
-    { label: "Fast Food", value: 3 },
-    { label: "Chinese", value: 4 },
-    { label: "Thai", value: 5 },
-    { label: "Oriental", value: 6 },
-    { label: "Vegetarian", value: 7 },
-    { label: "Bar", value: 8 },
-    { label: "Sea Food", value: 9 },
+    { label: "All", value: 'All' },
+    { label: "Pub", value: "Pub" },
+    { label: "Italian", value: "Italian" },
+    { label: "Fast Food", value: "Fast Food" },
+    { label: "Chinese", value: "Chinese" },
+    { label: "Thai", value: "Thai" },
+    { label: "Oriental", value: "Oriental" },
+    { label: "Vegetarian", value: "Vegetarian" },
+    { label: "Bar", value: "Bar" },
+    { label: "Sea Food", value: "Sea Food" },
   ]);
 
   //   manage search field changes
@@ -43,12 +48,20 @@ const Restaurant = () => {
 
   const onCategoryChange = (e) => {
     // fetch by category
+    const search_string = `search/?type=restaurants&search_string=${e.target.value}`
+    dispatch(searchAllRestaurantsAction(search_string));
   };
+
+  const handleSubmit = (e) => {
+    e.preventDefault()
+    const search_string = `search/?type=${viewFilter}restaurants&search_string=${e.target.value}`
+    dispatch()
+  }
 
   const renderContent = () => {
     switch (viewFilter) {
       case "RESTAURANTS":
-        return <RestaurantList></RestaurantList>;
+        return (restaurants ? (<RestaurantList items={restaurants} key={'restaurants'}></RestaurantList>) : <></>);
       case "REVIEWS":
         return <Reviews></Reviews>;
       case "USERS":
@@ -69,6 +82,7 @@ const Restaurant = () => {
               type="search"
               placeholder="Search..."
               defaultValue={searchTerm}
+              onSubmit={handleSubmit}
             ></SearchField>
             {viewFilter === "RESTAURANTS" ? (
               <SearchSelector onChange={onCategoryChange}>

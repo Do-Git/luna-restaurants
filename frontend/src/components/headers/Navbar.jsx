@@ -19,6 +19,10 @@ const Navbar = (props) => {
     const userId = useSelector(state => state.id);
     const clickedIndex = useSelector(state => state.clicked_index);
 
+    const logOut = () => {
+        localStorage.removeItem('token')
+    }
+
     useEffect(() => {
         if (!userId){
             const token = localStorage.getItem('token');
@@ -76,8 +80,9 @@ const Navbar = (props) => {
                     <Link to={'/sign-up'}>
                         <NavBarSignUpButton>SIGNUP</NavBarSignUpButton>
                     </Link>
-                    <Link to={'/sign-in'}>
-                    <NavBarSignInButton>LOGIN</NavBarSignInButton>
+                    {/* <Link to={'/sign-in'}> */}
+                    <Link to={(localStorage.getItem('token')) ? '/' : "/sign-in"}>
+                    <NavBarSignInButton onClick={logOut}>{(localStorage.getItem('token')) ? 'LOGOUT' : "LOGIN"}</NavBarSignInButton>
                     </Link>
                 </ButtonWrapper>
             </NavRightWrapper>
