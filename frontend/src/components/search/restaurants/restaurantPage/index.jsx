@@ -7,6 +7,7 @@ import RestaurantPageBanner from "./RestaurantPageBanner";
 import {RestaurantPageContainer} from "../../../../styledcomponents/search/restaurants/restaurantPage/layout";
 import { StarsReviewRestaurantPageContainer } from "../../../home/RestaurantList/RestaurantCard/style";
 import {useDispatch, useSelector} from 'react-redux'
+import { BodyWrapper } from "../../../../styledcomponents/forAll/layout";
 
 const RestaurantPage = () => {
 
@@ -48,19 +49,21 @@ const RestaurantPage = () => {
     return (
         <RestaurantPageContainer>
             <Navbar />
-            <RestaurantPageBanner 
-                // name={restaurantInfo !== {} ? restaurantInfo.name : 'Loading'}
-                // category={restaurantInfo !== {} ? restaurantInfo.categories : 'Loading'}
-                // avg_rating={restaurantInfo !== {} ? restaurantInfo.avg_rating : 0} 
-                // reviews_count={restaurantInfo !== {} && typeof restaurantInfo.reviews === 'array' ? restaurantInfo.reviews.length : 'Loading'}
-                // street={restaurantInfo !== {} ? restaurantInfo.street : 'Loading'}
-                // phone={restaurantInfo !== {} ? restaurantInfo.phone : 'Loading'}
-                // website={restaurantInfo !== {} ? restaurantInfo.website : 'Loading'}
-            />
-            <RestaurantPageReviews
-                // opening_hours={restaurantInfo !== {} ? restaurantInfo.opening_hours : 'Loading'}
-                // price_level={restaurantInfo !== {} ? restaurantInfo.price_level : 'Loading'}
-            />
+            <BodyWrapper>
+                <RestaurantPageBanner 
+                    // name={restaurantInfo !== {} ? restaurantInfo.name : 'Loading'}
+                    // category={restaurantInfo !== {} ? restaurantInfo.categories : 'Loading'}
+                    // avg_rating={restaurantInfo !== {} ? restaurantInfo.avg_rating : 0} 
+                    // reviews_count={restaurantInfo !== {} && typeof restaurantInfo.reviews === 'array' ? restaurantInfo.reviews.length : 'Loading'}
+                    // street={restaurantInfo !== {} ? restaurantInfo.street : 'Loading'}
+                    // phone={restaurantInfo !== {} ? restaurantInfo.phone : 'Loading'}
+                    // website={restaurantInfo !== {} ? restaurantInfo.website : 'Loading'}
+                />
+                <RestaurantPageReviews
+                    // opening_hours={restaurantInfo !== {} ? restaurantInfo.opening_hours : 'Loading'}
+                    // price_level={restaurantInfo !== {} ? restaurantInfo.price_level : 'Loading'}
+                />
+            </BodyWrapper>
             <Footer />
         </RestaurantPageContainer>
     )

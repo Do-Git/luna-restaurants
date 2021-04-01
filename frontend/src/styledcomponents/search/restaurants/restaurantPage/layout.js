@@ -9,9 +9,9 @@ export const RestaurantPageContainer = styled.div`
 
 export const BannerDiv = styled.div`
     position: relative;
-    top: 8vh;
+    top: 55px;
     min-width: 880px;
-    min-height: 400px;
+    min-height: 300px;
     width: 100%;
     height: 35vh;
     background-image: url(${bannerImg});
@@ -47,14 +47,14 @@ export const BannerGrayLayerSmall = styled.div`
 export const BannerGrayLayer = styled.div`
     position: absolute;
     width: 100%;
-    height: 50%;
+    height: 40%;
     background: rgba(0, 0, 0, 0.5);
     z-index: 2;
     min-width: 880px;
     padding-top: 1rem;
     #stars-container, .title {
         margin-left: 10%;
-        margin-top: 1.5rem;
+        margin-top: 0.5rem;
     }
 `
 
@@ -71,12 +71,11 @@ export const BannerBackground = () => {
 
 export const MapDiv = styled.div`
     position: absolute;
-    top: 5vh;
+    top: 5%;
     right: 7%;
-    width: 20%;
-    min-width: 260px;
-    min-height: 270px;
-    height: 50%;
+    width: 18%;
+    min-width: 200px;
+    min-height: 250px;
     background: white;
     z-index: 3;
     i {
@@ -99,7 +98,7 @@ export const RightSideDetailsContainer = styled.div`
     top: 10vh;
     right: 20%;
     width:30%;
-    height: 10%;
+    height: 5%;
     right: 20px;
     display: flex;
     flex-direction: column;
