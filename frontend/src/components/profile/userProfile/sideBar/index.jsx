@@ -1,14 +1,38 @@
-import { SideBarContainer, UserImage, UserName, SideBarButton } from '../../../../styledcomponents/Profile.js';
-import React, { useState } from 'react';
-import { useSelector } from 'react-redux';
+import { SideBarContainer,
+         UserImage,
+         UserName,
+         SideBarButton,
+         EditPen,
+         ChosenImage } from '../../../../styledcomponents/Profile.js';
+import React, { useState, useRef } from 'react';
+import { useSelector, useDispatch } from 'react-redux';
 
 const SideBar = (props) => {
 
+    const dispatch = useDispatch();
     const firstName = useSelector(state => state.mixReducers.first_name);
+    const profileImage = useSelector(state => state.mixReducers.profile_image);
+    let selectInputImg = useRef('');
+
+    const fileImgClick = (e) => {
+        selectInputImg.click();
+    }
+    const imageInput = (e) => {
+        props.setImage(e.target.files[0]);
+        // dispatch({type: "PROFILE_IMAGE", payload: image});
+    }
+
 
     return (
         <SideBarContainer>
-            <UserImage />
+            {props.image ? <ChosenImage src={ (window.URL || window.webkitURL).createObjectURL(props.image) } />
+            :
+            <UserImage/>
+            }
+            <EditPen id={ props.clickedIndex !== 3 ? "hide-pen" : null } >
+                <button onClick={ fileImgClick }><i class="far fa-edit"></i></button>
+                <input onChange={ imageInput } type="file" name="image" ref={input => selectInputImg = input} accept="image/png, image/jpeg" hidden="hidden" />
+            </EditPen>
             <UserName>
                 <p>{`${firstName}'s profile`}</p>
             </UserName>

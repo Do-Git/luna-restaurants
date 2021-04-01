@@ -2,10 +2,11 @@ import {RightSideDetailsContainer} from "../../../../../../styledcomponents/sear
 import {BlackSpan} from "../../../../../../styledcomponents/forAll/text";
 import {OrangeSmallButton} from "../../../../../../styledcomponents/forAll/buttons";
 import {FlexSpaceBetweenDiv} from "../../../../../../styledcomponents/forAll/layout";
-import {Link} from 'react-router-dom'
+import {Link, useParams} from 'react-router-dom'
 
 export const RightSideInfo = (props) => {
-
+    
+    const { id } = useParams();
     return (
         <RightSideDetailsContainer>
             <div>
@@ -17,7 +18,7 @@ export const RightSideInfo = (props) => {
                 <BlackSpan>Price level: {props.price_level}</BlackSpan>
             </div>
             <FlexSpaceBetweenDiv>
-                <Link to="/restaurants/review"><OrangeSmallButton>WRITE A REVIEW</OrangeSmallButton></Link>
+                <Link to={`/restaurants/review/${id}`}><OrangeSmallButton>WRITE A REVIEW</OrangeSmallButton></Link>
                 <OrangeSmallButton>EDIT DATA</OrangeSmallButton>
             </FlexSpaceBetweenDiv>
         </RightSideDetailsContainer>

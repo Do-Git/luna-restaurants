@@ -16,12 +16,9 @@ import { useSelector, useDispatch } from 'react-redux';
 const Navbar = (props) => {
 
     const dispatch = useDispatch();
-    const userId = useSelector(state => state.id);
-    const clickedIndex = useSelector(state => state.clicked_index);
+    const userId = useSelector(state => state.mixReducers.id);
+    const clickedIndex = useSelector(state => state.mixReducers.clicked_index);
 
-    const logOut = () => {
-        localStorage.removeItem('token')
-    }
 
     useEffect(() => {
         if (!userId){
@@ -59,7 +56,9 @@ const Navbar = (props) => {
 
     return (
         <NavWrapper>
-            <LunaLogoH1>LUNA</LunaLogoH1>
+            <Link to={'/'}>
+                <LunaLogoH1>LUNA</LunaLogoH1>
+            </Link>
             <NavRightWrapper>
                 <NavTextDiv primary={ clickedIndex === 0 ? true : false } >
                     <Link to={'/'} onClick={ () => dispatch({type: "CLICKED", payload: 0}) } >
@@ -80,9 +79,8 @@ const Navbar = (props) => {
                     <Link to={'/sign-up'}>
                         <NavBarSignUpButton>SIGNUP</NavBarSignUpButton>
                     </Link>
-                    {/* <Link to={'/sign-in'}> */}
-                    <Link to={(localStorage.getItem('token')) ? '/' : "/sign-in"}>
-                    <NavBarSignInButton onClick={logOut}>{(localStorage.getItem('token')) ? 'LOGOUT' : "LOGIN"}</NavBarSignInButton>
+                    <Link to={'/sign-in'}>
+                    <NavBarSignInButton>LOGIN</NavBarSignInButton>
                     </Link>
                 </ButtonWrapper>
             </NavRightWrapper>

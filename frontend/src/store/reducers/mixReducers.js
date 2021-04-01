@@ -15,7 +15,8 @@ const initialState = {
   things_I_love: 'Loading...',
   phone: 'Loading...',
   current_restaurant: {},
-  clicked_index: 0
+  clicked_index: 0,
+  profile_image: ''
 };
 
 export default function mixReducers(state = initialState, action) {
@@ -71,7 +72,10 @@ export default function mixReducers(state = initialState, action) {
     case 'ADD_CURRENT_RESTAURANT':
       return {...state, current_restaurant: action.payload};
       break;
-    default:
+    case 'PROFILE_IMAGE':
+      return {...state, profile_image: action.payload};
+      break;
+    default: 
       return state;
       break;
   }

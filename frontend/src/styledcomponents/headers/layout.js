@@ -21,6 +21,7 @@ export const NavRightWrapper = styled.div`
   min-width: 40%;
   justify-content: space-around;
   align-items: center;
+  height: 100%;
 `;
 
 export const NavTextDiv = styled.div`
@@ -75,6 +76,9 @@ export const LunaLogoH1 = styled.h1`
   font-family: papyrus, fantasy;
   font-size: 2rem;
   padding-left: 30px;
+  &:hover {
+    cursor: pointer;
+  }
 `;
 
 export const HeaderSpan = styled.span`
