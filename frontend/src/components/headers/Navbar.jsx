@@ -16,8 +16,8 @@ import { useSelector, useDispatch } from 'react-redux';
 const Navbar = (props) => {
 
     const dispatch = useDispatch();
-    const userId = useSelector(state => state.id);
-    const clickedIndex = useSelector(state => state.clicked_index);
+    const userId = useSelector(state => state.mixReducers.id);
+    const clickedIndex = useSelector(state => state.mixReducers.clicked_index);
 
     useEffect(() => {
         if (!userId){

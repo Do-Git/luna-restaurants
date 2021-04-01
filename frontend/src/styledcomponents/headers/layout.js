@@ -21,6 +21,7 @@ export const NavRightWrapper = styled.div`
   min-width: 40%;
   justify-content: space-around;
   align-items: center;
+  height: 100%;
 `;
 
 export const NavTextDiv = styled.div`

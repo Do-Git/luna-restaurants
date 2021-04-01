@@ -14,7 +14,8 @@ const initialState = {
   description: 'Loading...',
   things_I_love: 'Loading...',
   phone: 'Loading...',
-  clicked_index: 0
+  clicked_index: 0,
+  profile_image: ''
 };
 
 export default function mixReducers(state = initialState, action) {
@@ -66,7 +67,11 @@ export default function mixReducers(state = initialState, action) {
       break;
     case 'CLICKED':
       return {...state, clicked_index: action.payload};
-    default:
+      break;
+    case 'PROFILE_IMAGE':
+      return {...state, profile_image: action.payload};
+      break;
+    default: 
       return state;
       break;
   }

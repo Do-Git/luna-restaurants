@@ -29,6 +29,29 @@ export const UserImage = styled.div`
     width: 100%;
     height: 15vw;
 `
+export const ChosenImage = styled.img`
+    width: 100%;
+    height: 15vw;
+`
+export const EditPen = styled.div`
+    background-color: rgba(79, 79, 79, 0.8);
+    width: 100%;
+    height: 15vw;
+    position: absolute;
+    top: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    button{
+        color: white;
+        font-size: 5rem;
+        background-color: transparent;
+        border: none;
+        :hover{
+            cursor: pointer;
+        }
+    }
+`
 export const UserName = styled.div`
     height: 8vh;
     width: 99.5%;
@@ -110,6 +133,7 @@ export const ReviewCard = styled.div`
         width: 50%;
         background-color: white;
         padding-left: 1.5%;
+        margin-bottom: 1vh;
     }
     p {
         margin: 0;
@@ -212,5 +236,13 @@ export const CreateButton = styled.button`
     margin: 5vh auto 10vh 38%;
     :hover{
         cursor: pointer;
+    }
+`
+export const RestaurantContainer = styled.section`
+    width: 100%;
+    h3{
+        margin: 0;
+        margin-bottom: 2vh;
+        margin-left: 2%;
     }
 `
