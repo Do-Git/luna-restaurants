@@ -7,6 +7,7 @@ import {ReviewsContainer,
         from '../../../styledcomponents/Profile.js';
 import { useSelector, useDispatch } from 'react-redux';
 import { useState } from 'react';
+import userimage from '../../../assets/background/user/IMG_6531.JPG.png';
 
 
 const EditProfile = (props) => {
@@ -31,7 +32,11 @@ const EditProfile = (props) => {
     const [loveInput, setLove] = useState('');
     const [descriptionInput, setDescription] = useState('');
 
+    const formData = new FormData();
+    formData.append("image", props.image);
+
     const editAccount = (e) => {
+        console.log(props.image);
         e.preventDefault();
         const token = localStorage.getItem('token');
         const url = "https://luna-sagittarius.propulsion-learn.ch/backend/api/me/";
@@ -49,7 +54,8 @@ const EditProfile = (props) => {
             location: locationInput ? locationInput : location,
             phone: phoneInput ? phoneInput : phone,
             things_I_love: loveInput ? loveInput : thingsILove,
-            description: descriptionInput ? descriptionInput : description
+            description: descriptionInput ? descriptionInput : description,
+            profile_picture: props.image ? formData : null
         };
         const config = {
             method: method,

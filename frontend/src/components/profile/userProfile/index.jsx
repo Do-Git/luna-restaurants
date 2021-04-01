@@ -13,17 +13,18 @@ import { BodyWrapper } from '../../../styledcomponents/forAll/layout.js';
 
 const Profile = () => {
     const [clickedIndex, setClickedIndex] = useState(0);
+    const [image, setImage] = useState('');
 
     return (
         <RegistrationPageContainer>
             <Navbar />
-                <ProfileImage />
-                <SideBar clickedIndex={clickedIndex} setClickedIndex={setClickedIndex} />
-                <Reviews hide={clickedIndex !== 0 ? true : false} />
-                <Comments hide={clickedIndex !== 1 ? true : false} />
-                <Restaurants hide={clickedIndex !== 2 ? true : false} />
-                <EditProfile hide={clickedIndex !== 3 ? true : false} />
-                <About />
+            <ProfileImage />
+            <SideBar image={image} setImage={setImage} clickedIndex={clickedIndex} setClickedIndex={setClickedIndex} />
+            <Reviews hide={clickedIndex !== 0 ? true : false} />
+            <Comments hide={clickedIndex !== 1 ? true : false} />
+            <Restaurants hide={clickedIndex !== 2 ? true : false} />
+            <EditProfile image={image} hide={clickedIndex !== 3 ? true : false} />
+            <About />
             <Footer />
         </RegistrationPageContainer>
     )
