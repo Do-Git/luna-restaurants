@@ -7,14 +7,11 @@ import history from '../../../../history'
 
 
 const SignInButton = () => {
-    const loginHandler = (e) => {
-        e.preventDefault()
-        const token = localStorage.getItem('token')
-        if(token) history.push('/')
-    }
+
+
     return (
         
-          <BigButton type="submit" onClick={loginHandler}>Login</BigButton>
+          <BigButton type="submit">Login</BigButton>
         
     )
 }
