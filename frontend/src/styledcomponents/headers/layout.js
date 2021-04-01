@@ -76,6 +76,9 @@ export const LunaLogoH1 = styled.h1`
   font-family: papyrus, fantasy;
   font-size: 2rem;
   padding-left: 30px;
+  &:hover {
+    cursor: pointer;
+  }
 `;
 
 export const HeaderSpan = styled.span`
