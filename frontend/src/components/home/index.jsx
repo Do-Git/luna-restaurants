@@ -42,7 +42,7 @@ const Home = ({ top4Restaurants }) => {
 };
 const mapStateToProps = (state) => {
   return {
-    top4Restaurants: state.restaurantReducer.top4Restaurants,
+    top4Restaurants: state.top4Restaurants,
   };
 };
 
