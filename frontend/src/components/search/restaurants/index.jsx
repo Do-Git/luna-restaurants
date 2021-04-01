@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import {useSelector, useDispatch } from 'react-redux'
 import Footer from "../../headers/Footer";
 import Navbar from "../../headers/Navbar";
@@ -49,6 +49,9 @@ const Restaurant = () => {
 
   const onCategoryChange = (e) => {
     // fetch by category
+    if (e.target.value === 'All') {
+      dispatch(searchAllRestaurantsAction('restaurants/'));
+    }
     const search_string = `search/?type=restaurants&search_string=${e.target.value}`
     dispatch(searchAllRestaurantsAction(search_string));
   };
@@ -59,6 +62,10 @@ const Restaurant = () => {
       dispatch(searchAllRestaurantsAction(search_string, viewFilter))
     }
   }
+
+  useEffect(() => {
+    dispatch(searchAllRestaurantsAction('restaurants/'));
+}, []);
 
   const renderContent = () => {
     switch (viewFilter) {
