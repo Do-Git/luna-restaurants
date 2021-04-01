@@ -63,6 +63,7 @@ class Search(ListAPIView):
     def get_queryset(self):
         type_of_search = self.request.query_params.get('type')
         search = self.request.query_params.get('search_string')
+        category = Restaurant.objects.filter()
 
         if type_of_search == 'restaurants':
             return Restaurant.objects.filter(Q(name__icontains=search) |

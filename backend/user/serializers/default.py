@@ -2,12 +2,14 @@ from django.contrib.auth import get_user_model
 from rest_framework import serializers
 
 from restaurant.serializers.nested import RestaurantInUserSerializer
+from review.serializers.nested import ReviewInRestaurantSerializer
 
 User = get_user_model()
 
 
 class UserSerializer(serializers.ModelSerializer):
     restaurants = RestaurantInUserSerializer(read_only=True, many=True)
+    reviews = ReviewInRestaurantSerializer(read_only=True, many=True)
 
     class Meta:
         model = User
@@ -27,4 +29,5 @@ class UserSerializer(serializers.ModelSerializer):
                   "description",
                   "profile_picture",
                   "restaurants",
+                  "reviews"
                   ]
