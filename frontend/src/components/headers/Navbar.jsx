@@ -81,7 +81,6 @@ const Navbar = (props) => {
                         <NavBarSignUpButton>SIGNUP</NavBarSignUpButton>
                     </Link>
                     {/* <NavBarSignUpButton onClick={logOut}>LOGOUT</NavBarSignUpButton> */}
-
                     <Link to={'/sign-in'}>
                     <NavBarSignInButton>LOGIN</NavBarSignInButton>
                     </Link>
