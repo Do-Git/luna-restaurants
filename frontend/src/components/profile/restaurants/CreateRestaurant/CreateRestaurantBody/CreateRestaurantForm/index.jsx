@@ -110,16 +110,16 @@ const CreateRestaurantForm = () => {
                     <InputLabel for='category'>Category *</InputLabel>
                     <SelectBox id='category' value={category} onChange={event => setCategory(event.target.value)} required>
                         <option value="" disabled selected>Select your option</option>
-                        <option value='0'>No Category</option>
-                        <option value='1'>Pub</option>
-                        <option value='2'>Italian</option>
-                        <option value='3'>Fast Food</option>
-                        <option value='4'>Chinese</option>
-                        <option value='5'>Thai</option>
-                        <option value='6'>Oriental</option>
-                        <option value='7'>Vegetarian</option>
-                        <option value='8'>Bar</option>
-                        <option value='9'>Sea Food</option>
+                        <option value='No category'>No Category</option>
+                        <option value='Pub'>Pub</option>
+                        <option value='Italian'>Italian</option>
+                        <option value='Fast Food'>Fast Food</option>
+                        <option value='Chinese'>Chinese</option>
+                        <option value='Thai'>Thai</option>
+                        <option value='Oriental'>Oriental</option>
+                        <option value='Vegetarian'>Vegetarian</option>
+                        <option value='Bar'>Bar</option>
+                        <option value='Sea Food'>Sea Food</option>
                     </SelectBox>
                 </CategoryForm>
                 <CountryForm>
@@ -161,10 +161,10 @@ const CreateRestaurantForm = () => {
                     <InputLabel for='price_level'>Price level *</InputLabel>
                     <SelectBox id='price_level' value={priceLevel} onChange={event => setPriceLevel(event.target.value)} required>
                         <option value="" disabled selected>Select your option</option>
-                        <option value='0'>No Information</option>
-                        <option value='1'>Budget</option>
-                        <option value='2'>Fair</option>
-                        <option value='3'>Expensive</option>
+                        <option value='No Information'>No Information</option>
+                        <option value='Budget'>Budget</option>
+                        <option value='Fair'>Fair</option>
+                        <option value='Expensive'>Expensive</option>
                     </SelectBox>
                 </PriceForm>
                 <ImageForm>

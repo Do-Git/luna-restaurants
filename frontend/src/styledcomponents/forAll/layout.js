@@ -1,7 +1,7 @@
 import styled from "styled-components";
 
 export const BodyWrapper = styled.div`
-  min-height: calc(100vh - 146px); 
+  min-height: calc(100vh - 90px); 
   /* 55px for nav bar and 91px for footer */
 `
 

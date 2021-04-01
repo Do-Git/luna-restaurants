@@ -69,7 +69,7 @@ export const TabSelectorItem = styled.li`
   }
 `;
 export const PageContainer = styled.div`
-  padding-top: 70px;
+  padding-top: 55px;
   width: 100vw;
   min-height: 100vh;
   display: grid;
