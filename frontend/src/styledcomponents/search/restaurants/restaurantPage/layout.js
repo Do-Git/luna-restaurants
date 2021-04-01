@@ -33,7 +33,7 @@ export const BannerDivSmall = styled.div`
 export const BannerGrayLayerSmall = styled.div`
     position: absolute;
     width: 100%;
-    height: 93%;
+    height: 94%;
     background: rgba(0, 0, 0, 0.5);
     z-index: 2;
     min-width: 880px;
@@ -132,7 +132,7 @@ export const ReviewCardContainer = styled.div`
 `
 export const ReviewCardContainer2 = styled.div`
     background: #F2F2F2;
-    height: 100vh;
+    height: 73vh;
 `
 
 export const ReviewCardTop = styled.div`
