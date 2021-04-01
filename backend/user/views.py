@@ -49,6 +49,7 @@ class SearchForUser(ListAPIView):
 
 
 class Search(ListAPIView):
+    permission_classes = []
 
     def get_serializer_class(self):
         type_of_search = self.request.query_params.get('type')
@@ -80,6 +81,7 @@ class Search(ListAPIView):
 
 class GetBestFourRestaurants(ListAPIView):
     serializer_class = RestaurantSerializer
+    permission_classes = []
 
     def get_queryset(self):
         return Restaurant.objects.annotate(average=Avg('reviews__rating')).order_by('-average')[:4]

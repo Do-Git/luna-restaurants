@@ -11,6 +11,7 @@ export const BigButton = styled.button`
   margin-top: 150px;
   :hover {
     cursor: pointer;
+    background-color: #e87520;
   }
 `;
 export const ButtonSearchbar = styled.button`

@@ -52,6 +52,12 @@ const Restaurant = () => {
     dispatch(searchAllRestaurantsAction(search_string));
   };
 
+  const handleSubmit = (e) => {
+    e.preventDefault()
+    const search_string = `search/?type=${viewFilter}restaurants&search_string=${e.target.value}`
+    dispatch()
+  }
+
   const renderContent = () => {
     switch (viewFilter) {
       case "RESTAURANTS":
@@ -76,6 +82,7 @@ const Restaurant = () => {
               type="search"
               placeholder="Search..."
               defaultValue={searchTerm}
+              onSubmit={handleSubmit}
             ></SearchField>
             {viewFilter === "RESTAURANTS" ? (
               <SearchSelector onChange={onCategoryChange}>
