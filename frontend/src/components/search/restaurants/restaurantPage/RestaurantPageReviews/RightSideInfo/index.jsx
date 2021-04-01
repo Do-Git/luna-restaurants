@@ -2,7 +2,7 @@ import {RightSideDetailsContainer} from "../../../../../../styledcomponents/sear
 import {BlackSpan} from "../../../../../../styledcomponents/forAll/text";
 import {OrangeSmallButton} from "../../../../../../styledcomponents/forAll/buttons";
 import {FlexSpaceBetweenDiv} from "../../../../../../styledcomponents/forAll/layout";
-
+import {Link} from 'react-router-dom'
 
 export const RightSideInfo = () => {
 
@@ -17,7 +17,7 @@ export const RightSideInfo = () => {
                 <BlackSpan>Price level: {'$$$'}</BlackSpan>
             </div>
             <FlexSpaceBetweenDiv>
-                <OrangeSmallButton>WRITE A REVIEW</OrangeSmallButton>
+                <OrangeSmallButton><Link to="/restaurants/review">WRITE A REVIEW</Link></OrangeSmallButton>
                 <OrangeSmallButton>EDIT DATA</OrangeSmallButton>
             </FlexSpaceBetweenDiv>
         </RightSideDetailsContainer>

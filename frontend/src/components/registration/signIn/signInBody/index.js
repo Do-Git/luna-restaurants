@@ -39,9 +39,11 @@ class SignInBody extends Component {
           password: e.target.value 
       });
   }
+
   login = (e) => {
     e.preventDefault();
       const url = "https://luna-sagittarius.propulsion-learn.ch/backend/api/token/";
+      // const url = "http://localhost:8000/backend/api/token/";
       const method = 'POST';
       const body = {
           email: this.state.email,
@@ -63,6 +65,7 @@ class SignInBody extends Component {
             localStorage.setItem('token', token);
             this.props.dispatch({type: 'SET_TOKEN', payload: token});
             this.props.history.push(`/`);
+            console.log('id', data.id)
           } else {
             this.setState({
               email: '',

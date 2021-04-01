@@ -1,11 +1,12 @@
-* {
-  /* border: solid 1px red; */
-}
+/* * {
+  border: solid 1px red; 
+} */
 
 body {
   margin: 0;
   font-family: Helvetica, serif;
   color: #4c4c4c;
+  background-color: #F2F2F2;
 }
 
 a {
@@ -49,4 +50,8 @@ button {
 
 #username-label {
   margin-top: 5vh;
+}
+
+#description{
+  margin-bottom: 20vh;
 }

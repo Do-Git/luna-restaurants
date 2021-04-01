@@ -1,5 +1,10 @@
 import styled from "styled-components";
 
+export const BodyWrapper = styled.div`
+  min-height: calc(100vh - 90px); 
+  /* 55px for nav bar and 91px for footer */
+`
+
 export const MiddleSection = styled.div`
   height: 100vh;
   display: flex;
@@ -10,7 +15,7 @@ export const MiddleSection = styled.div`
 
 export const H1 = styled.h1`
   font-size: 2rem;
-  margin-top: 100px;
+  margin-top: 200px;
 `
 
 export const OrangeDiv = styled.div`
@@ -23,7 +28,7 @@ export const TopDiv = styled.div`
 `
 
 export const BottomDiv = styled.div`
-    margin-top:50px
+    margin-top: 50px;
     flex-direction: column;
     align-items: flex-start;
 `

@@ -3,14 +3,13 @@ import styled from 'styled-components';
 // Create Restaurant Body
 export const CreateRestaurantContainer = styled.div`
     position: relative;
-    top: 15vh;
+    top: 90px;
     min-width: 870px;
     width: 100%;
-    min-height: 92vh;
+    /* min-height: 60vh; */
     display: flex;
     flex-direction: column;
     align-items: center;
-    padding-top: 
 `
 
 // Grid Layout
@@ -18,14 +17,14 @@ export const FormGridContainer = styled.form`
     display: grid;
     grid-template: repeat(4, 5% 10%) 20% / repeat(3, 1fr);
     grid-column-gap: 3rem;
-    grid-row-gap: 1rem;
+    grid-row-gap: 0.5rem;
     width: 70%;
-    margin-top: 5%;
+    margin-top: 1rem;
 `
 
 //Text
 export const TitleH1 = styled.h1`
-    padding-top: 1rem;
+    /* padding-top: 1rem; */
     border-bottom: solid #e47d31;
 `
 
@@ -35,6 +34,7 @@ export const TitleH1 = styled.h1`
 export const AllTitlesSpan = styled.span`
     font-weight: bold;
     color: #4C4C4C;
+    margin-top: 1rem;
 `
 
 export const BasicSpan = styled(AllTitlesSpan)`
@@ -61,13 +61,20 @@ export const InputLabel = styled.label`
 
 export const InputBox = styled.input`
     border: solid 1px #EBEBEB;
-    height: 1.5rem;
+    /* height: 1.5rem; */
     margin: 1rem 0 1rem 0;
 `
 
+export const SelectBox = styled.select`
+    border: solid 1px #EBEBEB;
+    /* height: 1.5rem; */
+    margin: 1rem 0 1rem 0;  
+`
+
 const BaseFormDiv = styled.div`
-display: flex;
-flex-direction: column;
+    display: flex;
+    flex-direction: column;
+    margin-top: 1rem;
 `
 
 // Basic
