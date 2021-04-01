@@ -1,3 +1,4 @@
+/* eslint-disable no-unreachable */
 import { combineReducers } from "redux";
 import { restaurantReducer } from "./restaurantReducer";
 

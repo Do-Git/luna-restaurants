@@ -10,3 +10,13 @@ class RestaurantInUserSerializer(serializers.ModelSerializer):
                   'name',
                   'categories'
                   ]
+
+
+class RestaurantInReview(serializers.ModelSerializer):
+    class Meta:
+        model = Restaurant
+        fields = ['id',
+                  'name',
+                  'categories',
+                  'created'
+                  ]
