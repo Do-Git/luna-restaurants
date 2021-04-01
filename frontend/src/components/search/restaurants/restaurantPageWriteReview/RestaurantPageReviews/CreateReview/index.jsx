@@ -16,6 +16,7 @@ import {
     OrangeMiniButton
 } from "../../../../../../styledcomponents/forAll/buttons";
 import {FlexSpaceBetweenDiv} from "../../../../../../styledcomponents/forAll/layout";
+import { useParams } from "react-router-dom";
 
 const CreateReview = () => {
 
@@ -24,6 +25,8 @@ const CreateReview = () => {
     const [rating, setRating] = useState('');
     // const [restaurant, setRating] = useState('');
 
+    const { id } = useParams();
+  
     const ratingChanged = (newRating) => {
         setRating(newRating)
       };
@@ -31,11 +34,11 @@ const CreateReview = () => {
 
     const Review = e => {
         e.preventDefault();
-        const url = `https://luna-sagittarius.propulsion-learn.ch/backend/api/reviews/new/`;
+        const url = `https://luna-sagittarius.propulsion-learn.ch/backend/api/reviews/new/${id}/`;
         const method = 'POST';
         const body = {
             review: review,
-            rating: rating,
+            rating: '1',
         };
         const headers = new Headers({
             'Content-Type': 'application/json',
@@ -47,13 +50,18 @@ const CreateReview = () => {
             body: JSON.stringify(body)
         };
         fetch(url, config)
-        .then(res => res.status)
-        .then(status => {
-            if (status === 201){
-                console.log("ok")
-            } else {
+        // .then(res => res.status)
+        // .then(status => {
+        //     if (status === 200){
+        //         console.log("ok")
+        //     } else {
+        //         console.log("response not ok");
+        //         console.log(status);
+        //     }
+        .then(res => res.status==200?res.json():null)
+        .then(data => {
+                console.log(data)
                 console.log("response not ok");
-            }
         });
     }
 
@@ -64,12 +72,11 @@ const CreateReview = () => {
                         <StarsReviewRestaurantPageContainer id='stars-container-review'>
                             <ReactStars
                                 activeColor="#F8E71C"
-                                isHalf={true}
                                 color={"rgba(235, 235, 235, 0.5)"}
                                 size={67}
-                                value={0}
+                                value={1}
                                 count={5}
-                                isHalf={true}
+                                isHalf={false}
                                 onChange={ratingChanged}
                             />
                         </StarsReviewRestaurantPageContainer><span>{'Select your rating '}</span> 
