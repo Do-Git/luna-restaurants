@@ -13,23 +13,23 @@ const EditProfile = (props) => {
 
     const dispatch = useDispatch();
 
-    const location = useSelector(state => state.location);
-    const description = useSelector(state => state.description);
-    const thingsILove = useSelector(state => state.things_I_love);
-    const firstName = useSelector(state => state.first_name);
-    const lastName = useSelector(state => state.last_name);
-    const username = useSelector(state => state.user_name);
-    const email = useSelector(state => state.email);
-    const phone = useSelector(state => state.phone);
+    const location = useSelector(state => state.mixReducers.location);
+    const description = useSelector(state => state.mixReducers.description);
+    const thingsILove = useSelector(state => state.mixReducers.things_I_love);
+    const firstName = useSelector(state => state.mixReducers.first_name);
+    const lastName = useSelector(state => state.mixReducers.last_name);
+    const username = useSelector(state => state.mixReducers.user_name);
+    const email = useSelector(state => state.mixReducers.email);
+    const phone = useSelector(state => state.mixReducers.phone);
 
     const [emailInput, setEmail] = useState(email);
-    const [firstNameInput, setFirstName] = useState();
-    const [lastNameInput, setLastName] = useState();
+    const [firstNameInput, setFirstName] = useState('');
+    const [lastNameInput, setLastName] = useState('');
     const [usernameInput, setUserName] = useState(username);
-    const [locationInput, setLocation] = useState();
-    const [phoneInput, setPhone] = useState();
-    const [loveInput, setLove] = useState();
-    const [descriptionInput, setDescription] = useState();
+    const [locationInput, setLocation] = useState('');
+    const [phoneInput, setPhone] = useState('');
+    const [loveInput, setLove] = useState('');
+    const [descriptionInput, setDescription] = useState('');
 
     const editAccount = (e) => {
         e.preventDefault();

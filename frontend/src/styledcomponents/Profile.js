@@ -7,6 +7,8 @@ export const RegistrationPageContainer = styled.section`
     background-color: #f2f2f2;
     height: 100vh;
     overflow: scroll;
+    display: flex;
+    flex-wrap: wrap;
 `
 export const ProfileBackgroundImage = styled.div`
     width: 100%;
@@ -119,9 +121,6 @@ export const ReviewCard = styled.div`
 `
 export const AboutContainer = styled.article`
     width: 27.5vw;
-    left: 70vw;
-    top: -100vh;
-    position: relative;
     h2 {
         margin: 0;
         margin-top: 2.5vh;
