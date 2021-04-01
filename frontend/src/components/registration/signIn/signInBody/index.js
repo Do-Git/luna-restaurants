@@ -39,6 +39,7 @@ class SignInBody extends Component {
           password: e.target.value 
       });
   }
+
   login = (e) => {
     e.preventDefault();
       const url = "https://luna-sagittarius.propulsion-learn.ch/backend/api/token/";
