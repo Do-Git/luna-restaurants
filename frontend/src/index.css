@@ -2,6 +2,10 @@
   border: solid 1px red; 
 } */
 
+#hide-pen {
+  display: none;
+}
+
 body {
   margin: 0;
   font-family: Helvetica, serif;
@@ -54,4 +58,8 @@ button {
 
 #description{
   margin-bottom: 20vh;
+}
+
+#restaurant-address{
+  border-bottom: none;
 }
