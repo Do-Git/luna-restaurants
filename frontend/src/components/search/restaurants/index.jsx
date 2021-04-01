@@ -1,4 +1,5 @@
 import React, { useState } from "react";
+import {useSelector} from 'react-redux'
 import Footer from "../../headers/Footer";
 import Navbar from "../../headers/Navbar";
 import RestaurantList from "../../home/RestaurantList/";
@@ -22,6 +23,8 @@ import { BodyWrapper } from "../../../styledcomponents/forAll/layout";
 const Restaurant = () => {
   const [searchTerm, setSearchTerm] = useState("");
   const [viewFilter, setViewFilter] = useState("RESTAURANTS");
+  const restaurants = useSelector(state => state.restaurantReducer.restaurants);
+
 
   const [categories] = useState([
     { label: "Select a category...", value: 0 },
@@ -48,7 +51,7 @@ const Restaurant = () => {
   const renderContent = () => {
     switch (viewFilter) {
       case "RESTAURANTS":
-        return <RestaurantList></RestaurantList>;
+        return (restaurants ? (<RestaurantList items={restaurants} key={'restaurants'}></RestaurantList>) : <></>);
       case "REVIEWS":
         return <Reviews></Reviews>;
       case "USERS":
