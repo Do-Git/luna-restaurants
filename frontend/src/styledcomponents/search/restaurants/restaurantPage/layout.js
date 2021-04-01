@@ -130,6 +130,10 @@ export const ReviewCardContainer = styled.div`
     margin-top: 1rem;
     margin-bottom: 1rem;
 `
+export const ReviewCardContainer2 = styled.div`
+    background: #F2F2F2;
+    height: 100vh;
+`
 
 export const ReviewCardTop = styled.div`
     display: flex;
@@ -157,7 +161,7 @@ export const ReviewCardFirst = styled.div`
     display: flex;
     align-items: center;
     justify-content: space-around;
-    width: 33%;
+    width: 60%;
     height: 100px;
     white-space: nowrap;
     span{
@@ -172,9 +176,9 @@ export const ReviewCardFirst = styled.div`
 export const ReviewCardSecond = styled.div`
     display: flex;
     align-items: center;
+    justify-content: space-between;
     width: 100%;
     height: 100px;
-    white-space: nowrap;
     span{
         font-family: Helvetica;
         font-size: 20px;
@@ -182,6 +186,14 @@ export const ReviewCardSecond = styled.div`
         font-weight: 300; 
         letter-spacing: 0px;
         text-align: center;
+    }
+    p{
+        font-family: Helvetica;
+        font-style: normal;
+        font-weight: normal;
+        font-size: 16px;
+        line-height: 28px;
+        color: #B00000;
     }
 `
 
