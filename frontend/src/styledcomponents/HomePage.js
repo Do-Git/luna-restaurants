@@ -50,6 +50,10 @@ export const OrangeUnderline = styled.div`
   width: 265px;
   border: 1px solid #e47d31;
   background-color: #e47d31;
+  :hover {
+    cursor: pointer;
+    background-color: #e87520;
+  }
 `;
 
 export const UserAccessTitleWrapper = (props) => {
