@@ -41,6 +41,10 @@ export const ButtonSearchbar = styled.button`
   }
 `;
 
+// export const OrangeBigButton = styled(ButtonSearchbar)`
+//   margin-top: 30px;
+// `
+
 export const OrangeSmallButton = styled(ButtonSearchbar)`
     height: 40px;
     width: 170px;

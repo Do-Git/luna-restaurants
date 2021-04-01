@@ -14,7 +14,6 @@ const CreateRestaurant = () => {
             </BodyWrapper>
             <Footer />
         </>
-
     )
 }
 
