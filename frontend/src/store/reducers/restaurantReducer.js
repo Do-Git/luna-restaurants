@@ -6,6 +6,7 @@ const initial_state = {
 };
 
 export default function restaurantReducer (state = initial_state, action){
+  console.log('reducer', action.payload)
   switch (action.type) {
     case GET_TOP_4_RESTAURANTS:
       return {

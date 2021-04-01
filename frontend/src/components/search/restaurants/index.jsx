@@ -52,10 +52,13 @@ const Restaurant = () => {
     dispatch(searchAllRestaurantsAction(search_string));
   };
 
-  const handleSubmit = (e) => {
-    e.preventDefault()
-    const search_string = `search/?type=${viewFilter}restaurants&search_string=${e.target.value}`
-    dispatch()
+  const handleKeyPress = (e) => {
+    if (e.key === 'Enter') {
+      console.log('tro')
+      const search_string = `search/?type=${viewFilter.toLowerCase()}&search_string=${e.target.value}`
+      console.log(search_string, 'str')
+      dispatch(searchAllRestaurantsAction(search_string))
+    }
   }
 
   const renderContent = () => {
@@ -82,7 +85,7 @@ const Restaurant = () => {
               type="search"
               placeholder="Search..."
               defaultValue={searchTerm}
-              onSubmit={handleSubmit}
+              onKeyPress={handleKeyPress}
             ></SearchField>
             {viewFilter === "RESTAURANTS" ? (
               <SearchSelector onChange={onCategoryChange}>
