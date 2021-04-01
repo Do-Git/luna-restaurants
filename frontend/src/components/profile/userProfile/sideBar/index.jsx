@@ -4,7 +4,7 @@ import { useSelector } from 'react-redux';
 
 const SideBar = (props) => {
 
-    const firstName = useSelector(state => state.first_name);
+    const firstName = useSelector(state => state.mixReducers.first_name);
 
     return (
         <SideBarContainer>
