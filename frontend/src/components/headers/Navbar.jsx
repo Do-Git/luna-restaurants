@@ -17,7 +17,7 @@ const Navbar = (props) => {
 
     const dispatch = useDispatch();
     const userId = useSelector(state => state.id);
-    const clickedIndex = useSelector(state => state.clicked_index);
+    const clickedIndex = useSelector(state => state.mixReducers.clicked_index);
     
     const logOut = () => {
         localStorage.removeItem('token')
