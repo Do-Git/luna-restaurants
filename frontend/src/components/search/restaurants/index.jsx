@@ -25,6 +25,7 @@ const Restaurant = () => {
   const [searchTerm, setSearchTerm] = useState("");
   const [viewFilter, setViewFilter] = useState("RESTAURANTS");
   const restaurants = useSelector(state => state.restaurantReducer.restaurants);
+  const searchUsers = useSelector(state => state.restaurantReducer.searchUsers);
   const dispatch = useDispatch()
 
 
@@ -52,10 +53,11 @@ const Restaurant = () => {
     dispatch(searchAllRestaurantsAction(search_string));
   };
 
-  const handleSubmit = (e) => {
-    e.preventDefault()
-    const search_string = `search/?type=${viewFilter}restaurants&search_string=${e.target.value}`
-    dispatch()
+  const handleKeyPress = (e) => {
+    if (e.key === 'Enter') {
+      const search_string = `search/?type=${viewFilter.toLowerCase()}&search_string=${e.target.value}`
+      dispatch(searchAllRestaurantsAction(search_string, viewFilter))
+    }
   }
 
   const renderContent = () => {
@@ -65,7 +67,7 @@ const Restaurant = () => {
       case "REVIEWS":
         return <Reviews></Reviews>;
       case "USERS":
-        return <Users></Users>;
+        return (searchUsers ? (<Users></Users>) : <></>);
       default:
         return <p>Invalid filter...</p>;
     }
@@ -82,7 +84,7 @@ const Restaurant = () => {
               type="search"
               placeholder="Search..."
               defaultValue={searchTerm}
-              onSubmit={handleSubmit}
+              onKeyPress={handleKeyPress}
             ></SearchField>
             {viewFilter === "RESTAURANTS" ? (
               <SearchSelector onChange={onCategoryChange}>

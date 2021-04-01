@@ -1,6 +1,6 @@
 import React from "react";
 import styled from "styled-components";
-
+import {useSelector} from 'react-redux'
 import { TileContainer, TileGrid, TileTopLine } from "../style";
 import UserReviewHeader from "../reviews/UserReviewHeader";
 
@@ -14,21 +14,21 @@ const UserAboutText = styled.p`
 `;
 
 const SearchUsers = () => {
+  const searchUsers = useSelector(state => state.restaurantReducer.searchUsers);
   return (
     <>
       <TileGrid>
-        <TileContainer>
+      {searchUsers.map((user) => (
+        <TileContainer key={user.id}>
           <TileTopLine />
-          <UserReviewHeader></UserReviewHeader>
+          <UserReviewHeader user={user}></UserReviewHeader>
           <UserAbout>
             <UserAboutText>
-              Lorem, ipsum dolor sit amet consectetur adipisicing elit. Totam
-              beatae nesciunt cumque cupiditate. Aliquam aperiam hic aliquid ex
-              ratione, sint facere veritatis ab excepturi, cum praesentium.
-              Nostrum, pariatur? Autem, perferendis?
+              {user.things_I_love}
             </UserAboutText>
           </UserAbout>
         </TileContainer>
+      ))}
       </TileGrid>
     </>
   );
