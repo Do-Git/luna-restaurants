@@ -9,5 +9,4 @@ urlpatterns = [
     path('category/<int:pk>/', GetRestaurantByCategory.as_view()),
     path('user/<int:pk>/', GetRestaurantByUser.as_view()),
     path('<int:pk>/', HandleRestaurant.as_view()),
-    path('home/', ShowFourBestRatedRestaurants.as_view())
 ]
