@@ -17,6 +17,7 @@ import {
   TabSelector,
   TabSelectorItem,
 } from "./style";
+import { BodyWrapper } from "../../../styledcomponents/forAll/layout";
 
 const Restaurant = () => {
   const [searchTerm, setSearchTerm] = useState("");
@@ -60,52 +61,54 @@ const Restaurant = () => {
   return (
     <PageContainer>
       <Navbar></Navbar>
-      <PageContent>
-        <SearchBar>
-          <SearchField
-            onChange={onSearchFieldChange}
-            type="search"
-            placeholder="Search..."
-            defaultValue={searchTerm}
-          ></SearchField>
-          {viewFilter === "RESTAURANTS" ? (
-            <SearchSelector onChange={onCategoryChange}>
-              {categories.map((category) => {
-                return (
-                  <option key={category.value} value={category.value}>
-                    {category.label}
-                  </option>
-                );
-              })}
-            </SearchSelector>
-          ) : (
-            <></>
-          )}
-        </SearchBar>
-        <TabSelector>
-          <TabSelectorItem
-            isActive={viewFilter === "RESTAURANTS"}
-            onClick={() => setViewFilter("RESTAURANTS")}
-          >
-            RESTAURANTS
-          </TabSelectorItem>
-          <TabSelectorItem
-            isActive={viewFilter === "REVIEWS"}
-            onClick={() => setViewFilter("REVIEWS")}
-          >
-            REVIEWS
-          </TabSelectorItem>
-          <TabSelectorItem
-            isActive={viewFilter === "USERS"}
-            onClick={() => setViewFilter("USERS")}
-          >
-            USERS
-          </TabSelectorItem>
-        </TabSelector>
-        <BestRatedWrapper>
-          <CardWrapper>{renderContent()}</CardWrapper>
-        </BestRatedWrapper>
-      </PageContent>
+      <BodyWrapper>
+        <PageContent>
+          <SearchBar>
+            <SearchField
+              onChange={onSearchFieldChange}
+              type="search"
+              placeholder="Search..."
+              defaultValue={searchTerm}
+            ></SearchField>
+            {viewFilter === "RESTAURANTS" ? (
+              <SearchSelector onChange={onCategoryChange}>
+                {categories.map((category) => {
+                  return (
+                    <option key={category.value} value={category.value}>
+                      {category.label}
+                    </option>
+                  );
+                })}
+              </SearchSelector>
+            ) : (
+              <></>
+            )}
+          </SearchBar>
+          <TabSelector>
+            <TabSelectorItem
+              isActive={viewFilter === "RESTAURANTS"}
+              onClick={() => setViewFilter("RESTAURANTS")}
+            >
+              RESTAURANTS
+            </TabSelectorItem>
+            <TabSelectorItem
+              isActive={viewFilter === "REVIEWS"}
+              onClick={() => setViewFilter("REVIEWS")}
+            >
+              REVIEWS
+            </TabSelectorItem>
+            <TabSelectorItem
+              isActive={viewFilter === "USERS"}
+              onClick={() => setViewFilter("USERS")}
+            >
+              USERS
+            </TabSelectorItem>
+          </TabSelector>
+          <BestRatedWrapper>
+            <CardWrapper>{renderContent()}</CardWrapper>
+          </BestRatedWrapper>
+        </PageContent>
+      </BodyWrapper>
       <Footer></Footer>
     </PageContainer>
   );
