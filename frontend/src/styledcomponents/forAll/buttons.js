@@ -57,6 +57,18 @@ export const OrangeSmallButton = styled(ButtonSearchbar)`
     white-space: nowrap;
 `
 
+export const OrangeSmallSubmitButton = styled(ButtonSearchbar)`
+    height: 57px;
+    width: 200px;
+    border-radius: 28px;
+    font-family: Roboto;
+    font-style: normal;
+    font-weight: normal;
+    font-size: 20px;
+    line-height: 23px;
+    color: #000000;
+`
+
 export const OrangeMiniButton = styled(OrangeSmallButton)`
     width: 120px;
     margin-left: 1rem;

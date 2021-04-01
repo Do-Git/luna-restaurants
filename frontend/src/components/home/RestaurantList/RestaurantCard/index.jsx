@@ -9,6 +9,7 @@ import {
   TopBar,
 } from "./style";
 import DefaultRestaurantImage from "../../../../assets/restaurants/default.png";
+import history from '../../../../history'
 
 const RestaurantCard = ({ item }) => {
   const [rating, setRating] = useState(0);
@@ -16,6 +17,7 @@ const RestaurantCard = ({ item }) => {
   const onClickHandler = (e) => {
     e.preventDefault();
     // go to detail restaurant
+    history.push(`/restaurant-page/${item.id}/`)
   };
 
   return (
@@ -32,9 +34,10 @@ const RestaurantCard = ({ item }) => {
             isHalf={true}
             color={"rgba(235, 235, 235, 0.5)"}
             size={27}
+            edit={false}
             value={item.avg_rating ? item.avg_rating : rating}
           />
-          <p>75</p>
+          <p>{item.reviews.length}</p>
         </StarsReviewContainer>
       </RestaurantDetailsContainer>
       <img
