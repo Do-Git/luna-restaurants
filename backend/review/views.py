@@ -21,7 +21,7 @@ class CreateNewReview(CreateAPIView):
         restaurant = Restaurant.objects.get(id=kwargs['pk'])
         rating = self.request.data['rating']
 
-        if rating in ['1', '2', '3', '4', '5']:
+        if rating in [1, 2, 3, 4, 5]:
             review = Review(author=self.request.user, rating=rating,
                             restaurant=restaurant, content=self.request.data['content'])
             review.save()

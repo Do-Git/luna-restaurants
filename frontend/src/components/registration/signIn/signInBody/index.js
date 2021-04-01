@@ -27,8 +27,6 @@ class SignInBody extends Component {
     }
   }
   
-  
-
   setEmail = e => {
       this.setState({
           email: e.target.value
@@ -39,6 +37,7 @@ class SignInBody extends Component {
           password: e.target.value 
       });
   }
+
   login = (e) => {
     e.preventDefault();
       const url = "https://luna-sagittarius.propulsion-learn.ch/backend/api/token/";

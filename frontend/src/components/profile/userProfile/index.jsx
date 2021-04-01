@@ -9,6 +9,7 @@ import Comments from '../comments';
 import Restaurants from '../restaurants';
 import EditProfile from '../edit';
 import React, { useState } from 'react';
+import { BodyWrapper } from '../../../styledcomponents/forAll/layout.js';
 
 const Profile = () => {
     const [clickedIndex, setClickedIndex] = useState(0);

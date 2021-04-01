@@ -19,6 +19,7 @@ const Navbar = (props) => {
     const userId = useSelector(state => state.mixReducers.id);
     const clickedIndex = useSelector(state => state.mixReducers.clicked_index);
 
+
     useEffect(() => {
         if (!userId){
             const token = localStorage.getItem('token');
