@@ -4,7 +4,7 @@ import {
     ReviewCardTop, ReviewCardTopLeft, ReviewContent
 } from "../../../../../../styledcomponents/search/restaurants/restaurantPage/layout";
 import userProfilePicture from '../../../../../../assets/users/IMG_6531.JPG.png'
-import StarRatingComponent from "react-rating-stars-component";
+import ReactStars from "react-rating-stars-component";
 import {OrangeSpan} from "../../../../../../styledcomponents/forAll/text";
 import {StarsReviewRestaurantPageContainer} from "../../../../../home/RestaurantList/RestaurantCard/style";
 import React, {useState} from "react";
@@ -15,10 +15,10 @@ import {
 } from "../../../../../../styledcomponents/forAll/buttons";
 import {FlexSpaceAroundDiv, FlexSpaceBetweenDiv} from "../../../../../../styledcomponents/forAll/layout";
 import {CommentInput} from "../../../../../../styledcomponents/forAll/inputs";
+// import Moment from 'react-moment';
 
-const ReviewCard = () => {
+const ReviewCard = (props) => {
 
-    const [rating, setRating] = useState(0);
     const [showComments, setShowComments] = useState(false);
 
     const clickHandler = () => {
@@ -32,25 +32,29 @@ const ReviewCard = () => {
                 <ReviewCardTopLeft>
                     <img src={userProfilePicture} alt="profile picture"/>
                     <div>
-                        <h3>Laurent H.</h3>
+                        <h3>{props.first_name}</h3>
                         <span>{'6'} reviews in total</span>
                     </div>
                     <StarsReviewRestaurantPageContainer id='stars-container'>
-                        <StarRatingComponent
+                        <ReactStars
                             activeColor="#F8E71C"
                             isHalf={true}
                             color={"rgba(235, 235, 235, 0.5)"}
-                            size={27}
-                            value={rating}
+                            size={17}
+                            value={props.rating}
+                            edit={false}
                         />
                     </StarsReviewRestaurantPageContainer>
                 </ReviewCardTopLeft>
                 <DateTimeContainer>
-                    <span>{'01.01.2018 15:22'}</span>
+                    <span>
+                        props.created
+                        {/* <Moment>{props.created}</Moment> */}
+                    </span>
                 </DateTimeContainer>
             </ReviewCardTop>
             <ReviewContent>
-                <span>{'This location at the Bahnhofstrasse is quite friendly and easily located across the street from the train station. The people there seem to be quite good and helpful in their service.'}</span>
+                <span>{props.content}</span>
             </ReviewContent>
             {
                 !showComments ?

@@ -14,6 +14,7 @@ const initialState = {
   description: 'Loading...',
   things_I_love: 'Loading...',
   phone: 'Loading...',
+  current_restaurant: {},
   clicked_index: 0
 };
 
@@ -66,6 +67,9 @@ export default function mixReducers(state = initialState, action) {
       break;
     case 'CLICKED':
       return {...state, clicked_index: action.payload};
+      break;
+    case 'ADD_CURRENT_RESTAURANT':
+      return {...state, current_restaurant: action.payload};
       break;
     default:
       return state;
