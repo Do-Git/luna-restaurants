@@ -66,6 +66,7 @@ export default function mixReducers(state = initialState, action) {
       break;
     case 'CLICKED':
       return {...state, clicked_index: action.payload};
+      break;
     default:
       return state;
       break;
