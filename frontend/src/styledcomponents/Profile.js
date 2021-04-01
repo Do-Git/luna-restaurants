@@ -69,6 +69,7 @@ export const SideBarButton = styled.div`
             width: 97%;
             margin-left: 3%;
             cursor: pointer;
+            background-color: #e87520;
         }
     }
     
@@ -189,6 +190,7 @@ export const SubmitButton = styled.input`
     background-color: #e47d31;
     :hover{
         cursor: pointer;
+        background-color: #e87520;
     }
 `
 export const DeleteButton = styled.button`
@@ -212,5 +214,6 @@ export const CreateButton = styled.button`
     margin: 5vh auto 10vh 38%;
     :hover{
         cursor: pointer;
+        background-color: #e87520;
     }
 `
