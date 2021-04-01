@@ -4,7 +4,7 @@ const initial_state = {
   top4Restaurants: [],
 };
 
-export const restaurantReducer = (state = initial_state, action) => {
+export default function restaurantReducer (state = initial_state, action){
   switch (action.type) {
     case GET_TOP_4_RESTAURANTS:
       console.log(action.payload, "payloaaad");
