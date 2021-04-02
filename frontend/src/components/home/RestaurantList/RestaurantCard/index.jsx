@@ -34,7 +34,7 @@ const RestaurantCard = ({ item }) => {
             isHalf={true}
             color={"rgba(235, 235, 235, 0.5)"}
             size={27}
-            edit={false}
+            // edit={false}
             value={item.avg_rating ? item.avg_rating : rating}
           />
           <p>{item.reviews.length}</p>

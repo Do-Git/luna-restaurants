@@ -20,6 +20,7 @@ import {
 } from "./style";
 import { BodyWrapper } from "../../../styledcomponents/forAll/layout";
 import {searchAllRestaurantsAction} from '../../../store/actions/restaurantActions'
+import {searchAllReviewsAction} from '../../../store/actions/reviewActions'
 
 const Restaurant = () => {
   const [searchTerm, setSearchTerm] = useState("");
@@ -58,8 +59,8 @@ const Restaurant = () => {
 
   const handleKeyPress = (e) => {
     if (e.key === 'Enter') {
-      const search_string = `search/?type=${viewFilter.toLowerCase()}&search_string=${e.target.value}`
-      dispatch(searchAllRestaurantsAction(search_string, viewFilter))
+        const search_string = `search/?type=${viewFilter.toLowerCase()}&search_string=${e.target.value}`
+        dispatch(searchAllRestaurantsAction(search_string, viewFilter))
     }
   }
 
@@ -72,13 +73,19 @@ const Restaurant = () => {
       case "RESTAURANTS":
         return (restaurants ? (<RestaurantList items={restaurants} key={'restaurants'}></RestaurantList>) : <></>);
       case "REVIEWS":
-        return <Reviews></Reviews>;
+        return handleReviews();
       case "USERS":
         return (searchUsers ? (<Users></Users>) : <></>);
       default:
         return <p>Invalid filter...</p>;
     }
   };
+
+  const handleReviews = () => {
+      console.log('on reviews filter')
+      dispatch(searchAllReviewsAction('reviews/all/')) 
+      return <Reviews></Reviews>
+  }
 
   return (
     <PageContainer>
