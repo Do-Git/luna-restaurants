@@ -18,7 +18,12 @@ const Form = styled.form`
     display: flex;
     flex-direction: column;
   `
+  const styleBox = {
+    marginTop: '18px',
+    marginRight: '8px'
+}
 class SignInBody extends Component {
+
   constructor (props){
     super(props);
     this.state = {
@@ -78,11 +83,11 @@ class SignInBody extends Component {
              <OrangeDiv/>
            <Form onSubmit={ this.login } >
               <InputDiv>
-                <i className="far fa-user input-i" />
+                <i style={styleBox} className="far fa-user input-i" />
                 <Input value={ this.state.email } onChange={ this.setEmail } type="email" placeholder="   Username" required />
               </InputDiv>
               <InputDiv>
-                <i className="fas fa-unlock-alt input-i" />
+                <i style={styleBox} className="fas fa-unlock-alt input-i" />
                 <Input value={ this.state.password } onChange={ this.setPassword } type="password" placeholder="   Password" required />
                 {/* <Input type="password" placeholder="   Password" required /> */}
               </InputDiv> 

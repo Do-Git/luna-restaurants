@@ -13,7 +13,10 @@ const Form = styled.form`
   `
 
 const SignUnBody = (props) => {
-
+    const styleBox = {
+        marginTop: '16px',
+        marginRight: '8px'
+    }
     const [email, setEmail] = useState('');
     
     const register = e => {
@@ -48,7 +51,7 @@ const SignUnBody = (props) => {
           <OrangeDiv/>
           <Form onSubmit={ register }>
             <InputDiv>
-              <i className="fas fa-envelope input-i" />
+              <i style={styleBox} className="fas fa-envelope input-i" />
               <Input type="email" placeholder="   Email" value={ email } onChange={ event => setEmail(event.target.value) } required />
             </InputDiv>
                 <SignUpRegistration />
