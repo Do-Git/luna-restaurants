@@ -12,3 +12,12 @@ class ReviewInRestaurantSerializer(serializers.ModelSerializer):
     class Meta:
         model = Review
         fields = ['id', 'content', 'author', 'rating', 'created', 'restaurant']
+
+
+class ReviewInCommentSerializer(serializers.ModelSerializer):
+    author = UserInReviewSerializer(read_only=True)
+    restaurant = RestaurantInReview(read_only=True)
+
+    class Meta:
+        model = Review
+        fields = ['id', 'content', 'author', 'rating', 'created', 'restaurant']
