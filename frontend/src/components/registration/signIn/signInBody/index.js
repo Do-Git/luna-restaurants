@@ -63,7 +63,6 @@ class SignInBody extends Component {
             localStorage.setItem('token', token);
             this.props.dispatch({type: 'SET_TOKEN', payload: token});
             this.props.history.push(`/`);
-            console.log('id', data.id)
           } else {
             this.setState({
               email: '',
