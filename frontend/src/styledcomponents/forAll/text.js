@@ -4,10 +4,10 @@ import styled from "styled-components";
 export const WhiteH1 = styled.h1`
     color: white;
     font-family: Helvetica;
-    font-size: 30px;
+    font-size: 28px;
     font-style: normal;
     font-weight: 700;
-    line-height: 34px;
+    line-height: 1rem;
     letter-spacing: 0px;
     text-align: left;
 `
@@ -30,6 +30,7 @@ export const WhiteReviewCountSpan = styled(WhiteSpan)`
 `
 
 export const MapText = styled(WhiteReviewCountSpan)`
+    font-size: 18px;
     font-weight: 400;
     line-height: 2rem;
     color: #4C4C4C;

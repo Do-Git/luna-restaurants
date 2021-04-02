@@ -74,28 +74,12 @@ const CreateRestaurantForm = () => {
             body: JSON.stringify(body)
         };
         fetch(url, config)
-        .then(res => res.status)
-        .then(status => {
-            if (status === 201){
-                console.log("ok")
-                // dispatch({type: 'ADD_RESTAURANT', payload: body});
-                history.push("/");
-            } else {
-                console.log("response not ok");
-
-                console.log("name", name);
-                console.log("category", category)
-                console.log("country", country)
-                console.log("street", street)
-                console.log("city", city)
-                console.log("zip", zip)
-                console.log("website", website)
-                console.log("phone", phone)
-                console.log("email", email)
-                console.log("opening hours", openingHours)
-                console.log("price", priceLevel)
-                console.log("image", image)
-            }
+        .then(res => res.status === 201 ? res.json() : null )
+        .then(data => {
+            console.log("ok")
+            console.log(data);
+            // dispatch({type: 'ADD_NEW_RESTAURANT', payload: data});
+            history.push("/");
         });
     }
 
