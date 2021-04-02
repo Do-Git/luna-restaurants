@@ -14,7 +14,7 @@ export const BannerDiv = styled.div`
     min-height: 300px;
     width: 100%;
     height: 35vh;
-    background-image: url(${bannerImg});
+    background-image: url(${props => props.image});
     background-repeat: no-repeat;
     background-size: cover;
 `
