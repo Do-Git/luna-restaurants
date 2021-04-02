@@ -2,7 +2,7 @@ import React from "react";
 import styled from "styled-components";
 import UserReviewHeader from "./UserReviewHeader";
 import { Link } from "react-router-dom";
-
+import {useSelector} from 'react-redux'
 import { TileContainer, TileGrid, TileTopLine } from "../style";
 
 export const SplitButtonWrapper = styled.div`
@@ -83,24 +83,27 @@ const CommentDetail = styled.p`
 `;
 
 const Reviews = () => {
+  const searchReview = useSelector(state => state.reviewReducer.searchReviewResults)
+
   const likeReview = () => {
     // like a review (post)
   };
 
   return (
     <>
-      <TileGrid>
-        <TileContainer>
+      {/* <TileGrid>
+       {searchReview.map((review) => (
+        <TileContainer key={review.id}>
           <TileTopLine />
-          <UserReviewHeader></UserReviewHeader>
+          <UserReviewHeader user={review.user}></UserReviewHeader>
           <ReviewContainer>
-            <RestaurantName>Kansas</RestaurantName>
-            <ReviewText>Lore conr, alit. Face hic beata</ReviewText>
+            <RestaurantName to={`/restaurant-page/${review.restaurant.id}`} >{review.restaurant.name} </RestaurantName>
+            <ReviewText></ReviewText>
           </ReviewContainer>
           <ButtonContainer>
             <SplitButtonWrapper>
-              <SplitButton onClick={() => likeReview()}>Likes: 7</SplitButton>
-              <SplitButton>Comments: 3</SplitButton>
+              <SplitButton onClick={() => likeReview()}>Likes: {review.count_likes}</SplitButton>
+              <SplitButton>Comments: {review.count_comments}</SplitButton>
             </SplitButtonWrapper>
           </ButtonContainer>
           <CommentsContainer>
@@ -111,9 +114,11 @@ const Reviews = () => {
             </CommentWrapper>
           </CommentsContainer>
         </TileContainer>
-      </TileGrid>
+      </TileGrid> */}
     </>
   );
 };
 
 export default Reviews;
+
+ 
