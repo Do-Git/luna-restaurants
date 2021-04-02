@@ -1,9 +1,11 @@
 import React from "react";
 import styled from "styled-components";
-import UserReviewHeader from "./UserReviewHeader";
+import UserReviewHeader from "./UserReviewHeaderActual";
 import { Link } from "react-router-dom";
-
+import {useSelector, useDispatch} from 'react-redux'
 import { TileContainer, TileGrid, TileTopLine } from "../style";
+import Axios from '../../../axios'
+import {searchAllReviewsAction} from '../../../store/actions/reviewActions'
 
 export const SplitButtonWrapper = styled.div`
   background-color: rgba(145, 145, 145, 0.6);
@@ -83,37 +85,57 @@ const CommentDetail = styled.p`
 `;
 
 const Reviews = () => {
-  const likeReview = () => {
+  const searchReview = useSelector(state => state.reviewReducer.searchReviewResults)
+  const dispatch = useDispatch()
+  console.log('inside reviewwws', searchReview)
+
+  const likeReview = async (id) => {
     // like a review (post)
+    // reviews/like/1/
+    console.log(searchReview, 'searchReview inside likeReview')
+    // dispatch(iLikeReview(`reviews/like/${id}/`))
+    try {
+      const response = await Axios.post(`reviews/like/${id}/`);
+      console.log(response, 'response from like review')
+      if(response) {
+        dispatch(searchAllReviewsAction('reviews/all/'))
+      }
+  } catch (error) {
+      console.log('Error in searching Reviews>', error);
+      return error
+  }
   };
 
   return (
     <>
+    {searchReview.length > 0 ? (
       <TileGrid>
-        <TileContainer>
+       {searchReview.map((review) => (
+        <TileContainer key={review.id}>
           <TileTopLine />
-          <UserReviewHeader></UserReviewHeader>
+          <UserReviewHeader user={review}></UserReviewHeader>
           <ReviewContainer>
-            <RestaurantName>Kansas</RestaurantName>
-            <ReviewText>Lore conr, alit. Face hic beata</ReviewText>
+            <RestaurantName to={`/restaurant-page/${review.restaurant.id}`} >{review.restaurant.name} </RestaurantName>
+            <ReviewText></ReviewText>
           </ReviewContainer>
           <ButtonContainer>
             <SplitButtonWrapper>
-              <SplitButton onClick={() => likeReview()}>Likes: 7</SplitButton>
-              <SplitButton>Comments: 3</SplitButton>
+              <SplitButton onClick={() => likeReview(review.id)}>Likes: {review.liked_by.length}</SplitButton>
+              <SplitButton>Comments: {review.comments.length}</SplitButton>
             </SplitButtonWrapper>
           </ButtonContainer>
           <CommentsContainer>
-            <CommentsTitle>Comments: Hello im a client</CommentsTitle>
+            <CommentsTitle>Latest Comments</CommentsTitle>
             <CommentWrapper>
-              <CommentAuthor>Martin Garabal</CommentAuthor>
-              <CommentDetail>Hello im a client</CommentDetail>
+              <CommentAuthor></CommentAuthor>
+              <CommentDetail>{review.content}</CommentDetail>
             </CommentWrapper>
           </CommentsContainer>
         </TileContainer>
+  ))}
       </TileGrid>
+    ) : ('No reviews')}
     </>
-  );
-};
-
+);
+}
 export default Reviews;

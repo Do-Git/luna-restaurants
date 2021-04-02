@@ -17,6 +17,7 @@ import {
 } from "../../../../../../styledcomponents/forAll/buttons";
 import {FlexSpaceBetweenDiv} from "../../../../../../styledcomponents/forAll/layout";
 import { useParams } from "react-router-dom";
+import history from '../../../../../../history'
 
 const CreateReview = () => {
 
@@ -37,8 +38,8 @@ const CreateReview = () => {
         const url = `https://luna-sagittarius.propulsion-learn.ch/backend/api/reviews/new/${id}/`;
         const method = 'POST';
         const body = {
-            review: review,
-            rating: '1',
+            content: review,
+            rating: rating,
         };
         const headers = new Headers({
             'Content-Type': 'application/json',
@@ -59,9 +60,9 @@ const CreateReview = () => {
         //         console.log(status);
         //     }
         .then(res => res.status==200?res.json():null)
-        .then(data => {
-                console.log(data)
-                console.log("response not ok");
+        .then(status => {
+                console.log(`${id}`);
+                history.push(`/restaurant-page/${id}`)
         });
     }
 

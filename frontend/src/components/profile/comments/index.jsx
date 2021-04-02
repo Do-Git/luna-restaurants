@@ -1,6 +1,7 @@
 import { ReviewsContainer, ReviewCard } from '../../../styledcomponents/Profile.js';
 import { useSelector } from 'react-redux';
 import { useEffect, useState } from 'react';
+import Moment from 'react-moment';
 
 const Comments = (props) => {
 
@@ -38,7 +39,7 @@ const Comments = (props) => {
                 <ReviewCard>
                     <article>
                         <h3>{`Review ${comment.review.id}`}</h3>
-                        <span>{ comment.created.slice(0, 10) }</span>
+                        <span><Moment format='MMMM Do YYYY, h:mm:ss a'>{comment.created.slice(0, 10)}</Moment></span>
                     </article>
                     <p>{ comment.content }</p>
                 </ReviewCard>
@@ -49,10 +50,9 @@ const Comments = (props) => {
         :
             <ReviewCard>
                 <article>
-                    <h3>Review 1</h3>
-                    <span>01.01.2018 15:22</span>
+                    <h3>You haven't commented yet. Why? &#x1F620;</h3>
                 </article>
-                <p>This is horrible!</p>
+                <p>Log in and start commenting, so everyone will know the truth!</p>
             </ReviewCard>}
         </ReviewsContainer>
     )

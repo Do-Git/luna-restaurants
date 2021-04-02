@@ -5,11 +5,11 @@ import { SideBarContainer,
          EditPen,
          ChosenImage } from '../../../../styledcomponents/Profile.js';
 import React, { useState, useRef } from 'react';
-import { useSelector, useDispatch } from 'react-redux';
+import { useSelector } from 'react-redux';
+
 
 const SideBar = (props) => {
 
-    const dispatch = useDispatch();
     const firstName = useSelector(state => state.mixReducers.first_name);
     const profileImage = useSelector(state => state.mixReducers.profile_image);
     let selectInputImg = useRef('');
@@ -19,7 +19,6 @@ const SideBar = (props) => {
     }
     const imageInput = (e) => {
         props.setImage(e.target.files[0]);
-        // dispatch({type: "PROFILE_IMAGE", payload: image});
     }
 
 
@@ -27,7 +26,7 @@ const SideBar = (props) => {
         <SideBarContainer>
             {props.image ? <ChosenImage src={ (window.URL || window.webkitURL).createObjectURL(props.image) } />
             :
-            <UserImage/>
+            <ChosenImage src={ profileImage } />
             }
             <EditPen id={ props.clickedIndex !== 3 ? "hide-pen" : null } >
                 <button onClick={ fileImgClick }><i class="far fa-edit"></i></button>

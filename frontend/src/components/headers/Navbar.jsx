@@ -1,6 +1,6 @@
 import React, {useEffect, useState} from "react";
 import { Link } from 'react-router-dom';
-
+import { useHistory } from 'react-router';
 import {
   LunaLogoH1,
   NavRightWrapper,
@@ -15,10 +15,14 @@ import { useSelector, useDispatch } from 'react-redux';
 
 const Navbar = (props) => {
 
+    const history = useHistory();
     const dispatch = useDispatch();
-    const userId = useSelector(state => state.mixReducers.id);
+    const userId = useSelector(state => state.id);
     const clickedIndex = useSelector(state => state.mixReducers.clicked_index);
-
+    
+    const logOut = () => {
+        localStorage.removeItem('token')
+    }
 
     useEffect(() => {
         if (!userId){
@@ -49,6 +53,7 @@ const Navbar = (props) => {
                     dispatch({type: "ADD_PHONE", payload: data.phone});
                     dispatch({type: "ADD_USERNAME", payload: data.username});
                     dispatch({type: "ADD_RESTAURATS", payload: data.restaurants});
+                    dispatch({type: "PROFILE_IMAGE", payload: data.profile_picture});
                 })
         }
     }, []);
@@ -60,17 +65,17 @@ const Navbar = (props) => {
                 <LunaLogoH1>LUNA</LunaLogoH1>
             </Link>
             <NavRightWrapper>
-                <NavTextDiv primary={ clickedIndex === 0 ? true : false } >
+                <NavTextDiv primary={ history.location.pathname === '/' ? true : false } >
                     <Link to={'/'} onClick={ () => dispatch({type: "CLICKED", payload: 0}) } >
                         <HeaderSpan>Home</HeaderSpan>
                     </Link>
                 </NavTextDiv>
-                <NavTextDiv primary={ clickedIndex === 1 ? true : false } >
+                <NavTextDiv primary={ history.location.pathname === '/restaurants/' ? true : false } >
                     <Link to={'/restaurants/'} onClick={ () => dispatch({type: "CLICKED", payload: 1}) } >
                         <HeaderSpan>Search</HeaderSpan>
                     </Link>
                 </NavTextDiv>
-                <NavTextDiv primary={ clickedIndex === 2 ? true : false } >
+                <NavTextDiv primary={ history.location.pathname === '/profile/' ? true : false } >
                     <Link to={'/profile/'} onClick={ () => dispatch({type: "CLICKED", payload: 2}) } >
                         <HeaderSpan>Profile</HeaderSpan>
                     </Link>
@@ -79,8 +84,9 @@ const Navbar = (props) => {
                     <Link to={'/sign-up'}>
                         <NavBarSignUpButton>SIGNUP</NavBarSignUpButton>
                     </Link>
-                    <Link to={'/sign-in'}>
-                    <NavBarSignInButton>LOGIN</NavBarSignInButton>
+                   {/* <Link to={'/sign-in'}> */}
+                   <Link to={(localStorage.getItem('token')) ? '/' : "/sign-in"}>
+                    <NavBarSignInButton onClick={logOut}>{(localStorage.getItem('token')) ? 'LOGOUT' : "LOGIN"}</NavBarSignInButton>
                     </Link>
                 </ButtonWrapper>
             </NavRightWrapper>

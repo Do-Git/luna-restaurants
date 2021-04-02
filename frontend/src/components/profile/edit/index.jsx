@@ -7,11 +7,12 @@ import {ReviewsContainer,
         from '../../../styledcomponents/Profile.js';
 import { useSelector, useDispatch } from 'react-redux';
 import { useState } from 'react';
-import userimage from '../../../assets/background/user/IMG_6531.JPG.png';
+import { useHistory } from 'react-router';
 
 
 const EditProfile = (props) => {
 
+    const history = useHistory();
     const dispatch = useDispatch();
 
     const location = useSelector(state => state.mixReducers.location);
@@ -33,43 +34,20 @@ const EditProfile = (props) => {
     const [descriptionInput, setDescription] = useState('');
 
     const editAccount = (e) => {
-        // console.log(props.image);
-        // e.preventDefault();
-        // const token = localStorage.getItem('token');
-        // const url = "https://luna-sagittarius.propulsion-learn.ch/backend/api/me/";
-        // const method = 'PATCH';
-
-        // const headers = new Headers({
-        //     'Authorization': `Bearer ${token}`,
-        //     // 'Content-Type': 'application/json'
-        // });
-        // const body = {
-        //     email: emailInput,
-        //     first_name: firstNameInput ? firstNameInput : firstName,
-        //     last_name: lastNameInput ? lastNameInput : lastName,
-        //     username: usernameInput,
-        //     location: locationInput ? locationInput : location,
-        //     phone: phoneInput ? phoneInput : phone,
-        //     things_I_love: loveInput ? loveInput : thingsILove,
-        //     description: descriptionInput ? descriptionInput : description,
-        //     profile_picture: props.image ? formData : null
-        // };
-        // const config = {
-        //     method: method,
-        //     headers: headers,
-        //     body: JSON.stringify(body)
-        // };
-        console.log(props.image)
         e.preventDefault();
+        console.log(history.location.pathname);
         const formData = new FormData();
-        formData.append("profile_picture", props.image);
-        formData.append("first_name", firstNameInput);
-        formData.append('last_name', lastNameInput);
+        if (props.image){
+            formData.append("profile_picture", props.image);
+        }
+        formData.append("email", emailInput);
+        formData.append("first_name", firstNameInput ? firstNameInput : firstName);
+        formData.append('last_name', lastNameInput ? lastNameInput : lastName);
         formData.append('username', usernameInput);
-        formData.append('location', locationInput);
-        formData.append('phone', phoneInput);
-        formData.append('things_I_love', loveInput);
-        formData.append('description', descriptionInput);
+        formData.append('location', locationInput ? locationInput : location);
+        formData.append('phone', phoneInput ? phoneInput : phone);
+        formData.append('things_I_love', loveInput ? loveInput : thingsILove);
+        formData.append('description', descriptionInput ? descriptionInput : description);
         const token = localStorage.getItem('token');
         const url = "https://luna-sagittarius.propulsion-learn.ch/backend/api/me/";
         const method = 'PATCH';
@@ -106,6 +84,25 @@ const EditProfile = (props) => {
         });
     }
 
+    const deletAccount = () => {
+        const token = localStorage.getItem('token');
+        const url = `https://luna-sagittarius.propulsion-learn.ch/backend/api/me/`;
+        const method = 'DELETE';
+        const headers = new Headers({
+            'Authorization': `Bearer ${token}`
+        });
+        const config = {
+            method: method,
+            headers: headers
+        }
+        fetch(url, config).then(res => res.json())
+            .then(data => {
+                console.log(data);
+                history.push({pathname: '/sign-up', state: {response: "pushed"}});
+        })
+       setTimeout(() => { history.push({pathname: '/sign-up', state: {response: "pushed"}})}, 3000);
+    }
+
 
     return (
         <ReviewsContainer className={props.hide ? "hide" : null} >
@@ -138,7 +135,7 @@ const EditProfile = (props) => {
                     
                     <SubmitContainer>
                         <SubmitButton id="submit-input" type="submit" />
-                        <DeleteButton id="delete-input" type="button">Delete account</DeleteButton>
+                        <DeleteButton onClick={ deletAccount } id="delete-input" type="button">Delete account</DeleteButton>
                     </SubmitContainer>
                 </EditForm>
             </InputContainer>
