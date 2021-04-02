@@ -17,7 +17,7 @@ const Navbar = (props) => {
 
     const dispatch = useDispatch();
     const userId = useSelector(state => state.id);
-    const clickedIndex = useSelector(state => state.clicked_index);
+    const clickedIndex = useSelector(state => state.mixReducers.clicked_index);
     
     const logOut = () => {
         localStorage.removeItem('token')
@@ -52,6 +52,7 @@ const Navbar = (props) => {
                     dispatch({type: "ADD_PHONE", payload: data.phone});
                     dispatch({type: "ADD_USERNAME", payload: data.username});
                     dispatch({type: "ADD_RESTAURATS", payload: data.restaurants});
+                    dispatch({type: "PROFILE_IMAGE", payload: data.profile_picture});
                 })
         }
     }, []);
