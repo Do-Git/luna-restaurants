@@ -11,6 +11,7 @@ import {StarsReviewRestaurantPageContainer} from "../../../../home/RestaurantLis
 import React, {useState} from "react";
 import {useSelector} from 'react-redux';
 import {useParams} from "react-router-dom";
+import defaultImg from "../../../../../assets/background/restaurant/DSC_0213.png"
 
 
 const RestaurantPageBannerReview = () => {
@@ -23,7 +24,7 @@ const RestaurantPageBannerReview = () => {
 
     return(
         <>
-        <BannerDivSmall>
+        <BannerDivSmall image={restaurantInfo.image ? restaurantInfo.image : defaultImg}>
             <BannerGrayLayerSmall>
                 <WhiteH1 className="title">{restaurantInfo.name ? restaurantInfo.name : 'Restaurant Name'}</WhiteH1>
                 <WhiteSpan className="title">{restaurantInfo.categories ? restaurantInfo.categories : 'Category'}</WhiteSpan>
