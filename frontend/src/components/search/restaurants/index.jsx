@@ -84,6 +84,7 @@ const Restaurant = () => {
   const handleReviews = () => {
       console.log('on reviews filter')
       dispatch(searchAllReviewsAction('reviews/all/')) 
+      return <Reviews></Reviews>
   }
 
   return (

@@ -1,6 +1,6 @@
 import React from "react";
 import styled from "styled-components";
-import UserReviewHeader from "./UserReviewHeader";
+import UserReviewHeader from "./UserReviewHeaderActual";
 import { Link } from "react-router-dom";
 import {useSelector} from 'react-redux'
 import { TileContainer, TileGrid, TileTopLine } from "../style";
@@ -84,6 +84,7 @@ const CommentDetail = styled.p`
 
 const Reviews = () => {
   const searchReview = useSelector(state => state.reviewReducer.searchReviewResults)
+  console.log('inside reviewwws', searchReview)
 
   const likeReview = () => {
     // like a review (post)
@@ -91,34 +92,34 @@ const Reviews = () => {
 
   return (
     <>
-      {/* <TileGrid>
+    {searchReview.length > 0 ? (
+      <TileGrid>
        {searchReview.map((review) => (
         <TileContainer key={review.id}>
           <TileTopLine />
-          <UserReviewHeader user={review.user}></UserReviewHeader>
+          <UserReviewHeader user={review}></UserReviewHeader>
           <ReviewContainer>
             <RestaurantName to={`/restaurant-page/${review.restaurant.id}`} >{review.restaurant.name} </RestaurantName>
             <ReviewText></ReviewText>
           </ReviewContainer>
           <ButtonContainer>
             <SplitButtonWrapper>
-              <SplitButton onClick={() => likeReview()}>Likes: {review.count_likes}</SplitButton>
-              <SplitButton>Comments: {review.count_comments}</SplitButton>
+              <SplitButton onClick={likeReview}>Likes: {review.liked_by.length}</SplitButton>
+              <SplitButton>Comments: {searchReview.length}</SplitButton>
             </SplitButtonWrapper>
           </ButtonContainer>
           <CommentsContainer>
-            <CommentsTitle>Comments: Hello im a client</CommentsTitle>
+            <CommentsTitle>Latest Comments</CommentsTitle>
             <CommentWrapper>
-              <CommentAuthor>Martin Garabal</CommentAuthor>
-              <CommentDetail>Hello im a client</CommentDetail>
+              <CommentAuthor></CommentAuthor>
+              <CommentDetail>{review.content}</CommentDetail>
             </CommentWrapper>
           </CommentsContainer>
         </TileContainer>
-      </TileGrid> */}
+  ))}
+      </TileGrid>
+    ) : ('No reviews')}
     </>
-  );
-};
-
+);
+}
 export default Reviews;
-
- 
