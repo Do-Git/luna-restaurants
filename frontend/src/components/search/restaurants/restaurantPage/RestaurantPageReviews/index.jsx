@@ -44,6 +44,7 @@ const RestaurantPageReviews = (props) => {
                             created={review.created}
                             rating={review.rating}
                             content={review.content}
+                            profile_picture={review.author.profile_picture}
                         />
                     )
                 }
