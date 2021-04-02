@@ -257,7 +257,7 @@ export const FilterWrapper = styled.div`
     display: flex;
     justify-content: space-around;
     align-items: center;
-    width: 100%;
+    width: 90%;
 `
 export const TextWrapper = styled.div`
     display: flex;
