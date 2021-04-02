@@ -32,6 +32,7 @@ const EditProfile = (props) => {
     const [phoneInput, setPhone] = useState('');
     const [loveInput, setLove] = useState('');
     const [descriptionInput, setDescription] = useState('');
+    const [indexA, setIndexA] = useState(true);
 
     const editAccount = (e) => {
         e.preventDefault();
@@ -81,6 +82,8 @@ const EditProfile = (props) => {
         setPhone('');
         setLove('');
         setDescription('');
+        setIndexA(false);
+        setTimeout(() => {setIndexA(true)}, 2000)
         });
     }
 
@@ -106,7 +109,7 @@ const EditProfile = (props) => {
 
     return (
         <ReviewsContainer className={props.hide ? "hide" : null} >
-            <h2>EDIT USER PROFILE</h2>
+            <h2 id="edit-header" >EDIT USER PROFILE</h2>
             <InputContainer>
                 <EditForm onSubmit={ editAccount }>
                     <label htmlFor="username-input" id="username-label" >Username</label>
@@ -137,6 +140,7 @@ const EditProfile = (props) => {
                         <SubmitButton id="submit-input" type="submit" />
                         <DeleteButton onClick={ deletAccount } id="delete-input" type="button">Delete account</DeleteButton>
                     </SubmitContainer>
+                    <p class={ indexA ? "hide" : null } id="success">Data was uploaded successfully! yay!!</p>
                 </EditForm>
             </InputContainer>
         </ReviewsContainer>

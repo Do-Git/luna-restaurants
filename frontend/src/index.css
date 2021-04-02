@@ -63,3 +63,18 @@ button {
 #restaurant-address{
   border-bottom: none;
 }
+
+#restaurant-link {
+  width: 100%;
+  color: #4a4a4a;
+}
+#restaurant-link:hover{
+  cursor: pointer;
+}
+
+#success{
+  color: green;
+  margin-top: -10vh;
+  position: relative;
+  font-size: 2rem;
+}
