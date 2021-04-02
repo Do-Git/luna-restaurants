@@ -114,7 +114,7 @@ export const SocialMediaIcon = styled.div`
 `;
 
 export const GrayLikeButton = styled(NavBarSignUpButton)`
-  background-color: #919191;
+  background-color: ${props => props.liked_by_me ? "#e47d31" : "#919191"};
   height: 33px;
 `;
 

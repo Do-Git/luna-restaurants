@@ -1,24 +1,26 @@
 import RightSideInfo from "./RightSideInfo";
 import ReviewCard from "./ReviewCard";
-import {FlexCenterDiv} from "../../../../../styledcomponents/forAll/layout";
+import {FlexAlignCenterDiv, FlexCenterDiv} from "../../../../../styledcomponents/forAll/layout";
 import {
     AllReviewCardsDiv,
     FilterWrapper
 } from "../../../../../styledcomponents/search/restaurants/restaurantPage/layout";
 import {OrangeMiniButton} from "../../../../../styledcomponents/forAll/buttons";
 import React, {useState} from "react";
-import { useDispatch } from 'react-redux';
+import { useDispatch, useSelector } from 'react-redux';
 import { useHistory } from 'react-router-dom'
 import {FilterInput} from "../../../../../styledcomponents/forAll/inputs";
 
-const RestaurantPageReviews = () => {
+const RestaurantPageReviews = (props) => {
+  
+    const reviews = useSelector(state => state.mixReducers.current_restaurant.reviews);
+    const opening_hours = useSelector( state => state.mixReducers.current_restaurant.opening_hours );
+    const price_level = useSelector(state => state.mixReducers.current_restaurant.price_level);
 
-    // http://localhost:8000/backend/api/restaurants/2/  ->get restaurant by id
-    // http://localhost:8000/backend/api/reviews/restaurant/2/ -> get reviews of a specific restaurant
-    
-    const [restaurantInfo, setRestaurantInfo] = useState({})
-    const [reviews, setReviews] = useState([])
-    const [reviewsCount, setReviewsCount] = useState(0)
+    // console.log('Reviews', reviews);
+    // console.log('typeof reviews', typeof reviews);
+    // console.log('price level', price_level)
+    // console.log('opening_hours', opening_hours)
 
     return (
         <FlexCenterDiv>
@@ -33,23 +35,31 @@ const RestaurantPageReviews = () => {
                     />
                     <OrangeMiniButton>Filter</OrangeMiniButton>
                 </FilterWrapper>
-                { reviews === [] ? <span>No reviews available</span> :
+                { reviews === [] || !reviews ? <span>No reviews available</span> :
                     reviews.map( (review, index) => 
                         <ReviewCard 
                             key={'review'+index}
-                            first_name={review.author.FilterInputfirst_name}
-                            create={review.created}
-                            likesAmount={review.liked_by.length}
+                            review_id={review.id}
+                            first_name={review.author.first_name ? review.author.first_name : review.author.username}
+                            created={review.created}
+                            rating={review.rating}
                             content={review.content}
                         />
                     )
                 }
-                <ReviewCard />   
-                {/* dont for get to delte this line ^*/}
             </AllReviewCardsDiv>
-            <RightSideInfo />
+            <RightSideInfo
+                opening_hours={opening_hours}
+                price_level={price_level}
+            />
         </FlexCenterDiv>
     )
 }
 
 export default RestaurantPageReviews
+
+// author: {id: 43, username: "14440", first_name: "", last_name: ""}
+// content: "okok not bad"
+// created: "2021-04-01T20:33:38.309515Z"
+// id: 5
+// rating: 3

@@ -4,10 +4,10 @@ import {
     ReviewCardTop, ReviewCardTopLeft, ReviewContent
 } from "../../../../../../styledcomponents/search/restaurants/restaurantPage/layout";
 import userProfilePicture from '../../../../../../assets/users/IMG_6531.JPG.png'
-import StarRatingComponent from "react-rating-stars-component";
+import ReactStars from "react-rating-stars-component";
 import {OrangeSpan} from "../../../../../../styledcomponents/forAll/text";
 import {StarsReviewRestaurantPageContainer} from "../../../../../home/RestaurantList/RestaurantCard/style";
-import React, {useState} from "react";
+import React, {useState, useEffect} from "react";
 import {
     GrayCommentButton,
     GrayLikeButton,
@@ -15,15 +15,59 @@ import {
 } from "../../../../../../styledcomponents/forAll/buttons";
 import {FlexSpaceAroundDiv, FlexSpaceBetweenDiv} from "../../../../../../styledcomponents/forAll/layout";
 import {CommentInput} from "../../../../../../styledcomponents/forAll/inputs";
+import Moment from 'react-moment';
 
-const ReviewCard = () => {
+const ReviewCard = (props) => {
 
-    const [rating, setRating] = useState(0);
     const [showComments, setShowComments] = useState(false);
+    const [likesAmount, setLikesAmount] = useState(0);
+    const [likedByMe, setLikedByMe] = useState(false); 
+    const token = localStorage.getItem('token');
 
     const clickHandler = () => {
         setShowComments(!showComments)
-        console.log(showComments)
+        // console.log(showComments)
+    }
+
+    useEffect( () => {  // fetch specific reviews to get likes amount
+        const url = `https://luna-sagittarius.propulsion-learn.ch/backend/api/reviews/${props.review_id}/`;     
+        const method = 'GET';
+        const headers = new Headers({
+            'Content-Type': 'application/json',
+            'Authorization': `Bearer ${token}`
+        });
+        const config = {
+            method: method,
+            headers: headers,
+        };
+        fetch(url, config)
+        .then( res => res.status === 200 ? res.json() : null )
+        .then(data => {
+            // console.log("Fetching ok, in useEffect, data (review) ->",data);
+            console.log('liked_by.length', data.liked_by.length)
+            setLikesAmount(data.liked_by.length)
+        });
+    }, [likedByMe])
+
+    const likeHandler = () => {
+        const url = `https://luna-sagittarius.propulsion-learn.ch/backend/api/reviews/like/${props.review_id}/`;     
+        const method = 'POST';
+        const headers = new Headers({
+            'Content-Type': 'application/json',
+            'Authorization': `Bearer ${token}`
+        });
+        const config = {
+            method: method,
+            headers: headers,
+        };
+        fetch(url, config)
+        .then( res => res.status === 200 ? res.json() : null )
+        .then(data => {
+            // console.log("Fetching ok, in useEffect, data (review) ->",data);
+            console.log("Toggle like ok", data)
+            setLikedByMe(!likedByMe)
+            console.log('liked by me',likedByMe)
+        });
     }
 
     return(
@@ -32,33 +76,39 @@ const ReviewCard = () => {
                 <ReviewCardTopLeft>
                     <img src={userProfilePicture} alt="profile picture"/>
                     <div>
-                        <h3>Laurent H.</h3>
-                        <span>{'6'} reviews in total</span>
+                        <h3>{props.first_name}</h3>
+                        <span>{'2'} comments in total</span>
                     </div>
                     <StarsReviewRestaurantPageContainer id='stars-container'>
-                        <StarRatingComponent
+                        <ReactStars
                             activeColor="#F8E71C"
                             isHalf={true}
                             color={"rgba(235, 235, 235, 0.5)"}
-                            size={27}
-                            value={rating}
+                            size={17}
+                            value={props.rating}
+                            edit={false}
                         />
                     </StarsReviewRestaurantPageContainer>
                 </ReviewCardTopLeft>
                 <DateTimeContainer>
-                    <span>{'01.01.2018 15:22'}</span>
+                    <span>
+                        {/* {props.created} */}
+                        <Moment format='YYYY/MM/DD HH:MM'>{props.created}</Moment>
+                    </span>
                 </DateTimeContainer>
             </ReviewCardTop>
             <ReviewContent>
-                <span>{'This location at the Bahnhofstrasse is quite friendly and easily located across the street from the train station. The people there seem to be quite good and helpful in their service.'}</span>
+                <span>{props.content}</span>
             </ReviewContent>
             {
                 !showComments ?
                 <FlexSpaceBetweenDiv>
                     <div>
-                        <GrayLikeButton>
+                        <GrayLikeButton 
+                            onClick={likeHandler}
+                            liked_by_me={likedByMe}>
                             <i className="far fa-thumbs-up"></i>
-                            Like {'63'}
+                            Like {likesAmount}
                         </GrayLikeButton>
                         <GrayCommentButton onClick={clickHandler}>
                             Comment {'23'}
