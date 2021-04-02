@@ -2,8 +2,10 @@ import React from "react";
 import styled from "styled-components";
 import UserReviewHeader from "./UserReviewHeaderActual";
 import { Link } from "react-router-dom";
-import {useSelector} from 'react-redux'
+import {useSelector, useDispatch} from 'react-redux'
 import { TileContainer, TileGrid, TileTopLine } from "../style";
+import Axios from '../../../axios'
+import {searchAllReviewsAction} from '../../../store/actions/reviewActions'
 
 export const SplitButtonWrapper = styled.div`
   background-color: rgba(145, 145, 145, 0.6);
@@ -84,10 +86,24 @@ const CommentDetail = styled.p`
 
 const Reviews = () => {
   const searchReview = useSelector(state => state.reviewReducer.searchReviewResults)
+  const dispatch = useDispatch()
   console.log('inside reviewwws', searchReview)
 
-  const likeReview = () => {
+  const likeReview = async (id) => {
     // like a review (post)
+    // reviews/like/1/
+    console.log(searchReview, 'searchReview inside likeReview')
+    // dispatch(iLikeReview(`reviews/like/${id}/`))
+    try {
+      const response = await Axios.post(`reviews/like/${id}/`);
+      console.log(response, 'response from like review')
+      if(response) {
+        dispatch(searchAllReviewsAction('reviews/all/'))
+      }
+  } catch (error) {
+      console.log('Error in searching Reviews>', error);
+      return error
+  }
   };
 
   return (
@@ -104,7 +120,7 @@ const Reviews = () => {
           </ReviewContainer>
           <ButtonContainer>
             <SplitButtonWrapper>
-              <SplitButton onClick={likeReview}>Likes: {review.liked_by.length}</SplitButton>
+              <SplitButton onClick={() => likeReview(review.id)}>Likes: {review.liked_by.length}</SplitButton>
               <SplitButton>Comments: {searchReview.length}</SplitButton>
             </SplitButtonWrapper>
           </ButtonContainer>
