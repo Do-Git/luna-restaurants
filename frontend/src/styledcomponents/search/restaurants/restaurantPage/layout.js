@@ -21,7 +21,7 @@ export const BannerDiv = styled.div`
 
 export const BannerDivSmall = styled.div`
     position: relative;
-    top: 8vh;
+    top: 55px;
     min-width: 880px;
     width: 100%;
     height: 20vh;
