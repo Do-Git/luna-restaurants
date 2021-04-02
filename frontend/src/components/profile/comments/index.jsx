@@ -49,10 +49,9 @@ const Comments = (props) => {
         :
             <ReviewCard>
                 <article>
-                    <h3>Review 1</h3>
-                    <span>01.01.2018 15:22</span>
+                    <h3>You haven't commented yet. Why? &#x1F620;</h3>
                 </article>
-                <p>This is horrible!</p>
+                <p>Log in and start commenting, so everyone will no the truth!</p>
             </ReviewCard>}
         </ReviewsContainer>
     )

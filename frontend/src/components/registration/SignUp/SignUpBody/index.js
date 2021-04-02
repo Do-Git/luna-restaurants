@@ -35,7 +35,6 @@ const SignUnBody = (props) => {
         .then(res => res.status)
         .then(status => {
             if (status === 201){
-                console.log("ok")
                 props.dispatch({type: 'ADD_EMAIL', payload: email});
                 props.history.push("/sign-up/congratulation/");
             } else {
