@@ -121,7 +121,7 @@ const Reviews = () => {
           <ButtonContainer>
             <SplitButtonWrapper>
               <SplitButton onClick={() => likeReview(review.id)}>Likes: {review.liked_by.length}</SplitButton>
-              <SplitButton>Comments: {searchReview.length}</SplitButton>
+              <SplitButton>Comments: {review.comments.length}</SplitButton>
             </SplitButtonWrapper>
           </ButtonContainer>
           <CommentsContainer>
