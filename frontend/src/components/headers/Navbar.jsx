@@ -60,7 +60,9 @@ const Navbar = (props) => {
 
     return (
         <NavWrapper>
-            <LunaLogoH1>LUNA</LunaLogoH1>
+            <Link to={'/'}>
+                <LunaLogoH1>LUNA</LunaLogoH1>
+            </Link>
             <NavRightWrapper>
                 <NavTextDiv primary={ clickedIndex === 0 ? true : false } >
                     <Link to={'/'} onClick={ () => dispatch({type: "CLICKED", payload: 0}) } >

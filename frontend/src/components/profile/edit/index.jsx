@@ -32,35 +32,56 @@ const EditProfile = (props) => {
     const [loveInput, setLove] = useState('');
     const [descriptionInput, setDescription] = useState('');
 
-    const formData = new FormData();
-    formData.append("image", props.image);
-
     const editAccount = (e) => {
-        console.log(props.image);
+        // console.log(props.image);
+        // e.preventDefault();
+        // const token = localStorage.getItem('token');
+        // const url = "https://luna-sagittarius.propulsion-learn.ch/backend/api/me/";
+        // const method = 'PATCH';
+
+        // const headers = new Headers({
+        //     'Authorization': `Bearer ${token}`,
+        //     // 'Content-Type': 'application/json'
+        // });
+        // const body = {
+        //     email: emailInput,
+        //     first_name: firstNameInput ? firstNameInput : firstName,
+        //     last_name: lastNameInput ? lastNameInput : lastName,
+        //     username: usernameInput,
+        //     location: locationInput ? locationInput : location,
+        //     phone: phoneInput ? phoneInput : phone,
+        //     things_I_love: loveInput ? loveInput : thingsILove,
+        //     description: descriptionInput ? descriptionInput : description,
+        //     profile_picture: props.image ? formData : null
+        // };
+        // const config = {
+        //     method: method,
+        //     headers: headers,
+        //     body: JSON.stringify(body)
+        // };
+        console.log(props.image)
         e.preventDefault();
+        const formData = new FormData();
+        formData.append("profile_picture", props.image);
+        formData.append("first_name", firstNameInput);
+        formData.append('last_name', lastNameInput);
+        formData.append('username', usernameInput);
+        formData.append('location', locationInput);
+        formData.append('phone', phoneInput);
+        formData.append('things_I_love', loveInput);
+        formData.append('description', descriptionInput);
         const token = localStorage.getItem('token');
         const url = "https://luna-sagittarius.propulsion-learn.ch/backend/api/me/";
         const method = 'PATCH';
 
         const headers = new Headers({
             'Authorization': `Bearer ${token}`,
-            'Content-Type': 'application/json'
+            'Content-Type': 'multipart/form-data; boundary=--'
         });
-        const body = {
-            email: emailInput,
-            first_name: firstNameInput ? firstNameInput : firstName,
-            last_name: lastNameInput ? lastNameInput : lastName,
-            username: usernameInput,
-            location: locationInput ? locationInput : location,
-            phone: phoneInput ? phoneInput : phone,
-            things_I_love: loveInput ? loveInput : thingsILove,
-            description: descriptionInput ? descriptionInput : description,
-            profile_picture: props.image ? formData : null
-        };
         const config = {
             method: method,
             headers: headers,
-            body: JSON.stringify(body)
+            body: formData
         };
         fetch(url, config)
         .then(res => res.json())
