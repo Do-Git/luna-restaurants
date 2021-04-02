@@ -3,7 +3,8 @@ import {
     ReviewCardContainer,
     ReviewCardTop, ReviewCardTopLeft, ReviewContent
 } from "../../../../../../styledcomponents/search/restaurants/restaurantPage/layout";
-import userProfilePicture from '../../../../../../assets/users/IMG_6531.JPG.png'
+import userProfilePicture from '../../../../../../assets/users/IMG_6531.JPG.png';
+import defaultProfilePic from '../../../../../../assets/users/default-user-icon.png';
 import ReactStars from "react-rating-stars-component";
 import {OrangeSpan} from "../../../../../../styledcomponents/forAll/text";
 import {StarsReviewRestaurantPageContainer} from "../../../../../home/RestaurantList/RestaurantCard/style";
@@ -74,7 +75,7 @@ const ReviewCard = (props) => {
         <ReviewCardContainer>
             <ReviewCardTop>
                 <ReviewCardTopLeft>
-                    <img src={userProfilePicture} alt="profile picture"/>
+                    <img src={props.profile_picture ? props.profile_picture : defaultProfilePic} alt="profile picture"/>
                     <div>
                         <h3>{props.first_name}</h3>
                         <span>{'2'} comments in total</span>
@@ -92,8 +93,7 @@ const ReviewCard = (props) => {
                 </ReviewCardTopLeft>
                 <DateTimeContainer>
                     <span>
-                        {/* {props.created} */}
-                        <Moment format='YYYY/MM/DD HH:MM'>{props.created}</Moment>
+                        <Moment format='DD.MM.YYYY HH:MM'>{props.created}</Moment>
                     </span>
                 </DateTimeContainer>
             </ReviewCardTop>
@@ -111,7 +111,7 @@ const ReviewCard = (props) => {
                             Like {likesAmount}
                         </GrayLikeButton>
                         <GrayCommentButton onClick={clickHandler}>
-                            Comment {'23'}
+                            Comment {'2'}
                         </GrayCommentButton>
                     </div>
                     <OrangeSpan onClick={clickHandler}>View all comments</OrangeSpan>
@@ -125,8 +125,8 @@ const ReviewCard = (props) => {
                     </FlexSpaceAroundDiv>
                     <FlexSpaceBetweenDiv>
                         <div>
-                            <h3>Colin Wirtz</h3>
-                            <span>actually you have no taste!</span>
+                            <h3>Dottie</h3>
+                            <span>The best in town!</span>
                         </div>
                         <div>
                             <span>01.01.2018 15:22</span>
@@ -134,8 +134,8 @@ const ReviewCard = (props) => {
                     </FlexSpaceBetweenDiv>
                     <FlexSpaceBetweenDiv>
                         <div>
-                            <h3>Colin Wirtz</h3>
-                            <span>actually you have no taste!</span>
+                            <h3>Tuni The Cat</h3>
+                            <span>They don't have fish for me. Super disappointed!</span>
                         </div>
                         <div>
                             <span>01.01.2018 15:22</span>
