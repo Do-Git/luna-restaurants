@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useState, useRef } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 import { useHistory } from 'react-router-dom'
 
@@ -48,38 +48,53 @@ const CreateRestaurantForm = () => {
 
     const createRestaurant = e => {
         e.preventDefault();
+        let formData = new FormData()
+        formData.append('name', name)
+        formData.append('category', category)
+        formData.append('country', country)
+        formData.append('street', street)
+        formData.append('city', city)
+        formData.append('zip_code', zip)
+        formData.append('website', website)
+        formData.append('phone', phone)
+        formData.append('email', email)
+        formData.append('opening_hours', openingHours)
+        formData.append('price_level', priceLevel)
+        if(image){
+            formData.append('image', image)
+        }
         const url = "https://luna-sagittarius.propulsion-learn.ch/backend/api/restaurants/new/";
         const method = 'POST';
-        const body = {
-            name: name,
-            categories: category,
-            country: country,
-            street: street,
-            city: city,
-            zip_code: zip,
-            website: website,
-            phone: phone,
-            email: email,
-            opening_hours: openingHours,
-            price_level: priceLevel,
-            image: image
-        };
+        // const body = {
+        //     name: name,
+        //     categories: category,
+        //     country: country,
+        //     street: street,
+        //     city: city,
+        //     zip_code: zip,
+        //     website: website,
+        //     phone: phone,
+        //     email: email,
+        //     opening_hours: openingHours,
+        //     price_level: priceLevel,
+        //     image: image
+        // };
         const headers = new Headers({
-            'Content-Type': 'application/json',
+            'Content-Type': 'multipart/form-data; boundary=--',
             'Authorization': `Bearer ${token}`
         });
         const config = {
             method: method,
             headers: headers,
-            body: JSON.stringify(body)
+            body: formData
         };
         fetch(url, config)
         .then(res => res.status === 201 ? res.json() : null )
         .then(data => {
             console.log("ok")
             console.log(data);
-            // dispatch({type: 'ADD_NEW_RESTAURANT', payload: data});
-            history.push("/");
+            // dispatch({type: 'ADD_NEW_RESTAURANT', payload: data.id});
+            history.push(`/restaurant-page/${data.id}`);
         });
     }
 
@@ -153,7 +168,9 @@ const CreateRestaurantForm = () => {
                 </PriceForm>
                 <ImageForm>
                     <InputLabel for='image'>Image</InputLabel>
-                    <InputBox id='image' value={image} onChange={event => setImage(event.target.value)}/>
+                    <InputBox id='image' type='file' 
+                    onChange={event => setImage(event.target.files[0])}
+                    accept="image/png, image/jpeg"/>
                 </ImageForm>
                 <CreateButtonDiv>
                     <ButtonSearchbar type='submit'>Create</ButtonSearchbar>
