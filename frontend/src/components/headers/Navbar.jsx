@@ -52,6 +52,7 @@ const Navbar = (props) => {
                     dispatch({type: "ADD_PHONE", payload: data.phone});
                     dispatch({type: "ADD_USERNAME", payload: data.username});
                     dispatch({type: "ADD_RESTAURATS", payload: data.restaurants});
+                    dispatch({type: "PROFILE_IMAGE", payload: data.profile_picture});
                 })
         }
     }, []);
