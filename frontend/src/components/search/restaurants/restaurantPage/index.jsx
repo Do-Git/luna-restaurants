@@ -15,7 +15,7 @@ const RestaurantPage = () => {
     const token = localStorage.getItem('token');
     const [restaurantInfo, setRestaurantInfo] = useState({});
     const dispatch = useDispatch();
-    const restaurantReduxState = useSelector( state => state.current_restaurant );
+    const restaurantReduxState = useSelector( state => state.mixReducers.current_restaurant );
 
     useEffect(() => {
         const url = `https://luna-sagittarius.propulsion-learn.ch/backend/api/restaurants/${id}/`;     
@@ -35,34 +35,14 @@ const RestaurantPage = () => {
             // setRestaurantInfo(data);
             dispatch({type: 'ADD_CURRENT_RESTAURANT', payload: data});
         });
-        // console.log('restaurantInfo state', restaurantInfo);
     }, [])
-
-    // useEffect(() => {
-    //     console.log('from useEffect Restaurant info', restaurantInfo)
-    //     console.log('review', restaurantInfo.reviews)
-    //     console.log('avg rating', restaurantInfo.avg_rating)
-    //     console.log('name', restaurantInfo.name)
-    //     console.log(restaurantReduxState)
-    // }, [restaurantInfo])
 
     return (
         <RestaurantPageContainer>
             <Navbar />
             <BodyWrapper>
-                <RestaurantPageBanner 
-                    // name={restaurantInfo !== {} ? restaurantInfo.name : 'Loading'}
-                    // category={restaurantInfo !== {} ? restaurantInfo.categories : 'Loading'}
-                    // avg_rating={restaurantInfo !== {} ? restaurantInfo.avg_rating : 0} 
-                    // reviews_count={restaurantInfo !== {} && typeof restaurantInfo.reviews === 'array' ? restaurantInfo.reviews.length : 'Loading'}
-                    // street={restaurantInfo !== {} ? restaurantInfo.street : 'Loading'}
-                    // phone={restaurantInfo !== {} ? restaurantInfo.phone : 'Loading'}
-                    // website={restaurantInfo !== {} ? restaurantInfo.website : 'Loading'}
-                />
-                <RestaurantPageReviews
-                    // opening_hours={restaurantInfo !== {} ? restaurantInfo.opening_hours : 'Loading'}
-                    // price_level={restaurantInfo !== {} ? restaurantInfo.price_level : 'Loading'}
-                />
+                <RestaurantPageBanner/>
+                <RestaurantPageReviews/>
             </BodyWrapper>
             <Footer />
         </RestaurantPageContainer>

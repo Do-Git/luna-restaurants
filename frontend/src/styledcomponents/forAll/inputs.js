@@ -26,6 +26,7 @@ export const FilterInput = styled.input`
     top: 0px;
     border-radius: 3px;
     border: solid 1px #EBEBEB;
+    padding-left: 1rem;
 `
 
 export const TextInput = styled.textarea`
@@ -50,4 +51,10 @@ export const CommentInput = styled(FilterInput)`
     // margin-left: 1rem;
     width: 60%;
     height: 30px;
+`
+
+export const HoursPriceInput = styled(CommentInput)`
+    height: 2rem;
+    margin-left: 1rem;
+    padding-left: 0.5rem;
 `
