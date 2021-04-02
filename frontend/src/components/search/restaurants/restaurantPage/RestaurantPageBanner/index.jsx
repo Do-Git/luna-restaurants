@@ -4,6 +4,7 @@ import {
     BannerDiv,
     MapDiv, MapImage
 } from "../../../../../styledcomponents/search/restaurants/restaurantPage/layout";
+import defaultImg from "../../../../../assets/background/restaurant/DSC_0213.png";
 import {MapText, WhiteH1, WhiteReviewCountSpan, WhiteSpan} from "../../../../../styledcomponents/forAll/text";
 import ReactStars from "react-rating-stars-component";
 import {StarsReviewRestaurantPageContainer} from "../../../../home/RestaurantList/RestaurantCard/style";
@@ -20,7 +21,7 @@ const RestaurantPageBanner = (props) => {
 
     return(
         <>
-            <BannerDiv>
+            <BannerDiv image={restaurantInfo.image ? restaurantInfo.image : defaultImg}>
                 <BannerGrayLayer>
                     <WhiteH1 className="title">{restaurantInfo.name ? restaurantInfo.name : 'Restaurant Name'}</WhiteH1>
                     <WhiteSpan className="title">{restaurantInfo.categories ? restaurantInfo.categories : 'Category'}</WhiteSpan>
