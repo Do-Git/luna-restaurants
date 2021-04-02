@@ -10,3 +10,4 @@ export const searchAllReviewsAction = (search_string) => async (dispatch) => {
         return error
     }
 };
+
