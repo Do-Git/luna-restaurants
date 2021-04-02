@@ -83,5 +83,9 @@ class GetBestFourRestaurants(ListAPIView):
     serializer_class = RestaurantSerializer
     permission_classes = []
 
+    # def get_queryset(self):
+    #     return Restaurant.objects.annotate(average=Avg('reviews__rating')).order_by('-average')[:4]
+
     def get_queryset(self):
-        return Restaurant.objects.annotate(average=Avg('reviews__rating')).order_by('-average')[:4]
+        qs = Restaurant.objects.exclude(reviews__isnull=True)
+        return qs.annotate(average=Avg('reviews__rating')).order_by('-average')[:4]
