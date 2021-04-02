@@ -42,10 +42,10 @@ const UserHeaderReviewTotal = styled.p`
 const UserReviewHeader = ({user}) => {
   return (
     <UserHeader to={`/profile/`}>
-      <UserPicture image={ImageUserTest}></UserPicture>
+      <UserPicture image={user.author.profile_picture ? user.author.profile_picture : ImageUserTest}></UserPicture>
       <UserHeaderDetails>
         <UserHeaderName>{user.author.first_name || user.author.username}</UserHeaderName>
-        <UserHeaderReviewTotal>Reviews: {37}</UserHeaderReviewTotal>
+        <UserHeaderReviewTotal>Reviews: {user.author.reviews.length}</UserHeaderReviewTotal>
       </UserHeaderDetails>
     </UserHeader>
   );
