@@ -17,8 +17,7 @@ const Verification = (props) => {
 }
 
 const mapStateToProps = () => {
-    return {
-        
+    return {  
     };
 }
 
