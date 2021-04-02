@@ -18,18 +18,6 @@ class User(AbstractUser):
     description = models.CharField(max_length=500, blank=True)
     profile_picture = models.ImageField(blank=True, null=True, upload_to=user_directory_path)
 
-    # @property
-    # def friends(self):
-    #     """Returns the list of friends"""
-    #     friends_list = []
-    #     received = Friendships.objects.filter(request_for=self, status='A')
-    #     for friend in received:
-    #         friends_list.append(friend.request_from)
-    #     sent = Friendships.objects.filter(request_from=self, status='A')
-    #     for friend in sent:
-    #         friends_list.append(friend.request_for)
-    #     return friends_list
-
     def __str__(self):
         return f'{User.id} {User.email}'
 

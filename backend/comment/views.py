@@ -20,6 +20,14 @@ class CreateNewComment(CreateAPIView):
         return Response(self.get_serializer(comment).data)
 
 
+class GetCommentsByReview(ListAPIView):
+    serializer_class = CommentSerializer
+    lookup_url_kwarg = 'review_id'
+
+    def get_queryset(self):
+        return Comment.objects.filter(review__id=self.kwargs['review_id'])
+
+
 class GetCommentsByUser(ListAPIView):
     serializer_class = CommentSerializer
     lookup_url_kwarg = 'user_id'
