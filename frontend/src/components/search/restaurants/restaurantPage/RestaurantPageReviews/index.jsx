@@ -13,13 +13,14 @@ import {FilterInput} from "../../../../../styledcomponents/forAll/inputs";
 
 const RestaurantPageReviews = (props) => {
   
-    // const [restaurantInfo, setRestaurantInfo] = useState({})
-    // const [reviews, setReviews] = useState([])
-    // const [reviewsCount, setReviewsCount] = useState(0)
     const reviews = useSelector(state => state.mixReducers.current_restaurant.reviews);
-    // const restaurantInfo = useSelector( state => state.mixReducers.current_restaurant );
-    console.log('Reviews', reviews);
-    console.log('typeof reviews', typeof reviews);
+    const opening_hours = useSelector( state => state.mixReducers.current_restaurant.opening_hours );
+    const price_level = useSelector(state => state.mixReducers.current_restaurant.price_level);
+
+    // console.log('Reviews', reviews);
+    // console.log('typeof reviews', typeof reviews);
+    // console.log('price level', price_level)
+    // console.log('opening_hours', opening_hours)
 
     return (
         <FlexCenterDiv>
@@ -47,9 +48,9 @@ const RestaurantPageReviews = (props) => {
                     )
                 }
             </AllReviewCardsDiv>
-            <RightSideInfo 
-                opening_hours={props.opening_hours}
-                price_level={props.price_level}
+            <RightSideInfo
+                opening_hours={opening_hours}
+                price_level={price_level}
             />
         </FlexCenterDiv>
     )

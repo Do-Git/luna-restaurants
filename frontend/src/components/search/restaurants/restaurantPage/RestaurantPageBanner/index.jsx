@@ -14,9 +14,9 @@ import mapImage from "../../../../../assets/map/Screen Shot 2018-04-26 at 00.15.
 const RestaurantPageBanner = (props) => {
 
     const restaurantInfo = useSelector( state => state.mixReducers.current_restaurant );
-    console.log("inside restaurant reviews-> current restaurant from redux state", restaurantInfo)
+    // console.log("inside restaurant reviews-> current restaurant from redux state", restaurantInfo)
     const default_rating = 4
-    console.log('avg rating', restaurantInfo.avg_rating)
+    // console.log('avg rating', restaurantInfo.avg_rating)
 
     return(
         <>
