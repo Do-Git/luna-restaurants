@@ -15,7 +15,7 @@ import {
 } from "../../../../../../styledcomponents/forAll/buttons";
 import {FlexSpaceAroundDiv, FlexSpaceBetweenDiv} from "../../../../../../styledcomponents/forAll/layout";
 import {CommentInput} from "../../../../../../styledcomponents/forAll/inputs";
-// import Moment from 'react-moment';
+import Moment from 'react-moment';
 
 const ReviewCard = (props) => {
 
@@ -48,8 +48,8 @@ const ReviewCard = (props) => {
                 </ReviewCardTopLeft>
                 <DateTimeContainer>
                     <span>
-                        {props.created}
-                        {/* <Moment>{props.created}</Moment> */}
+                        {/* {props.created} */}
+                        <Moment format='YYYY/MM/DD HH:MM'>{props.created}</Moment>
                     </span>
                 </DateTimeContainer>
             </ReviewCardTop>
