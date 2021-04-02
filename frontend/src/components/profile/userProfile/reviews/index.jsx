@@ -2,6 +2,7 @@ import { ReviewsContainer, ReviewCard } from '../../../../styledcomponents/Profi
 import StarRatingComponent from "react-rating-stars-component";
 import { useSelector } from 'react-redux';
 import { useEffect, useState } from 'react';
+import Moment from 'react-moment';
 
 const Reviews = (props) => {
 
@@ -34,17 +35,12 @@ const Reviews = (props) => {
         <ReviewsContainer className={props.hide ? "hide" : null} >
             <h2>REVIES</h2>
             {reviews.length > 0 ? reviews.map((review, index) => {
-                // const year = parseInt(review.created.slice(0, 4));
-                // const monthNum = parseInt(review.created.slice(0, 2));
-                // const day = parseInt(review.created.slice(8, 10));
-                // const date = new Date(year, day, monthNum);
-                // const month = date.toLocaleString('default', {month: 'long'});
 
                 return (
                     <ReviewCard key={index} >
                         <article>
                             <h3>{ review.restaurant.name }</h3>
-                            <span>{ review.created.slice(0, 10) }</span>
+                            <span><Moment format='MMMM Do YYYY, h:mm:ss a' >{ review.created.slice(0, 10) }</Moment></span>
                         </article>
                         <StarRatingComponent
                             count={5}

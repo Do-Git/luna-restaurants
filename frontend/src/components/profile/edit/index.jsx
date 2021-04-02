@@ -35,6 +35,7 @@ const EditProfile = (props) => {
 
     const editAccount = (e) => {
         e.preventDefault();
+        console.log(history.location.pathname);
         const formData = new FormData();
         if (props.image){
             formData.append("profile_picture", props.image);
