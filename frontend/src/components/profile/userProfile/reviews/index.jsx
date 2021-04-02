@@ -3,6 +3,7 @@ import StarRatingComponent from "react-rating-stars-component";
 import { useSelector } from 'react-redux';
 import { useEffect, useState } from 'react';
 import Moment from 'react-moment';
+import { Link } from 'react-router-dom';
 
 const Reviews = (props) => {
 
@@ -26,7 +27,7 @@ const Reviews = (props) => {
             }
             fetch(url, config).then(res => res.json())
                 .then(data => {
-                    console.log(data);
+                    console.log("reviews", data);
                     setReviews(data.results);
                 })
     }, []);
@@ -39,7 +40,9 @@ const Reviews = (props) => {
                 return (
                     <ReviewCard key={index} >
                         <article>
-                            <h3>{ review.restaurant.name }</h3>
+                            <Link id="restaurant-link" to={`/restaurant-page/${review.restaurant.id}/`} >
+                                <h3>{ review.restaurant.name }</h3>
+                            </Link>
                             <span><Moment format='MMMM Do YYYY, h:mm:ss a' >{ review.created.slice(0, 10) }</Moment></span>
                         </article>
                         <StarRatingComponent
