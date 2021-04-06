@@ -11,4 +11,6 @@ class UserInReviewSerializer(serializers.ModelSerializer):
                   "username",
                   "first_name",
                   "last_name",
+                  "reviews",
+                  "profile_picture"
                   ]

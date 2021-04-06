@@ -39,7 +39,9 @@ const Restaurants = (props) => {
                 return (
                 <ReviewCard key={index} >
                     <article>
-                        <h3>{restaurant.name}</h3>
+                        <Link id="restaurant-link" to={`/restaurant-page/${restaurant.id}/`}>
+                            <h3>{restaurant.name}</h3>
+                        </Link>
                     </article>
                     <StarRatingComponent
                         count={5}
