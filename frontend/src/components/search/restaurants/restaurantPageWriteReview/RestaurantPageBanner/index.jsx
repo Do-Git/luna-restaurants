@@ -19,7 +19,7 @@ const RestaurantPageBannerReview = () => {
     // console.log("inside restaurant reviews-> current restaurant from redux state", restaurantInfo)
     const default_rating = 4
     // console.log('avg rating', restaurantInfo.avg_rating)
-
+    
 
     return(
         <>
@@ -39,6 +39,7 @@ const RestaurantPageBannerReview = () => {
                     <WhiteReviewCountSpan>{restaurantInfo.reviews ? restaurantInfo.reviews.length : 'Review count'} reviews</WhiteReviewCountSpan>
                 </StarsReviewRestaurantPageContainer>
             </BannerGrayLayerSmall>
+          {/* //  <img src={restaurantInfo.restaurant_image}/> */}
         </BannerDivSmall>
         </>
     )

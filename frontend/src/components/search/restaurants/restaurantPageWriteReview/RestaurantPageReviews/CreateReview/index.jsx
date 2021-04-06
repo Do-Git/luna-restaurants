@@ -24,6 +24,7 @@ const CreateReview = () => {
     const token = localStorage.getItem('token');
     const [review, setReview] = useState('');
     const [rating, setRating] = useState('');
+  
     // const [restaurant, setRating] = useState('');
 
     const { id } = useParams();
