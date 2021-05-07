@@ -1,6 +1,6 @@
-# luna-restaurants
-Luna is a website where users can review their favorite restaurants with 5 star ratings system, and restaurant owners can show their best dishes tagging an average price menu.
+# Luna
+Luna is a website where users can review their favorite restaurants with 5-star rating system, and restaurant owners can show their best dishes by tagging an average price menu.
 
-The website is still working in progress and some features are not yet implemented.
+The website has got all the basic features, in the future, there will be the implementation of Google maps for the restaurants and social media authentication.
 
 API's documentation: /api/docs/ API written with Concrete View Classes
